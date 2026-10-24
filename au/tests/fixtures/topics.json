@@ -1,0 +1,684 @@
+[
+  {
+    "id": "aum_k_01",
+    "subject": "maths",
+    "year": 0,
+    "strand": "Number",
+    "focusArea": "Representing whole numbers",
+    "name": "Counting to 10",
+    "type": "procedural",
+    "description": "Counts forwards to 10 and says how many are in a small group.",
+    "mastery_criteria": [
+      "Says the number names to 10 in order",
+      "Counts a group of up to 10 objects"
+    ],
+    "standards": [
+      {
+        "id": "MAE-RWN-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9MFN01",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false,
+    "root_reason": "Counting by ones is where school maths begins."
+  },
+  {
+    "id": "aum_k_02",
+    "subject": "maths",
+    "year": 0,
+    "strand": "Number",
+    "focusArea": "Representing whole numbers",
+    "name": "Comparing groups to 10",
+    "type": "conceptual",
+    "description": "Compares two groups of up to 10 objects and says which has more or fewer.",
+    "mastery_criteria": [
+      "Says which group has more",
+      "Finds how many more in small groups"
+    ],
+    "standards": [
+      {
+        "id": "MAE-RWN-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9MFN02",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  },
+  {
+    "id": "aum_k_03",
+    "subject": "maths",
+    "year": 0,
+    "strand": "Number",
+    "focusArea": "Combining and separating quantities",
+    "name": "Combining and separating to 10",
+    "type": "procedural",
+    "description": "Joins and takes away small groups to 10 using objects and fingers.",
+    "mastery_criteria": [
+      "Combines two small groups",
+      "Finds how many are left"
+    ],
+    "standards": [
+      {
+        "id": "MAE-CSQ-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9MFN03",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  },
+  {
+    "id": "aum_y1_01",
+    "subject": "maths",
+    "year": 1,
+    "strand": "Number",
+    "focusArea": "Representing whole numbers",
+    "name": "Counting to 120",
+    "type": "procedural",
+    "description": "Counts forwards and backwards by ones from any starting point up to 120.",
+    "mastery_criteria": [
+      "Counts on from any number to 120",
+      "Counts back from any number within 120"
+    ],
+    "standards": [
+      {
+        "id": "MA1-RWN-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9M1N01",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  },
+  {
+    "id": "aum_y1_02",
+    "subject": "maths",
+    "year": 1,
+    "strand": "Number",
+    "focusArea": "Representing whole numbers",
+    "name": "Skip counting by 2s, 5s and 10s",
+    "type": "procedural",
+    "description": "Counts by twos, fives and tens from zero and from other starting points.",
+    "mastery_criteria": [
+      "Skip counts by 10s to 120",
+      "Skip counts by 2s and 5s"
+    ],
+    "standards": [
+      {
+        "id": "MA1-RWN-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9M1N02",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  },
+  {
+    "id": "aum_y1_03",
+    "subject": "maths",
+    "year": 1,
+    "strand": "Number",
+    "focusArea": "Combining and separating quantities",
+    "name": "Adding and subtracting to 20",
+    "type": "procedural",
+    "description": "Adds and subtracts numbers to 20 using counting on, doubles and part-part-whole.",
+    "mastery_criteria": [
+      "Adds two numbers with a total up to 20",
+      "Subtracts within 20"
+    ],
+    "standards": [
+      {
+        "id": "MA1-CSQ-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9M1N04",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  },
+  {
+    "id": "aum_y1_04",
+    "subject": "maths",
+    "year": 1,
+    "strand": "Measurement",
+    "focusArea": "Geometric measure",
+    "name": "Measuring length with informal units",
+    "type": "conceptual",
+    "description": "Measures and compares lengths by placing uniform informal units end to end.",
+    "mastery_criteria": [
+      "Lines units up with no gaps or overlaps",
+      "Compares two lengths using the same unit"
+    ],
+    "standards": [
+      {
+        "id": "MA1-GM-02",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9M1M01",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false,
+    "root_reason": "Comparing lengths with everyday objects needs no earlier school maths."
+  },
+  {
+    "id": "aum_y2_01",
+    "subject": "maths",
+    "year": 2,
+    "strand": "Number",
+    "focusArea": "Representing whole numbers",
+    "name": "Place value to 1000",
+    "type": "conceptual",
+    "description": "Reads, writes and partitions three-digit numbers into hundreds, tens and ones.",
+    "mastery_criteria": [
+      "Names the value of each digit",
+      "Finds 10 more or 10 less"
+    ],
+    "standards": [
+      {
+        "id": "MA1-RWN-02",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9M2N01",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  },
+  {
+    "id": "aum_y2_02",
+    "subject": "maths",
+    "year": 2,
+    "strand": "Number",
+    "focusArea": "Additive relations",
+    "name": "Adding two-digit numbers",
+    "type": "procedural",
+    "description": "Adds two-digit numbers by partitioning and recombining tens and ones.",
+    "mastery_criteria": [
+      "Adds two-digit numbers without regrouping",
+      "Adds two-digit numbers with regrouping"
+    ],
+    "standards": [
+      {
+        "id": "MA1-AR-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9M2N04",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  },
+  {
+    "id": "aum_y3_01",
+    "subject": "maths",
+    "year": 3,
+    "strand": "Number",
+    "focusArea": "Multiplicative relations",
+    "name": "Multiplication facts for 2, 5 and 10",
+    "type": "procedural",
+    "description": "Recalls multiplication facts for twos, fives and tens and uses them in simple problems.",
+    "mastery_criteria": [
+      "Recalls the 2, 5 and 10 facts",
+      "Uses a fact to solve a sharing or grouping problem"
+    ],
+    "standards": [
+      {
+        "id": "MA2-MR-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9M3N06",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  },
+  {
+    "id": "aum_y3_02",
+    "subject": "maths",
+    "year": 3,
+    "strand": "Number",
+    "focusArea": "Representing numbers using fractions",
+    "name": "Halves, quarters and eighths",
+    "type": "conceptual",
+    "description": "Names and compares halves, quarters and eighths of shapes and collections.",
+    "mastery_criteria": [
+      "Names a half, a quarter and an eighth",
+      "Finds a quarter of a small collection"
+    ],
+    "standards": [
+      {
+        "id": "MA2-RN-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9M3N03",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false,
+    "root_reason": "Sharing into equal parts is taught here with concrete materials, so no earlier skill in this map is required."
+  },
+  {
+    "id": "aum_y4_01",
+    "subject": "maths",
+    "year": 4,
+    "strand": "Number",
+    "focusArea": "Representing numbers using fractions",
+    "name": "Equivalent fractions",
+    "type": "conceptual",
+    "description": "Finds fractions that name the same amount, such as 1/2 and 2/4.",
+    "mastery_criteria": [
+      "Finds an equal fraction with a given denominator",
+      "Explains why two fractions are equal"
+    ],
+    "standards": [
+      {
+        "id": "MA2-RN-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9M4N03",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  },
+  {
+    "id": "aum_y5_01",
+    "subject": "maths",
+    "year": 5,
+    "strand": "Number",
+    "focusArea": "Multiplicative relations",
+    "name": "Multiplying by one-digit numbers",
+    "type": "procedural",
+    "description": "Multiplies two- and three-digit numbers by one-digit numbers using written strategies.",
+    "mastery_criteria": [
+      "Multiplies a two-digit number by a one-digit number",
+      "Solves word problems with multiplication"
+    ],
+    "standards": [
+      {
+        "id": "MA3-MR-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9M5N06",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  },
+  {
+    "id": "aum_y6_01",
+    "subject": "maths",
+    "year": 6,
+    "strand": "Number",
+    "focusArea": "Representing quantities using fractions, decimals and percentages",
+    "name": "Percentages of quantities",
+    "type": "application",
+    "description": "Finds common percentages of amounts, including discounts in dollars.",
+    "mastery_criteria": [
+      "Finds 10%, 25% and 50% of an amount",
+      "Works out a discount and sale price"
+    ],
+    "standards": [
+      {
+        "id": "MA3-RQF-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9M6N05",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  },
+  {
+    "id": "aum_y6_02",
+    "subject": "maths",
+    "year": 6,
+    "strand": "Measurement",
+    "focusArea": "Geometric measure",
+    "name": "Area of rectangles",
+    "type": "application",
+    "description": "Calculates the area of rectangles in square centimetres and square metres.",
+    "mastery_criteria": [
+      "Multiplies length by width",
+      "Finds a missing side from the area"
+    ],
+    "standards": [
+      {
+        "id": "MA3-GM-02",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9M5M02",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  },
+  {
+    "id": "aum_y6_03",
+    "subject": "maths",
+    "year": 6,
+    "strand": "Space",
+    "focusArea": "Geometric measure",
+    "name": "Angles on a straight line",
+    "type": "reasoning",
+    "description": "Uses the fact that angles on a straight line add to 180 degrees to find unknown angles.",
+    "mastery_criteria": [
+      "States that a straight angle is 180 degrees",
+      "Finds an unknown angle on a straight line"
+    ],
+    "standards": [
+      {
+        "id": "MA3-GM-03",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9M6M04",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false,
+    "root_reason": "Measuring angles in degrees is introduced in this topic for the fixture, so it has no prerequisite here."
+  },
+  {
+    "id": "aue_k_01",
+    "subject": "english",
+    "year": 0,
+    "strand": "Phonological awareness",
+    "focusArea": "Phonological awareness",
+    "name": "Hearing rhyming words",
+    "type": "conceptual",
+    "description": "Hears and picks words that rhyme in spoken language.",
+    "mastery_criteria": [
+      "Picks a word that rhymes",
+      "Says when two words do not rhyme"
+    ],
+    "standards": [
+      {
+        "id": "ENE-PHOA-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9EFLY09",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false,
+    "root_reason": "Listening for rhyme uses the spoken language children bring to school."
+  },
+  {
+    "id": "aue_k_02",
+    "subject": "english",
+    "year": 0,
+    "strand": "Phonics and word recognition",
+    "focusArea": "Phonic knowledge and word recognition",
+    "name": "Letter–sound links",
+    "type": "procedural",
+    "description": "Matches single letters to the sounds they most often make.",
+    "mastery_criteria": [
+      "Names the first sound of a word",
+      "Matches the sound to its letter"
+    ],
+    "standards": [
+      {
+        "id": "ENE-PHOKW-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9EFLY12",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  },
+  {
+    "id": "aue_k_03",
+    "subject": "english",
+    "year": 0,
+    "strand": "Phonics and word recognition",
+    "focusArea": "Phonic knowledge and word recognition",
+    "name": "Blending CVC words",
+    "type": "procedural",
+    "description": "Blends three sounds to read short consonant-vowel-consonant words.",
+    "mastery_criteria": [
+      "Blends c-a-t to say cat",
+      "Reads short CVC words"
+    ],
+    "standards": [
+      {
+        "id": "ENE-PHOKW-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9EFLY12",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  },
+  {
+    "id": "aue_y1_01",
+    "subject": "english",
+    "year": 1,
+    "strand": "Phonics and word recognition",
+    "focusArea": "Phonic knowledge and word recognition",
+    "name": "Digraphs sh, ch and th",
+    "type": "procedural",
+    "description": "Reads and writes words with the digraphs sh, ch and th.",
+    "mastery_criteria": [
+      "Reads words starting or ending with sh, ch, th",
+      "Spells simple words with these digraphs"
+    ],
+    "standards": [
+      {
+        "id": "EN1-PHOKW-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9E1LY12",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  },
+  {
+    "id": "aue_y1_02",
+    "subject": "english",
+    "year": 1,
+    "strand": "Grammar and punctuation",
+    "focusArea": "Creating written texts",
+    "name": "Capital letters and full stops",
+    "type": "procedural",
+    "description": "Starts sentences and names with capital letters and ends statements with full stops.",
+    "mastery_criteria": [
+      "Uses a capital letter to start a sentence",
+      "Ends a statement with a full stop"
+    ],
+    "standards": [
+      {
+        "id": "EN1-CWT-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9E1LA05",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false,
+    "root_reason": "Writing a simple sentence is the starting point for punctuation in this map."
+  },
+  {
+    "id": "aue_y1_03",
+    "subject": "english",
+    "year": 1,
+    "strand": "Spelling",
+    "focusArea": "Spelling",
+    "name": "Spelling high-frequency words",
+    "type": "procedural",
+    "description": "Spells common words such as said, because and friend correctly.",
+    "mastery_criteria": [
+      "Picks the correct spelling of common words",
+      "Chooses to, too or two correctly"
+    ],
+    "standards": [
+      {
+        "id": "EN1-SPELL-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9E1LY09",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  },
+  {
+    "id": "aue_y2_01",
+    "subject": "english",
+    "year": 2,
+    "strand": "Spelling",
+    "focusArea": "Spelling",
+    "name": "Adding -ed for the past",
+    "type": "procedural",
+    "description": "Adds -ed to verbs, doubling the last letter or changing y to i when needed.",
+    "mastery_criteria": [
+      "Adds -ed to regular verbs",
+      "Doubles the consonant in short words like hop"
+    ],
+    "standards": [
+      {
+        "id": "EN1-SPELL-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9E2LY10",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  },
+  {
+    "id": "aue_y3_01",
+    "subject": "english",
+    "year": 3,
+    "strand": "Reading comprehension",
+    "focusArea": "Reading, viewing and comprehending texts",
+    "name": "Finding the main idea",
+    "type": "reasoning",
+    "description": "Identifies what a short paragraph is mostly about.",
+    "mastery_criteria": [
+      "Picks the main idea of a paragraph",
+      "Chooses a suitable title"
+    ],
+    "standards": [
+      {
+        "id": "EN2-RECOM-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9E3LY05",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false,
+    "root_reason": "Finding the main idea is taught as a starting point for comprehension in this map."
+  },
+  {
+    "id": "aue_y6_01",
+    "subject": "english",
+    "year": 6,
+    "strand": "Reading comprehension",
+    "focusArea": "Reading, viewing and comprehending texts",
+    "name": "Making inferences",
+    "type": "reasoning",
+    "description": "Uses clues in a text to work out what is not stated directly.",
+    "mastery_criteria": [
+      "Infers a feeling from actions",
+      "Infers what happened from clues"
+    ],
+    "standards": [
+      {
+        "id": "EN3-RECOM-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9E6LY05",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  },
+  {
+    "id": "aue_y6_02",
+    "subject": "english",
+    "year": 6,
+    "strand": "Grammar and punctuation",
+    "focusArea": "Creating written texts",
+    "name": "Commas in complex sentences",
+    "type": "procedural",
+    "description": "Uses a comma after an opening dependent clause.",
+    "mastery_criteria": [
+      "Places the comma after an opening clause",
+      "Spots a sentence that needs a comma"
+    ],
+    "standards": [
+      {
+        "id": "EN3-CWT-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9E6LA06",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  },
+  {
+    "id": "aue_y6_03",
+    "subject": "english",
+    "year": 6,
+    "strand": "Vocabulary",
+    "focusArea": "Vocabulary",
+    "name": "Prefixes and suffixes",
+    "type": "conceptual",
+    "description": "Uses common prefixes and suffixes to change and work out word meanings.",
+    "mastery_criteria": [
+      "Explains un-, re- and mis-",
+      "Uses -ful and -less"
+    ],
+    "standards": [
+      {
+        "id": "EN3-VOCAB-01",
+        "confidence": "exact"
+      },
+      {
+        "id": "AC9E6LY09",
+        "confidence": "inferred"
+      }
+    ],
+    "external": false
+  }
+]

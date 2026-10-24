@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Skill map · K–6 Learning Map</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20fill%3D%22%23dff3ef%22%20stroke%3D%22%230f6e62%22%20stroke-width%3D%221.7%22%20stroke-linejoin%3D%22round%22%20d%3D%22M6.6%204.8H17L27.4%2015.2V25Q27.4%2027.4%2025.2%2027.4H6.6Q4.4%2027.4%204.4%2025.2V7Q4.4%204.8%206.6%204.8Z%22%2F%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M17.7%206.3%2026.1%2014.7H17.7Z%22%2F%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%230f6e62%22%20stroke-width%3D%221.35%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20d%3D%22M17.7%206.3V14.7H26.1%22%2F%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%230f6e62%22%20stroke-width%3D%222.15%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20d%3D%22M8.3%2024.2H12.4Q14.2%2024.2%2014.2%2022.4V20.2Q14.2%2018.6%2016%2018.6H18.8%22%2F%3E%3Cpath%20fill%3D%22%230f6e62%22%20d%3D%22M18.5%2016.85%2023%2018.6%2018.5%2020.35Z%22%2F%3E%3C%2Fsvg%3E">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../assets/explore.css">
+<link rel="stylesheet" href="../../assets/pwa.css">
+<link rel="stylesheet" href="../assets/au.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../../assets/icons/apple-touch-icon.png">
+<meta name="theme-color" content="#0f6e62">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="K–6 Map">
+</head>
+<body class="page-explore">
+<header class="site-header">
+  <a class="brand" href="../">
+    <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><path fill="var(--logo-sheet)" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" d="M6.6 4.8H17L27.4 15.2V25Q27.4 27.4 25.2 27.4H6.6Q4.4 27.4 4.4 25.2V7Q4.4 4.8 6.6 4.8Z"/><path fill="var(--logo-fold)" d="M17.7 6.3 26.1 14.7H17.7Z"/><path fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" d="M17.7 6.3V14.7H26.1"/><path fill="none" stroke="currentColor" stroke-width="2.15" stroke-linecap="round" stroke-linejoin="round" d="M8.3 24.2H12.4Q14.2 24.2 14.2 22.4V20.2Q14.2 18.6 16 18.6H18.8"/><path fill="currentColor" d="M18.5 16.85 23 18.6 18.5 20.35Z"/></svg>
+    <span class="brand-copy">
+      <span class="brand-name">K–6 Learning Map</span>
+      <span class="brand-kicker">NSW Maths &amp; English</span>
+    </span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <div class="subject-switch" role="group" aria-label="Subject">
+      <a class="nav-link subject-link on" data-subject="maths" href="./">Maths</a>
+      <a class="nav-link subject-link" data-subject="english" href="./?subject=english">English</a>
+    </div>
+    <div class="page-links">
+      <a class="nav-link page-link" href="../">Home</a>
+      <a class="nav-link page-link active" href="./" aria-current="page">Skill map</a>
+      <a class="nav-link page-link" href="../diagnose/">Check-up</a>
+      <a class="nav-link page-link" href="../kids/">Kids</a>
+      <a class="nav-link" href="https://github.com/zhangzhongnan928/cn-math-taxonomy/tree/main/au" target="_blank" rel="noopener noreferrer">About</a>
+    </div>
+  </nav>
+</header>
+<div class="explore">
+  <div class="explore-mobile-bar">
+    <button type="button" id="list-toggle" class="list-toggle" aria-expanded="false" aria-controls="side">Show the skill list</button>
+  </div>
+  <aside id="side" class="side">
+    <div class="side-tools">
+      <input id="q" type="search" placeholder="Search skills, focus areas or codes" autocomplete="off" aria-label="Search skills">
+      <div class="filter-row three">
+        <select id="fYear" aria-label="School year">
+          <option value="">All years</option>
+          <option value="0">Kindergarten</option>
+          <option value="1">Year 1</option><option value="2">Year 2</option><option value="3">Year 3</option>
+          <option value="4">Year 4</option><option value="5">Year 5</option><option value="6">Year 6</option>
+        </select>
+        <select id="fStrand" aria-label="Strand"><option value="">All strands</option></select>
+        <select id="fFocus" aria-label="Focus area"><option value="">All focus areas</option></select>
+      </div>
+      <div id="count" class="count">Loading…</div>
+    </div>
+    <div id="list" class="list"><p class="muted" style="padding:12px">Loading skills…</p></div>
+  </aside>
+  <section class="graph-pane" aria-label="Prerequisite graph">
+    <div class="graph-toolbar">
+      <div class="depth" id="depth-switch" role="group" aria-label="How far back to show">
+        <span class="depth-label">Show back</span>
+        <div class="seg">
+          <button type="button" data-depth="1" aria-pressed="false" aria-label="1 step"><span class="wide-only">1 step</span><span class="narrow-only">1</span></button>
+          <button type="button" data-depth="2" class="on" aria-pressed="true" aria-label="2 steps"><span class="wide-only">2 steps</span><span class="narrow-only">2</span></button>
+          <button type="button" data-depth="3" aria-pressed="false" aria-label="3 steps"><span class="wide-only">3 steps</span><span class="narrow-only">3</span></button>
+          <button type="button" data-depth="all" aria-pressed="false" aria-label="All">All</button>
+        </div>
+      </div>
+      <div class="zoom-tools" role="group" aria-label="Zoom">
+        <button type="button" id="btn-zoom-out" aria-label="Zoom out" title="Zoom out"><svg class="zoom-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14.6 14.6 19.5 19.5M7.4 10h5.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="zoom-label">Zoom out</span></button>
+        <button type="button" id="btn-zoom-in" aria-label="Zoom in" title="Zoom in"><svg class="zoom-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14.6 14.6 19.5 19.5M7.4 10h5.2M10 7.4v5.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="zoom-label">Zoom in</span></button>
+        <button type="button" id="btn-fit" aria-label="Fit to screen" title="Fit to screen"><svg class="zoom-ico" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 9V5.5A1.5 1.5 0 0 1 5.5 4H9M15 4h3.5A1.5 1.5 0 0 1 20 5.5V9M20 15v3.5a1.5 1.5 0 0 1-1.5 1.5H15M9 20H5.5A1.5 1.5 0 0 1 4 18.5V15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="zoom-label">Fit</span></button>
+      </div>
+    </div>
+    <p id="graph-fold" class="graph-fold" hidden></p>
+    <div id="graph-stage" class="graph-stage">
+      <div id="cy" hidden role="img" aria-label="Prerequisite graph around the chosen skill"></div>
+      <div id="graph-empty" class="graph-empty">
+        <p>Pick a skill and this space shows the skills it builds on, plus the next skills that use it.</p>
+        <p class="muted">Tap a box to move to that skill. Pinch or scroll to zoom, drag to move around. Long names are shortened; hover or tap to see the full name.</p>
+        <button type="button" id="pick-sample" class="btn btn-primary">Show me an example</button>
+      </div>
+      <div id="node-tip" class="node-tip" role="tooltip" hidden></div>
+    </div>
+    <ul class="legend">
+      <li><i class="swatch sw-early"></i>K–Year 2</li>
+      <li><i class="swatch sw-middle"></i>Years 3–4</li>
+      <li><i class="swatch sw-upper"></i>Years 5–6</li>
+      <li><i class="swatch sw-c"></i>Chosen skill</li>
+      <li><i class="swatch line-hard"></i>Needed first (solid)</li>
+      <li><i class="swatch line-soft"></i>Helps (dashed)</li>
+    </ul>
+    <p id="graph-meta" class="graph-meta"></p>
+  </section>
+  <aside id="detail" class="detail"><p class="muted">Loading…</p></aside>
+</div>
+<footer class="site-footer">
+  <p><a href="https://github.com/zhangzhongnan928/cn-math-taxonomy/tree/main/au" target="_blank" rel="noopener noreferrer">About this site</a></p>
+</footer>
+<script src="../../assets/vendor/cytoscape.min.js"></script>
+<script src="../../assets/vendor/dagre.min.js"></script>
+<script src="../../assets/vendor/cytoscape-dagre.js"></script>
+<script src="../assets/common.js"></script>
+<script src="app.js"></script>
+<script src="../../assets/stats-config.js"></script>
+<script src="../../assets/stats.js"></script>
+<script src="../assets/pwa.js"></script>
+</body>
+</html>

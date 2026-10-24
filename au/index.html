@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>K–6 Learning Map · NSW Maths &amp; English</title>
+<meta name="description" content="A map of Kindergarten to Year 6 Maths and English skills, aligned to the NSW syllabuses, with a short adaptive check-up that finds where a gap starts.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20fill%3D%22%23dff3ef%22%20stroke%3D%22%230f6e62%22%20stroke-width%3D%221.7%22%20stroke-linejoin%3D%22round%22%20d%3D%22M6.6%204.8H17L27.4%2015.2V25Q27.4%2027.4%2025.2%2027.4H6.6Q4.4%2027.4%204.4%2025.2V7Q4.4%204.8%206.6%204.8Z%22%2F%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M17.7%206.3%2026.1%2014.7H17.7Z%22%2F%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%230f6e62%22%20stroke-width%3D%221.35%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20d%3D%22M17.7%206.3V14.7H26.1%22%2F%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%230f6e62%22%20stroke-width%3D%222.15%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20d%3D%22M8.3%2024.2H12.4Q14.2%2024.2%2014.2%2022.4V20.2Q14.2%2018.6%2016%2018.6H18.8%22%2F%3E%3Cpath%20fill%3D%22%230f6e62%22%20d%3D%22M18.5%2016.85%2023%2018.6%2018.5%2020.35Z%22%2F%3E%3C%2Fsvg%3E">
+<script>
+(function () {
+  var id = location.hash.replace(/^#/, '');
+  try { id = decodeURIComponent(id); } catch (e) { return; }
+  if (/^au[me]_[A-Za-z0-9_]+$/.test(id)) {
+    document.documentElement.style.visibility = 'hidden';
+    location.replace('explore/' + (id.indexOf('aue_') === 0 ? '?subject=english' : '') + '#' + encodeURIComponent(id));
+  }
+})();
+</script>
+<link rel="stylesheet" href="../assets/site.css">
+<link rel="stylesheet" href="../assets/pwa.css">
+<link rel="stylesheet" href="assets/au.css">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="../assets/icons/apple-touch-icon.png">
+<meta name="theme-color" content="#0f6e62">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="K–6 Map">
+</head>
+<body class="page-home">
+<header class="site-header">
+  <a class="brand" href="./">
+    <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><path fill="var(--logo-sheet)" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" d="M6.6 4.8H17L27.4 15.2V25Q27.4 27.4 25.2 27.4H6.6Q4.4 27.4 4.4 25.2V7Q4.4 4.8 6.6 4.8Z"/><path fill="var(--logo-fold)" d="M17.7 6.3 26.1 14.7H17.7Z"/><path fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" d="M17.7 6.3V14.7H26.1"/><path fill="none" stroke="currentColor" stroke-width="2.15" stroke-linecap="round" stroke-linejoin="round" d="M8.3 24.2H12.4Q14.2 24.2 14.2 22.4V20.2Q14.2 18.6 16 18.6H18.8"/><path fill="currentColor" d="M18.5 16.85 23 18.6 18.5 20.35Z"/></svg>
+    <span class="brand-copy">
+      <span class="brand-name">K–6 Learning Map</span>
+      <span class="brand-kicker">NSW Maths &amp; English</span>
+    </span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <div class="subject-switch" role="group" aria-label="Subject">
+      <a class="nav-link subject-link on" data-subject="maths" href="./">Maths</a>
+      <a class="nav-link subject-link" data-subject="english" href="./?subject=english">English</a>
+    </div>
+    <div class="page-links">
+      <a class="nav-link page-link active" href="./" aria-current="page">Home</a>
+      <a class="nav-link page-link" href="explore/">Skill map</a>
+      <a class="nav-link page-link" href="diagnose/">Check-up</a>
+      <a class="nav-link page-link" href="kids/">Kids</a>
+      <a class="nav-link" href="https://github.com/zhangzhongnan928/cn-math-taxonomy/tree/main/au" target="_blank" rel="noopener noreferrer">About</a>
+    </div>
+  </nav>
+</header>
+<main class="home">
+  <section class="hero">
+    <p class="eyebrow" id="eyebrow">Maths · Kindergarten to Year 6 · NSW syllabus</p>
+    <h1>Find the step your child hasn’t quite got yet</h1>
+    <p class="lede" id="lede">A short check-up that adapts as your child answers. When something is tricky, it steps back through the skills it builds on to find where the gap starts, then lists what to practise next, in order.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary btn-lg" id="cta-check" href="diagnose/">Start a check-up</a>
+      <a class="btn btn-lg" id="cta-map" href="explore/">Explore the skill map</a>
+    </div>
+    <div class="quick-grid" id="quick" aria-label="Quick start"></div>
+    <p class="home-kids" id="kids-line"></p>
+    <p class="quiet-link"><a id="demo-link" href="diagnose/?demo=1">See a demo first</a></p>
+  </section>
+
+  <h2 class="section-title">How it works</h2>
+  <ol class="steps">
+    <li>
+      <span class="step-no">1</span>
+      <h3>Pick a skill or a whole year</h3>
+      <p>Search the skill map, or choose a whole-year check-up from Kindergarten to Year 6.</p>
+    </li>
+    <li>
+      <span class="step-no">2</span>
+      <h3>Your child answers a few questions</h3>
+      <p>A wrong answer gets one more, easier try. Two misses and it checks the skills that come before. Young children can have each question read aloud.</p>
+    </li>
+    <li>
+      <span class="step-no">3</span>
+      <h3>See where the gap starts</h3>
+      <p>Results show what your child has got, what is shaky, and what to practise next, in order from the earliest year.</p>
+    </li>
+  </ol>
+
+  <h2 class="section-title" id="stats-title">What’s in the Maths map</h2>
+  <div class="stat-grid" id="stats">
+    <div class="stat-card"><div class="stat-num" id="n-topics">…</div><div class="stat-label">Skills</div></div>
+    <div class="stat-card"><div class="stat-num" id="n-edges">…</div><div class="stat-label">Prerequisite links</div></div>
+    <div class="stat-card"><div class="stat-num" id="n-questions">…</div><div class="stat-label">Questions</div></div>
+    <div class="stat-card"><div class="stat-num" id="n-standards">…</div><div class="stat-label">Curriculum outcomes</div></div>
+  </div>
+  <p class="stat-note" id="stat-note">Counted from the data when the page opens. Outcomes include NSW syllabus outcomes and Australian Curriculum v9 content descriptions.</p>
+  <div id="load-error" class="load-error" hidden></div>
+
+  <h2 class="section-title">By school year</h2>
+  <div class="year-grid" id="years" aria-busy="true"></div>
+  <p class="home-note">Progress and kid profiles stay in this browser only. Nothing is uploaded and there are no accounts. The skill map and questions are an early draft, aligned to the NSW syllabuses (2022) but not yet reviewed by teachers, so treat results as clues rather than a report card.</p>
+</main>
+<footer class="site-footer">
+  <p><a href="https://github.com/zhangzhongnan928/cn-math-taxonomy/tree/main/au" target="_blank" rel="noopener noreferrer">About this site</a></p>
+</footer>
+<script src="assets/common.js"></script>
+<script src="assets/kids.js"></script>
+<script src="assets/home.js"></script>
+<script src="../assets/stats-config.js"></script>
+<script src="../assets/stats.js"></script>
+<script src="assets/pwa.js"></script>
+</body>
+</html>
