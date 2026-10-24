@@ -278,7 +278,8 @@ def main():
             if CJK_RE.search(txt):
                 err(f"{qid}: contains CJK characters")
                 break
-        prompts[(t["subject"], norm_text(q.get("prompt", "")), q.get("say", ""))].append(qid)
+        prompts[(t["subject"], norm_text(q.get("prompt", "")), q.get("say", ""), q.get("figure", ""),
+                 tuple(norm_text(c.get("text", "")) for c in q.get("choices", [])))].append(qid)
         words = len(q.get("prompt", "").split())
         if t["year"] <= 2 and words > 30:
             warn(f"{qid}: K-2 prompt has {words} words")

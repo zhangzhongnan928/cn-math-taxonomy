@@ -80,7 +80,7 @@ The Australian edition is a separate, English-only site under `au/`. It shares n
 | `type` | `numeric` (a number), `choice` (3–4 options), `short` (a short word or phrase, exact match after normalising case and spaces), `self` (open answer, the child or parent compares with the reference; avoid). |
 | `prompt` | Self-contained. Units go in the prompt, the answer has no unit. Australian English spelling (colour, centre, metre, litre, maths), Australian money (dollars and cents), metric units, Australian everyday contexts. K–Year 2 prompts are short (about 20 words at most) and use decodable, everyday words, because they are read aloud to the child. |
 | `say` | Optional. Text that the read-aloud button speaks instead of the prompt. Use it for spelling dictation and sound questions where the prompt must not show the word, e.g. prompt `Listen, then type the word you hear.`, say `ship. The ship sailed out of the harbour. ship.` |
-| `answer` | String. numeric: one number (integer, decimal or fraction `a/b`); choice: the option letter; short: the canonical answer. |
+| `answer` | String. numeric: one number (integer, decimal, fraction `a/b` or mixed numeral `2 3/4`); choice: the option letter; short: the canonical answer. |
 | `accept` | Optional list of other accepted answers (short and numeric). |
 | `choices` | Required for `choice`: `[{"key":"A","text":"…"}, …]`, keys A, B, C, D in order, texts distinct. The correct letter should vary across a topic's questions. |
 | `figure` | Optional inline SVG string (`<svg viewBox=…>`, uses `currentColor`, no external references, no script). |

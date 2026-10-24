@@ -618,7 +618,7 @@ test('groupOf: year + strand + focus area', () => {
 
 /* ------------------------------------------------------------ dataset checks (fixtures, and au/data when present) */
 
-const NUM_RE = /^-?\d+(\.\d+)?(\/\d+)?$/;
+const NUM_RE = /^-?\d+(\.\d+)?(\/\d+)?$|^\d+ \d+\/\d+$/; // integer, decimal, fraction a/b or mixed numeral "2 3/4"
 const STRANDS = {
   maths: ['Number', 'Algebra', 'Measurement', 'Space', 'Statistics', 'Probability'],
   english: ['Phonological awareness', 'Phonics and word recognition', 'Spelling', 'Vocabulary', 'Grammar and punctuation', 'Reading comprehension', 'Text and literature']

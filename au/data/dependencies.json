@@ -1,0 +1,3446 @@
+[
+  {
+    "topicId": "aum_k_03",
+    "prerequisiteId": "aum_k_02",
+    "strength": "hard",
+    "reason": "Counting objects needs the counting words in order."
+  },
+  {
+    "topicId": "aum_k_04",
+    "prerequisiteId": "aum_k_02",
+    "strength": "hard",
+    "reason": "Reading a numeral means linking it to a counting word the child already says."
+  },
+  {
+    "topicId": "aum_k_05",
+    "prerequisiteId": "aum_k_03",
+    "strength": "hard",
+    "reason": "Matching a numeral to a group needs counting the group."
+  },
+  {
+    "topicId": "aum_k_05",
+    "prerequisiteId": "aum_k_04",
+    "strength": "hard",
+    "reason": "Matching a numeral to a group needs reading the numeral."
+  },
+  {
+    "topicId": "aum_k_06",
+    "prerequisiteId": "aum_k_02",
+    "strength": "hard",
+    "reason": "Counting backwards reverses the forward counting sequence."
+  },
+  {
+    "topicId": "aum_k_07",
+    "prerequisiteId": "aum_k_06",
+    "strength": "hard",
+    "reason": "One less is the number before, which comes from counting backwards."
+  },
+  {
+    "topicId": "aum_k_07",
+    "prerequisiteId": "aum_k_05",
+    "strength": "soft",
+    "reason": "Seeing one more as one extra object links the number to a quantity."
+  },
+  {
+    "topicId": "aum_k_08",
+    "prerequisiteId": "aum_k_07",
+    "strength": "hard",
+    "reason": "Ordering numbers relies on knowing which number comes after or before another."
+  },
+  {
+    "topicId": "aum_k_09",
+    "prerequisiteId": "aum_k_03",
+    "strength": "hard",
+    "reason": "Splitting a group into parts needs counting each part."
+  },
+  {
+    "topicId": "aum_k_09",
+    "prerequisiteId": "aum_k_01",
+    "strength": "soft",
+    "reason": "Seeing small parts at a glance makes part-whole thinking quicker."
+  },
+  {
+    "topicId": "aum_k_10",
+    "prerequisiteId": "aum_k_03",
+    "strength": "hard",
+    "reason": "Comparing groups by number needs counting each group."
+  },
+  {
+    "topicId": "aum_k_11",
+    "prerequisiteId": "aum_k_09",
+    "strength": "hard",
+    "reason": "Adding two groups is joining two parts to make a whole."
+  },
+  {
+    "topicId": "aum_k_12",
+    "prerequisiteId": "aum_k_09",
+    "strength": "hard",
+    "reason": "Taking away separates a whole into the part removed and the part left."
+  },
+  {
+    "topicId": "aum_k_12",
+    "prerequisiteId": "aum_k_06",
+    "strength": "soft",
+    "reason": "Counting back helps find how many are left."
+  },
+  {
+    "topicId": "aum_k_14",
+    "prerequisiteId": "aum_k_03",
+    "strength": "hard",
+    "reason": "Checking that groups are equal needs counting each group."
+  },
+  {
+    "topicId": "aum_k_17",
+    "prerequisiteId": "aum_k_16",
+    "strength": "hard",
+    "reason": "Knowing two parts are equal halves needs comparing their lengths."
+  },
+  {
+    "topicId": "aum_k_20",
+    "prerequisiteId": "aum_k_18",
+    "strength": "soft",
+    "reason": "Describing the flat faces of objects uses the names of flat shapes."
+  },
+  {
+    "topicId": "aum_k_24",
+    "prerequisiteId": "aum_k_23",
+    "strength": "soft",
+    "reason": "Ordering the days builds on ordering events in time."
+  },
+  {
+    "topicId": "aum_k_25",
+    "prerequisiteId": "aum_k_04",
+    "strength": "hard",
+    "reason": "Reading a clock needs reading the numerals 1 to 12."
+  },
+  {
+    "topicId": "aum_k_25",
+    "prerequisiteId": "aum_k_23",
+    "strength": "soft",
+    "reason": "Linking clock times to daily events gives them meaning."
+  },
+  {
+    "topicId": "aum_k_26",
+    "prerequisiteId": "aum_k_10",
+    "strength": "hard",
+    "reason": "Reading a data display means comparing how many are in each group."
+  },
+  {
+    "topicId": "aum_y1_01",
+    "prerequisiteId": "aum_k_07",
+    "strength": "hard",
+    "reason": "Saying the number before and after any number to 120 extends one more and one less within 20."
+  },
+  {
+    "topicId": "aum_y1_02",
+    "prerequisiteId": "aum_y1_01",
+    "strength": "hard",
+    "reason": "Writing numbers to 120 depends on knowing their names and order."
+  },
+  {
+    "topicId": "aum_y1_03",
+    "prerequisiteId": "aum_y1_02",
+    "strength": "hard",
+    "reason": "Grouping in tens is recorded with two-digit numerals."
+  },
+  {
+    "topicId": "aum_y1_03",
+    "prerequisiteId": "aum_k_09",
+    "strength": "soft",
+    "reason": "Splitting a number into tens and ones builds on splitting numbers into parts."
+  },
+  {
+    "topicId": "aum_y1_04",
+    "prerequisiteId": "aum_y1_03",
+    "strength": "hard",
+    "reason": "Comparing two-digit numbers means comparing tens first, then ones."
+  },
+  {
+    "topicId": "aum_y1_04",
+    "prerequisiteId": "aum_k_08",
+    "strength": "hard",
+    "reason": "Ordering larger numbers extends ordering numbers to 20."
+  },
+  {
+    "topicId": "aum_y1_05",
+    "prerequisiteId": "aum_y1_04",
+    "strength": "hard",
+    "reason": "Finding the nearest ten means placing a number between two tens on a number line."
+  },
+  {
+    "topicId": "aum_y1_06",
+    "prerequisiteId": "aum_y1_01",
+    "strength": "hard",
+    "reason": "Skip counting picks out every second, fifth or tenth number from the counting sequence."
+  },
+  {
+    "topicId": "aum_y1_07",
+    "prerequisiteId": "aum_k_13",
+    "strength": "hard",
+    "reason": "Finding the repeating unit builds on continuing repeating patterns."
+  },
+  {
+    "topicId": "aum_y1_08",
+    "prerequisiteId": "aum_y1_06",
+    "strength": "hard",
+    "reason": "Finding the total of equal groups uses skip counting."
+  },
+  {
+    "topicId": "aum_y1_08",
+    "prerequisiteId": "aum_k_14",
+    "strength": "hard",
+    "reason": "Describing equal groups builds on making equal groups by sharing."
+  },
+  {
+    "topicId": "aum_y1_09",
+    "prerequisiteId": "aum_y1_08",
+    "strength": "hard",
+    "reason": "Sharing and grouping problems are described with the language of equal groups."
+  },
+  {
+    "topicId": "aum_y1_10",
+    "prerequisiteId": "aum_k_09",
+    "strength": "hard",
+    "reason": "Number bonds are part-whole facts for numbers to 10."
+  },
+  {
+    "topicId": "aum_y1_11",
+    "prerequisiteId": "aum_k_11",
+    "strength": "hard",
+    "reason": "Counting on is a quicker way of combining groups."
+  },
+  {
+    "topicId": "aum_y1_11",
+    "prerequisiteId": "aum_k_07",
+    "strength": "hard",
+    "reason": "Counting on starts from saying the next number, which is one more."
+  },
+  {
+    "topicId": "aum_y1_12",
+    "prerequisiteId": "aum_k_12",
+    "strength": "hard",
+    "reason": "Counting back is a quicker way of taking away."
+  },
+  {
+    "topicId": "aum_y1_12",
+    "prerequisiteId": "aum_k_07",
+    "strength": "hard",
+    "reason": "Counting back starts from saying the number before, which is one less."
+  },
+  {
+    "topicId": "aum_y1_13",
+    "prerequisiteId": "aum_y1_11",
+    "strength": "hard",
+    "reason": "A near double is a double plus one more, which needs counting on."
+  },
+  {
+    "topicId": "aum_y1_14",
+    "prerequisiteId": "aum_y1_10",
+    "strength": "hard",
+    "reason": "Making ten uses the bond that makes 10."
+  },
+  {
+    "topicId": "aum_y1_14",
+    "prerequisiteId": "aum_y1_03",
+    "strength": "hard",
+    "reason": "After making ten, the answer is ten and some more."
+  },
+  {
+    "topicId": "aum_y1_15",
+    "prerequisiteId": "aum_y1_10",
+    "strength": "hard",
+    "reason": "Fact families are built from known number bonds."
+  },
+  {
+    "topicId": "aum_y1_15",
+    "prerequisiteId": "aum_y1_12",
+    "strength": "soft",
+    "reason": "Seeing subtraction as the reverse of addition is easier once take-away is secure."
+  },
+  {
+    "topicId": "aum_y1_16",
+    "prerequisiteId": "aum_y1_15",
+    "strength": "hard",
+    "reason": "Balanced sentences such as 3 + 7 = 7 + 3 rely on knowing related facts."
+  },
+  {
+    "topicId": "aum_y1_17",
+    "prerequisiteId": "aum_y1_11",
+    "strength": "hard",
+    "reason": "Solving joining stories needs an addition strategy."
+  },
+  {
+    "topicId": "aum_y1_17",
+    "prerequisiteId": "aum_y1_12",
+    "strength": "hard",
+    "reason": "Solving take-away stories needs a subtraction strategy."
+  },
+  {
+    "topicId": "aum_y1_18",
+    "prerequisiteId": "aum_k_15",
+    "strength": "hard",
+    "reason": "Giving directions uses position words, including left and right."
+  },
+  {
+    "topicId": "aum_y1_19",
+    "prerequisiteId": "aum_k_16",
+    "strength": "hard",
+    "reason": "Measuring with units builds on comparing lengths directly."
+  },
+  {
+    "topicId": "aum_y1_19",
+    "prerequisiteId": "aum_k_03",
+    "strength": "hard",
+    "reason": "Measuring with units needs counting the units."
+  },
+  {
+    "topicId": "aum_y1_20",
+    "prerequisiteId": "aum_y1_19",
+    "strength": "hard",
+    "reason": "Comparing measured lengths needs measuring with informal units."
+  },
+  {
+    "topicId": "aum_y1_21",
+    "prerequisiteId": "aum_k_18",
+    "strength": "hard",
+    "reason": "Naming polygons extends naming familiar shapes."
+  },
+  {
+    "topicId": "aum_y1_21",
+    "prerequisiteId": "aum_k_03",
+    "strength": "hard",
+    "reason": "Naming a polygon depends on counting its sides."
+  },
+  {
+    "topicId": "aum_y1_22",
+    "prerequisiteId": "aum_k_20",
+    "strength": "hard",
+    "reason": "Naming 3D objects builds on describing everyday objects."
+  },
+  {
+    "topicId": "aum_y1_23",
+    "prerequisiteId": "aum_k_21",
+    "strength": "hard",
+    "reason": "Counting cubes gives a number to how much space a model takes up."
+  },
+  {
+    "topicId": "aum_y1_23",
+    "prerequisiteId": "aum_y1_08",
+    "strength": "soft",
+    "reason": "Counting cubes layer by layer uses equal groups."
+  },
+  {
+    "topicId": "aum_y1_24",
+    "prerequisiteId": "aum_k_21",
+    "strength": "hard",
+    "reason": "Measuring capacity with units builds on comparing containers directly."
+  },
+  {
+    "topicId": "aum_y1_24",
+    "prerequisiteId": "aum_k_03",
+    "strength": "hard",
+    "reason": "Measuring with cups or scoops needs counting them."
+  },
+  {
+    "topicId": "aum_y1_25",
+    "prerequisiteId": "aum_k_22",
+    "strength": "hard",
+    "reason": "Using a balance builds on comparing heavier and lighter."
+  },
+  {
+    "topicId": "aum_y1_26",
+    "prerequisiteId": "aum_k_24",
+    "strength": "hard",
+    "reason": "Months and years extend the cycle of the days of the week."
+  },
+  {
+    "topicId": "aum_y1_27",
+    "prerequisiteId": "aum_y1_26",
+    "strength": "hard",
+    "reason": "Choosing between days, weeks, months and years needs those units and how they relate."
+  },
+  {
+    "topicId": "aum_y1_28",
+    "prerequisiteId": "aum_k_26",
+    "strength": "hard",
+    "reason": "Tallying records how many are in each group of sorted data."
+  },
+  {
+    "topicId": "aum_y1_28",
+    "prerequisiteId": "aum_y1_06",
+    "strength": "soft",
+    "reason": "Counting tally groups is quicker with counting by fives."
+  },
+  {
+    "topicId": "aum_y1_29",
+    "prerequisiteId": "aum_k_26",
+    "strength": "hard",
+    "reason": "Picture graphs extend object displays of sorted data."
+  },
+  {
+    "topicId": "aum_y2_01",
+    "prerequisiteId": "aum_y1_03",
+    "strength": "hard",
+    "reason": "Hundreds are built from tens just as tens are built from ones."
+  },
+  {
+    "topicId": "aum_y2_02",
+    "prerequisiteId": "aum_y2_01",
+    "strength": "hard",
+    "reason": "The value of a digit depends on reading hundreds, tens and ones."
+  },
+  {
+    "topicId": "aum_y2_03",
+    "prerequisiteId": "aum_y2_02",
+    "strength": "hard",
+    "reason": "Renaming numbers uses the value of each digit."
+  },
+  {
+    "topicId": "aum_y2_04",
+    "prerequisiteId": "aum_y2_02",
+    "strength": "hard",
+    "reason": "Comparing three-digit numbers means comparing hundreds, then tens, then ones."
+  },
+  {
+    "topicId": "aum_y2_04",
+    "prerequisiteId": "aum_y1_04",
+    "strength": "hard",
+    "reason": "Ordering three-digit numbers extends ordering numbers to 120."
+  },
+  {
+    "topicId": "aum_y2_05",
+    "prerequisiteId": "aum_y1_06",
+    "strength": "hard",
+    "reason": "Counting by tens off the decade extends counting by tens from zero."
+  },
+  {
+    "topicId": "aum_y2_05",
+    "prerequisiteId": "aum_y1_03",
+    "strength": "hard",
+    "reason": "Adding a ten changes the tens digit and keeps the ones."
+  },
+  {
+    "topicId": "aum_y2_06",
+    "prerequisiteId": "aum_y1_06",
+    "strength": "hard",
+    "reason": "Even numbers are the numbers said when counting by twos."
+  },
+  {
+    "topicId": "aum_y2_06",
+    "prerequisiteId": "aum_k_14",
+    "strength": "soft",
+    "reason": "Sharing into two equal groups shows whether one is left over."
+  },
+  {
+    "topicId": "aum_y2_07",
+    "prerequisiteId": "aum_y2_04",
+    "strength": "hard",
+    "reason": "Finding the nearest hundred means placing a number between two hundreds on a number line."
+  },
+  {
+    "topicId": "aum_y2_07",
+    "prerequisiteId": "aum_y1_05",
+    "strength": "hard",
+    "reason": "Rounding to the nearest hundred extends rounding to the nearest ten."
+  },
+  {
+    "topicId": "aum_y2_08",
+    "prerequisiteId": "aum_y1_14",
+    "strength": "hard",
+    "reason": "Facts with totals over 10 are worked out by making ten."
+  },
+  {
+    "topicId": "aum_y2_08",
+    "prerequisiteId": "aum_y1_13",
+    "strength": "soft",
+    "reason": "Doubles and near doubles are anchor facts for recall."
+  },
+  {
+    "topicId": "aum_y2_09",
+    "prerequisiteId": "aum_y2_08",
+    "strength": "hard",
+    "reason": "Subtraction facts to 20 come from the matching addition facts."
+  },
+  {
+    "topicId": "aum_y2_09",
+    "prerequisiteId": "aum_y1_15",
+    "strength": "hard",
+    "reason": "Linking subtraction to addition uses fact families."
+  },
+  {
+    "topicId": "aum_y2_10",
+    "prerequisiteId": "aum_y2_09",
+    "strength": "hard",
+    "reason": "Finding a difference uses subtraction facts or counting up."
+  },
+  {
+    "topicId": "aum_y2_10",
+    "prerequisiteId": "aum_k_10",
+    "strength": "soft",
+    "reason": "The difference is the 'how many more' between two groups."
+  },
+  {
+    "topicId": "aum_y2_11",
+    "prerequisiteId": "aum_y2_08",
+    "strength": "hard",
+    "reason": "Adding the ones parts uses addition facts to 20."
+  },
+  {
+    "topicId": "aum_y2_11",
+    "prerequisiteId": "aum_y2_05",
+    "strength": "hard",
+    "reason": "Jumping by tens on a number line uses counting by tens off the decade."
+  },
+  {
+    "topicId": "aum_y2_12",
+    "prerequisiteId": "aum_y2_09",
+    "strength": "hard",
+    "reason": "Subtracting the ones parts uses subtraction facts to 20."
+  },
+  {
+    "topicId": "aum_y2_12",
+    "prerequisiteId": "aum_y2_05",
+    "strength": "hard",
+    "reason": "Jumping back by tens uses counting by tens off the decade."
+  },
+  {
+    "topicId": "aum_y2_13",
+    "prerequisiteId": "aum_y2_09",
+    "strength": "hard",
+    "reason": "Finding a missing addend is a subtraction fact in disguise."
+  },
+  {
+    "topicId": "aum_y2_13",
+    "prerequisiteId": "aum_y1_16",
+    "strength": "hard",
+    "reason": "Missing numbers on either side need equals to mean 'the same as'."
+  },
+  {
+    "topicId": "aum_y2_14",
+    "prerequisiteId": "aum_y2_11",
+    "strength": "hard",
+    "reason": "Solving the problems needs two-digit addition."
+  },
+  {
+    "topicId": "aum_y2_14",
+    "prerequisiteId": "aum_y2_12",
+    "strength": "hard",
+    "reason": "Solving the problems needs two-digit subtraction."
+  },
+  {
+    "topicId": "aum_y2_14",
+    "prerequisiteId": "aum_y1_17",
+    "strength": "soft",
+    "reason": "Choosing the operation was first practised with small-number stories."
+  },
+  {
+    "topicId": "aum_y2_15",
+    "prerequisiteId": "aum_y1_08",
+    "strength": "hard",
+    "reason": "Multiplication starts from describing and counting equal groups."
+  },
+  {
+    "topicId": "aum_y2_16",
+    "prerequisiteId": "aum_y2_15",
+    "strength": "hard",
+    "reason": "Each row of an array is one of the equal groups."
+  },
+  {
+    "topicId": "aum_y2_17",
+    "prerequisiteId": "aum_y2_16",
+    "strength": "hard",
+    "reason": "Splitting an array into equal rows shows division."
+  },
+  {
+    "topicId": "aum_y2_17",
+    "prerequisiteId": "aum_y1_09",
+    "strength": "hard",
+    "reason": "Division problems build on sharing and grouping collections."
+  },
+  {
+    "topicId": "aum_y2_18",
+    "prerequisiteId": "aum_y2_15",
+    "strength": "hard",
+    "reason": "Twos facts are repeated addition of two."
+  },
+  {
+    "topicId": "aum_y2_18",
+    "prerequisiteId": "aum_y1_13",
+    "strength": "hard",
+    "reason": "Two times a number is the double of that number."
+  },
+  {
+    "topicId": "aum_y2_18",
+    "prerequisiteId": "aum_y2_06",
+    "strength": "soft",
+    "reason": "Even numbers are the answers to the twos facts."
+  },
+  {
+    "topicId": "aum_y2_19",
+    "prerequisiteId": "aum_k_17",
+    "strength": "hard",
+    "reason": "Quarters and eighths come from halving each half of a length or shape."
+  },
+  {
+    "topicId": "aum_y2_20",
+    "prerequisiteId": "aum_y2_17",
+    "strength": "hard",
+    "reason": "Finding a fraction of a collection is sharing it into equal groups."
+  },
+  {
+    "topicId": "aum_y2_20",
+    "prerequisiteId": "aum_y2_19",
+    "strength": "soft",
+    "reason": "Naming halves and quarters of a collection uses the fraction words from shapes and lengths."
+  },
+  {
+    "topicId": "aum_y2_21",
+    "prerequisiteId": "aum_y1_06",
+    "strength": "hard",
+    "reason": "Patterns with a constant step extend skip counting."
+  },
+  {
+    "topicId": "aum_y2_21",
+    "prerequisiteId": "aum_y2_08",
+    "strength": "soft",
+    "reason": "Working out each next term uses addition and subtraction facts."
+  },
+  {
+    "topicId": "aum_y2_22",
+    "prerequisiteId": "aum_y1_18",
+    "strength": "hard",
+    "reason": "Following a path on a map uses directions such as left and right."
+  },
+  {
+    "topicId": "aum_y2_23",
+    "prerequisiteId": "aum_y1_20",
+    "strength": "hard",
+    "reason": "Formal units are needed once informal units give different answers."
+  },
+  {
+    "topicId": "aum_y2_24",
+    "prerequisiteId": "aum_k_18",
+    "strength": "hard",
+    "reason": "Seeing that a moved shape is the same shape needs knowing its features."
+  },
+  {
+    "topicId": "aum_y2_24",
+    "prerequisiteId": "aum_y2_19",
+    "strength": "soft",
+    "reason": "Naming quarter and half turns uses the words for fractions of a whole."
+  },
+  {
+    "topicId": "aum_y2_25",
+    "prerequisiteId": "aum_y1_21",
+    "strength": "hard",
+    "reason": "Describing features such as parallel sides builds on counting sides and vertices."
+  },
+  {
+    "topicId": "aum_y2_26",
+    "prerequisiteId": "aum_k_19",
+    "strength": "hard",
+    "reason": "Measuring area with units builds on comparing areas directly."
+  },
+  {
+    "topicId": "aum_y2_26",
+    "prerequisiteId": "aum_y2_16",
+    "strength": "hard",
+    "reason": "Counting tiles in rows and columns uses array structure."
+  },
+  {
+    "topicId": "aum_y2_26",
+    "prerequisiteId": "aum_y1_19",
+    "strength": "soft",
+    "reason": "The rules for measuring length with units carry over to covering a surface."
+  },
+  {
+    "topicId": "aum_y2_27",
+    "prerequisiteId": "aum_y1_22",
+    "strength": "hard",
+    "reason": "Describing faces, edges and vertices builds on naming 3D objects."
+  },
+  {
+    "topicId": "aum_y2_27",
+    "prerequisiteId": "aum_y1_21",
+    "strength": "soft",
+    "reason": "Naming the faces uses polygon names."
+  },
+  {
+    "topicId": "aum_y2_28",
+    "prerequisiteId": "aum_y1_24",
+    "strength": "hard",
+    "reason": "Ordering capacities needs measuring capacity with informal units."
+  },
+  {
+    "topicId": "aum_y2_29",
+    "prerequisiteId": "aum_y1_23",
+    "strength": "hard",
+    "reason": "Comparing volumes needs counting the cubes in each model."
+  },
+  {
+    "topicId": "aum_y2_30",
+    "prerequisiteId": "aum_y1_25",
+    "strength": "hard",
+    "reason": "Measuring mass with units needs reading an equal-arm balance."
+  },
+  {
+    "topicId": "aum_y2_31",
+    "prerequisiteId": "aum_k_25",
+    "strength": "hard",
+    "reason": "Half and quarter times build on reading o'clock times."
+  },
+  {
+    "topicId": "aum_y2_31",
+    "prerequisiteId": "aum_y2_24",
+    "strength": "soft",
+    "reason": "A quarter of an hour is a quarter turn of the minute hand."
+  },
+  {
+    "topicId": "aum_y2_32",
+    "prerequisiteId": "aum_y1_27",
+    "strength": "hard",
+    "reason": "Counting days and weeks between dates builds on the units of time to a year."
+  },
+  {
+    "topicId": "aum_y2_33",
+    "prerequisiteId": "aum_y1_28",
+    "strength": "hard",
+    "reason": "Organising data in tables builds on recording it with tallies."
+  },
+  {
+    "topicId": "aum_y2_33",
+    "prerequisiteId": "aum_y1_29",
+    "strength": "hard",
+    "reason": "These graphs extend one-to-one picture graphs."
+  },
+  {
+    "topicId": "aum_y2_34",
+    "prerequisiteId": "aum_y2_33",
+    "strength": "soft",
+    "reason": "Listing possible outcomes is like listing the categories for data."
+  },
+  {
+    "topicId": "aum_y3_01",
+    "prerequisiteId": "aum_y2_02",
+    "strength": "hard",
+    "reason": "Thousands extend the place value pattern of hundreds, tens and ones."
+  },
+  {
+    "topicId": "aum_y3_02",
+    "prerequisiteId": "aum_y3_01",
+    "strength": "hard",
+    "reason": "Renaming four-digit numbers needs reading them in thousands, hundreds, tens and ones."
+  },
+  {
+    "topicId": "aum_y3_02",
+    "prerequisiteId": "aum_y2_03",
+    "strength": "hard",
+    "reason": "Renaming four-digit numbers extends renaming three-digit numbers."
+  },
+  {
+    "topicId": "aum_y3_03",
+    "prerequisiteId": "aum_y3_01",
+    "strength": "hard",
+    "reason": "Comparing four-digit numbers starts with the thousands digit."
+  },
+  {
+    "topicId": "aum_y3_03",
+    "prerequisiteId": "aum_y2_04",
+    "strength": "hard",
+    "reason": "Ordering four-digit numbers extends ordering three-digit numbers."
+  },
+  {
+    "topicId": "aum_y3_04",
+    "prerequisiteId": "aum_y2_09",
+    "strength": "hard",
+    "reason": "Adding tens or hundreds uses the matching fact to 20."
+  },
+  {
+    "topicId": "aum_y3_04",
+    "prerequisiteId": "aum_y3_01",
+    "strength": "hard",
+    "reason": "Knowing 80 is 8 tens lets 8 + 6 become 80 + 60."
+  },
+  {
+    "topicId": "aum_y3_05",
+    "prerequisiteId": "aum_y2_11",
+    "strength": "hard",
+    "reason": "Mental strategies extend two-digit addition by splitting and jumping."
+  },
+  {
+    "topicId": "aum_y3_05",
+    "prerequisiteId": "aum_y2_12",
+    "strength": "hard",
+    "reason": "Mental strategies extend two-digit subtraction by jumping."
+  },
+  {
+    "topicId": "aum_y3_05",
+    "prerequisiteId": "aum_y3_04",
+    "strength": "soft",
+    "reason": "Adding and subtracting tens mentally speeds up each jump."
+  },
+  {
+    "topicId": "aum_y3_06",
+    "prerequisiteId": "aum_y2_13",
+    "strength": "hard",
+    "reason": "Finding unknowns with larger numbers extends missing-number sentences within 20."
+  },
+  {
+    "topicId": "aum_y3_06",
+    "prerequisiteId": "aum_y2_11",
+    "strength": "soft",
+    "reason": "Checking two-digit answers needs two-digit addition."
+  },
+  {
+    "topicId": "aum_y3_07",
+    "prerequisiteId": "aum_y2_11",
+    "strength": "hard",
+    "reason": "Column addition records adding tens and ones separately."
+  },
+  {
+    "topicId": "aum_y3_07",
+    "prerequisiteId": "aum_y2_03",
+    "strength": "hard",
+    "reason": "Regrouping 10 ones as 1 ten needs renaming numbers."
+  },
+  {
+    "topicId": "aum_y3_08",
+    "prerequisiteId": "aum_y2_12",
+    "strength": "hard",
+    "reason": "Column subtraction records subtracting tens and ones separately."
+  },
+  {
+    "topicId": "aum_y3_08",
+    "prerequisiteId": "aum_y2_03",
+    "strength": "hard",
+    "reason": "Exchanging a ten for 10 ones needs renaming numbers."
+  },
+  {
+    "topicId": "aum_y3_09",
+    "prerequisiteId": "aum_y1_06",
+    "strength": "hard",
+    "reason": "Counting coins uses counting by fives and tens."
+  },
+  {
+    "topicId": "aum_y3_09",
+    "prerequisiteId": "aum_y2_02",
+    "strength": "soft",
+    "reason": "Writing dollars and cents uses place value."
+  },
+  {
+    "topicId": "aum_y3_10",
+    "prerequisiteId": "aum_y3_09",
+    "strength": "hard",
+    "reason": "Working out change needs counting money in dollars and cents."
+  },
+  {
+    "topicId": "aum_y3_10",
+    "prerequisiteId": "aum_y3_05",
+    "strength": "hard",
+    "reason": "Change is found by subtracting or counting up mentally."
+  },
+  {
+    "topicId": "aum_y3_11",
+    "prerequisiteId": "aum_y2_07",
+    "strength": "hard",
+    "reason": "Estimating uses the nearest ten or hundred."
+  },
+  {
+    "topicId": "aum_y3_11",
+    "prerequisiteId": "aum_y3_07",
+    "strength": "soft",
+    "reason": "Estimating is used to check written calculations."
+  },
+  {
+    "topicId": "aum_y3_12",
+    "prerequisiteId": "aum_y3_05",
+    "strength": "hard",
+    "reason": "Solving the problems needs a reliable addition or subtraction strategy."
+  },
+  {
+    "topicId": "aum_y3_12",
+    "prerequisiteId": "aum_y3_06",
+    "strength": "soft",
+    "reason": "Knowing the inverse helps choose the operation for 'missing part' problems."
+  },
+  {
+    "topicId": "aum_y3_12",
+    "prerequisiteId": "aum_y2_14",
+    "strength": "soft",
+    "reason": "Writing a number sentence for a word problem was first done with two-digit numbers."
+  },
+  {
+    "topicId": "aum_y3_13",
+    "prerequisiteId": "aum_y2_16",
+    "strength": "hard",
+    "reason": "Multiples are read from the rows of an array."
+  },
+  {
+    "topicId": "aum_y3_14",
+    "prerequisiteId": "aum_y3_13",
+    "strength": "hard",
+    "reason": "Facts are recalled from patterns of multiples in arrays."
+  },
+  {
+    "topicId": "aum_y3_14",
+    "prerequisiteId": "aum_y2_18",
+    "strength": "hard",
+    "reason": "The twos facts are the first facts recalled and anchor the fours."
+  },
+  {
+    "topicId": "aum_y3_15",
+    "prerequisiteId": "aum_y3_14",
+    "strength": "hard",
+    "reason": "Division facts are found from the matching multiplication facts."
+  },
+  {
+    "topicId": "aum_y3_15",
+    "prerequisiteId": "aum_y2_17",
+    "strength": "hard",
+    "reason": "Division facts record sharing and grouping with symbols."
+  },
+  {
+    "topicId": "aum_y3_16",
+    "prerequisiteId": "aum_y3_15",
+    "strength": "hard",
+    "reason": "Solving these problems needs multiplication and division facts."
+  },
+  {
+    "topicId": "aum_y3_17",
+    "prerequisiteId": "aum_y2_21",
+    "strength": "hard",
+    "reason": "Following an algorithm that adds a constant builds on patterns that grow by the same amount."
+  },
+  {
+    "topicId": "aum_y3_18",
+    "prerequisiteId": "aum_y2_19",
+    "strength": "hard",
+    "reason": "Making thirds and fifths extends making equal parts by halving."
+  },
+  {
+    "topicId": "aum_y3_19",
+    "prerequisiteId": "aum_y3_18",
+    "strength": "hard",
+    "reason": "Fraction notation names parts such as thirds and fifths."
+  },
+  {
+    "topicId": "aum_y3_19",
+    "prerequisiteId": "aum_y2_20",
+    "strength": "soft",
+    "reason": "Fractions of collections give another model of unit fractions."
+  },
+  {
+    "topicId": "aum_y3_20",
+    "prerequisiteId": "aum_y3_19",
+    "strength": "hard",
+    "reason": "Completing a whole needs counting equal parts of the same denominator."
+  },
+  {
+    "topicId": "aum_y3_21",
+    "prerequisiteId": "aum_y2_23",
+    "strength": "hard",
+    "reason": "Millimetres extend measuring with centimetres and metres."
+  },
+  {
+    "topicId": "aum_y3_22",
+    "prerequisiteId": "aum_y2_30",
+    "strength": "hard",
+    "reason": "The kilogram replaces informal units for measuring mass."
+  },
+  {
+    "topicId": "aum_y3_23",
+    "prerequisiteId": "aum_y2_28",
+    "strength": "hard",
+    "reason": "The litre replaces informal units for measuring capacity."
+  },
+  {
+    "topicId": "aum_y3_24",
+    "prerequisiteId": "aum_y2_31",
+    "strength": "hard",
+    "reason": "Reading minutes builds on reading quarter past and quarter to."
+  },
+  {
+    "topicId": "aum_y3_24",
+    "prerequisiteId": "aum_y1_06",
+    "strength": "hard",
+    "reason": "Reading the minute hand uses counting by fives."
+  },
+  {
+    "topicId": "aum_y3_25",
+    "prerequisiteId": "aum_y2_32",
+    "strength": "hard",
+    "reason": "Relating time units extends comparing hours, minutes and seconds."
+  },
+  {
+    "topicId": "aum_y3_26",
+    "prerequisiteId": "aum_y2_24",
+    "strength": "hard",
+    "reason": "An angle measures an amount of turn, and a quarter turn is a right angle."
+  },
+  {
+    "topicId": "aum_y3_27",
+    "prerequisiteId": "aum_y2_22",
+    "strength": "hard",
+    "reason": "Grid maps add rows and columns to simple maps."
+  },
+  {
+    "topicId": "aum_y3_28",
+    "prerequisiteId": "aum_y2_25",
+    "strength": "hard",
+    "reason": "Naming quadrilaterals uses features such as parallel and equal sides."
+  },
+  {
+    "topicId": "aum_y3_28",
+    "prerequisiteId": "aum_y3_26",
+    "strength": "soft",
+    "reason": "Describing quadrilaterals uses right angles."
+  },
+  {
+    "topicId": "aum_y3_29",
+    "prerequisiteId": "aum_y2_27",
+    "strength": "hard",
+    "reason": "Classifying prisms and pyramids uses faces, edges and vertices."
+  },
+  {
+    "topicId": "aum_y3_30",
+    "prerequisiteId": "aum_y2_33",
+    "strength": "hard",
+    "reason": "Frequency tables extend sorting data into tables."
+  },
+  {
+    "topicId": "aum_y3_31",
+    "prerequisiteId": "aum_y3_30",
+    "strength": "hard",
+    "reason": "Graphs are drawn from the counts in a frequency table."
+  },
+  {
+    "topicId": "aum_y3_32",
+    "prerequisiteId": "aum_y2_34",
+    "strength": "hard",
+    "reason": "Certain and impossible add the end points to likely and unlikely."
+  },
+  {
+    "topicId": "aum_y3_33",
+    "prerequisiteId": "aum_y3_30",
+    "strength": "hard",
+    "reason": "Recording experiment results uses tally and frequency tables."
+  },
+  {
+    "topicId": "aum_y3_33",
+    "prerequisiteId": "aum_y3_32",
+    "strength": "soft",
+    "reason": "Predicting results uses the language of likelihood."
+  },
+  {
+    "topicId": "aum_y4_01",
+    "prerequisiteId": "aum_y3_02",
+    "strength": "hard",
+    "reason": "Six-digit numbers extend renaming in thousands, hundreds, tens and ones."
+  },
+  {
+    "topicId": "aum_y4_01",
+    "prerequisiteId": "aum_y3_03",
+    "strength": "hard",
+    "reason": "Ordering larger numbers extends ordering four-digit numbers."
+  },
+  {
+    "topicId": "aum_y4_02",
+    "prerequisiteId": "aum_y4_01",
+    "strength": "hard",
+    "reason": "Moving digits between places needs place value to six digits."
+  },
+  {
+    "topicId": "aum_y4_02",
+    "prerequisiteId": "aum_y3_14",
+    "strength": "hard",
+    "reason": "Multiplying by multiples of ten uses known multiplication facts."
+  },
+  {
+    "topicId": "aum_y4_03",
+    "prerequisiteId": "aum_y3_14",
+    "strength": "hard",
+    "reason": "Even numbers are the multiples of 2, so the twos facts explain the last-digit rule."
+  },
+  {
+    "topicId": "aum_y4_04",
+    "prerequisiteId": "aum_y3_19",
+    "strength": "hard",
+    "reason": "Decimal tenths record the unit fraction 1/10 and its multiples."
+  },
+  {
+    "topicId": "aum_y4_04",
+    "prerequisiteId": "aum_y3_01",
+    "strength": "soft",
+    "reason": "The decimal point extends the place value system to the right of the ones."
+  },
+  {
+    "topicId": "aum_y4_05",
+    "prerequisiteId": "aum_y4_04",
+    "strength": "hard",
+    "reason": "Hundredths come from splitting each tenth into ten equal parts."
+  },
+  {
+    "topicId": "aum_y4_06",
+    "prerequisiteId": "aum_y4_05",
+    "strength": "hard",
+    "reason": "Comparing decimals means comparing tenths, then hundredths."
+  },
+  {
+    "topicId": "aum_y4_07",
+    "prerequisiteId": "aum_y3_19",
+    "strength": "hard",
+    "reason": "Equivalent fractions compare unit fractions and their multiples of the same whole."
+  },
+  {
+    "topicId": "aum_y4_08",
+    "prerequisiteId": "aum_y4_05",
+    "strength": "hard",
+    "reason": "Writing fractions as decimals needs decimal hundredths."
+  },
+  {
+    "topicId": "aum_y4_08",
+    "prerequisiteId": "aum_y4_07",
+    "strength": "soft",
+    "reason": "Writing 1/2 as 5/10 or 50/100 uses equivalent fractions."
+  },
+  {
+    "topicId": "aum_y4_09",
+    "prerequisiteId": "aum_y3_20",
+    "strength": "hard",
+    "reason": "Counting past one needs knowing how many parts make a whole."
+  },
+  {
+    "topicId": "aum_y4_10",
+    "prerequisiteId": "aum_y3_06",
+    "strength": "hard",
+    "reason": "Finding unknowns uses the inverse relationship between addition and subtraction."
+  },
+  {
+    "topicId": "aum_y4_10",
+    "prerequisiteId": "aum_y2_10",
+    "strength": "soft",
+    "reason": "Equal differences build on finding the difference between two numbers."
+  },
+  {
+    "topicId": "aum_y4_11",
+    "prerequisiteId": "aum_y3_07",
+    "strength": "hard",
+    "reason": "Four-digit column addition extends three-digit column addition."
+  },
+  {
+    "topicId": "aum_y4_11",
+    "prerequisiteId": "aum_y3_08",
+    "strength": "hard",
+    "reason": "Four-digit column subtraction extends three-digit column subtraction."
+  },
+  {
+    "topicId": "aum_y4_12",
+    "prerequisiteId": "aum_y3_11",
+    "strength": "hard",
+    "reason": "Rounding to estimate extends estimating with the nearest ten or hundred."
+  },
+  {
+    "topicId": "aum_y4_12",
+    "prerequisiteId": "aum_y4_01",
+    "strength": "hard",
+    "reason": "Rounding to the nearest thousand needs place value to six digits."
+  },
+  {
+    "topicId": "aum_y4_13",
+    "prerequisiteId": "aum_y3_10",
+    "strength": "hard",
+    "reason": "Two-step money problems build on adding prices and giving change."
+  },
+  {
+    "topicId": "aum_y4_13",
+    "prerequisiteId": "aum_y4_11",
+    "strength": "soft",
+    "reason": "Larger amounts need column addition and subtraction."
+  },
+  {
+    "topicId": "aum_y4_13",
+    "prerequisiteId": "aum_y3_12",
+    "strength": "soft",
+    "reason": "Representing a problem with a bar model helps plan the two steps."
+  },
+  {
+    "topicId": "aum_y4_14",
+    "prerequisiteId": "aum_y3_15",
+    "strength": "hard",
+    "reason": "Facts to 10 × 10 extend the multiplication and division facts for 2, 3, 4, 5 and 10."
+  },
+  {
+    "topicId": "aum_y4_15",
+    "prerequisiteId": "aum_y4_14",
+    "strength": "hard",
+    "reason": "Each part of the split is a known multiplication fact."
+  },
+  {
+    "topicId": "aum_y4_15",
+    "prerequisiteId": "aum_y4_02",
+    "strength": "hard",
+    "reason": "Multiplying the tens part uses multiplying by multiples of ten."
+  },
+  {
+    "topicId": "aum_y4_16",
+    "prerequisiteId": "aum_y4_14",
+    "strength": "hard",
+    "reason": "Dividing larger numbers relies on division facts to 10 × 10."
+  },
+  {
+    "topicId": "aum_y4_17",
+    "prerequisiteId": "aum_y4_14",
+    "strength": "hard",
+    "reason": "Missing numbers are found with division facts."
+  },
+  {
+    "topicId": "aum_y4_17",
+    "prerequisiteId": "aum_y3_16",
+    "strength": "hard",
+    "reason": "Writing number sentences builds on representing multiplication and division problems."
+  },
+  {
+    "topicId": "aum_y4_18",
+    "prerequisiteId": "aum_y3_17",
+    "strength": "hard",
+    "reason": "Rules with multiplication extend algorithms that add a constant."
+  },
+  {
+    "topicId": "aum_y4_18",
+    "prerequisiteId": "aum_y4_14",
+    "strength": "soft",
+    "reason": "Patterns of related multiples need the multiplication facts."
+  },
+  {
+    "topicId": "aum_y4_19",
+    "prerequisiteId": "aum_y3_21",
+    "strength": "hard",
+    "reason": "Finding a perimeter needs measuring each side in standard units."
+  },
+  {
+    "topicId": "aum_y4_20",
+    "prerequisiteId": "aum_y3_21",
+    "strength": "hard",
+    "reason": "Converting units needs knowing 100 cm = 1 m and 10 mm = 1 cm."
+  },
+  {
+    "topicId": "aum_y4_20",
+    "prerequisiteId": "aum_y4_05",
+    "strength": "hard",
+    "reason": "Writing lengths such as 1.45 m uses decimal hundredths."
+  },
+  {
+    "topicId": "aum_y4_21",
+    "prerequisiteId": "aum_y2_26",
+    "strength": "hard",
+    "reason": "Square centimetres are a formal unit for counting area in rows and columns."
+  },
+  {
+    "topicId": "aum_y4_21",
+    "prerequisiteId": "aum_y3_13",
+    "strength": "soft",
+    "reason": "Counting squares in rows uses array structure."
+  },
+  {
+    "topicId": "aum_y4_22",
+    "prerequisiteId": "aum_y3_22",
+    "strength": "hard",
+    "reason": "Grams are needed for objects lighter than a kilogram."
+  },
+  {
+    "topicId": "aum_y4_23",
+    "prerequisiteId": "aum_y3_23",
+    "strength": "hard",
+    "reason": "Millilitres are needed for amounts smaller than a litre."
+  },
+  {
+    "topicId": "aum_y4_24",
+    "prerequisiteId": "aum_y2_29",
+    "strength": "hard",
+    "reason": "Cubic centimetres are a formal unit for counting cubes in a model."
+  },
+  {
+    "topicId": "aum_y4_24",
+    "prerequisiteId": "aum_y3_13",
+    "strength": "soft",
+    "reason": "Each layer of cubes is an array."
+  },
+  {
+    "topicId": "aum_y4_25",
+    "prerequisiteId": "aum_y3_24",
+    "strength": "hard",
+    "reason": "Digital time and am or pm build on reading time to the minute."
+  },
+  {
+    "topicId": "aum_y4_25",
+    "prerequisiteId": "aum_y3_25",
+    "strength": "hard",
+    "reason": "Converting and comparing durations needs the relationships between time units."
+  },
+  {
+    "topicId": "aum_y4_26",
+    "prerequisiteId": "aum_y3_26",
+    "strength": "hard",
+    "reason": "Angle types are named by comparing with a right angle."
+  },
+  {
+    "topicId": "aum_y4_27",
+    "prerequisiteId": "aum_y3_27",
+    "strength": "hard",
+    "reason": "Grid references label the rows and columns of a grid map."
+  },
+  {
+    "topicId": "aum_y4_27",
+    "prerequisiteId": "aum_y3_26",
+    "strength": "soft",
+    "reason": "Turning between compass directions uses quarter and half turns."
+  },
+  {
+    "topicId": "aum_y4_28",
+    "prerequisiteId": "aum_y3_26",
+    "strength": "hard",
+    "reason": "Rotational symmetry is described by the amount of turn, such as a half or quarter turn."
+  },
+  {
+    "topicId": "aum_y4_28",
+    "prerequisiteId": "aum_y2_25",
+    "strength": "soft",
+    "reason": "Finding lines of symmetry uses the features of shapes, such as equal and parallel sides."
+  },
+  {
+    "topicId": "aum_y4_29",
+    "prerequisiteId": "aum_y3_28",
+    "strength": "hard",
+    "reason": "Splitting a composite shape means recognising the quadrilaterals and triangles inside it."
+  },
+  {
+    "topicId": "aum_y4_30",
+    "prerequisiteId": "aum_y3_29",
+    "strength": "hard",
+    "reason": "Drawing views of objects needs knowing their faces and shape."
+  },
+  {
+    "topicId": "aum_y4_30",
+    "prerequisiteId": "aum_y4_24",
+    "strength": "soft",
+    "reason": "Working with cube models builds on counting cubes in layers."
+  },
+  {
+    "topicId": "aum_y4_31",
+    "prerequisiteId": "aum_y3_29",
+    "strength": "hard",
+    "reason": "Matching a net needs knowing the faces of prisms."
+  },
+  {
+    "topicId": "aum_y4_32",
+    "prerequisiteId": "aum_y3_31",
+    "strength": "hard",
+    "reason": "Many-to-one scales extend column graphs with a scale of one."
+  },
+  {
+    "topicId": "aum_y4_32",
+    "prerequisiteId": "aum_y3_14",
+    "strength": "soft",
+    "reason": "Reading a scale in 2s, 5s or 10s uses multiplication facts."
+  },
+  {
+    "topicId": "aum_y4_33",
+    "prerequisiteId": "aum_y4_32",
+    "strength": "hard",
+    "reason": "Comparing displays needs reading column and picture graphs, including many-to-one scales."
+  },
+  {
+    "topicId": "aum_y4_34",
+    "prerequisiteId": "aum_y3_33",
+    "strength": "hard",
+    "reason": "Ordering likelihood builds on predicting and recording experiment results."
+  },
+  {
+    "topicId": "aum_y4_35",
+    "prerequisiteId": "aum_y4_34",
+    "strength": "hard",
+    "reason": "Judging whether a chance changes needs comparing likelihoods."
+  },
+  {
+    "topicId": "aum_y5_01",
+    "prerequisiteId": "aum_y4_01",
+    "strength": "hard",
+    "reason": "Millions extend the place value pattern used for six-digit numbers."
+  },
+  {
+    "topicId": "aum_y5_02",
+    "prerequisiteId": "aum_y5_01",
+    "strength": "hard",
+    "reason": "Rounding large numbers needs place value into the millions."
+  },
+  {
+    "topicId": "aum_y5_02",
+    "prerequisiteId": "aum_y4_12",
+    "strength": "hard",
+    "reason": "Choosing a place to round to extends rounding to 10, 100 or 1000."
+  },
+  {
+    "topicId": "aum_y5_03",
+    "prerequisiteId": "aum_y4_14",
+    "strength": "hard",
+    "reason": "Finding factors means finding pairs that multiply or divide exactly."
+  },
+  {
+    "topicId": "aum_y5_03",
+    "prerequisiteId": "aum_y4_03",
+    "strength": "soft",
+    "reason": "The test for divisibility by 2 is the odd and even rule."
+  },
+  {
+    "topicId": "aum_y5_04",
+    "prerequisiteId": "aum_y4_05",
+    "strength": "hard",
+    "reason": "Thousandths come from splitting each hundredth into ten equal parts."
+  },
+  {
+    "topicId": "aum_y5_05",
+    "prerequisiteId": "aum_y5_04",
+    "strength": "hard",
+    "reason": "Ordering to three places needs the value of thousandths."
+  },
+  {
+    "topicId": "aum_y5_05",
+    "prerequisiteId": "aum_y4_06",
+    "strength": "hard",
+    "reason": "Ordering to three places extends comparing decimals to two places."
+  },
+  {
+    "topicId": "aum_y5_06",
+    "prerequisiteId": "aum_y4_08",
+    "strength": "hard",
+    "reason": "A percentage is a number of hundredths, linked to fractions and decimals."
+  },
+  {
+    "topicId": "aum_y5_07",
+    "prerequisiteId": "aum_y4_09",
+    "strength": "hard",
+    "reason": "Placing unit fractions on a number line builds on locating fractions on a number line."
+  },
+  {
+    "topicId": "aum_y5_08",
+    "prerequisiteId": "aum_y4_09",
+    "strength": "hard",
+    "reason": "Improper fractions come from counting by fractions past one."
+  },
+  {
+    "topicId": "aum_y5_09",
+    "prerequisiteId": "aum_y5_07",
+    "strength": "hard",
+    "reason": "Ordering fractions builds on comparing unit fractions."
+  },
+  {
+    "topicId": "aum_y5_09",
+    "prerequisiteId": "aum_y4_07",
+    "strength": "hard",
+    "reason": "Renaming to a common denominator uses equivalent fractions."
+  },
+  {
+    "topicId": "aum_y5_10",
+    "prerequisiteId": "aum_y4_09",
+    "strength": "hard",
+    "reason": "Adding like fractions is counting on by that fraction."
+  },
+  {
+    "topicId": "aum_y5_11",
+    "prerequisiteId": "aum_y4_16",
+    "strength": "hard",
+    "reason": "Finding a unit fraction of a quantity means dividing by the denominator."
+  },
+  {
+    "topicId": "aum_y5_11",
+    "prerequisiteId": "aum_y3_19",
+    "strength": "soft",
+    "reason": "The denominator tells how many equal parts to share into."
+  },
+  {
+    "topicId": "aum_y5_12",
+    "prerequisiteId": "aum_y4_02",
+    "strength": "hard",
+    "reason": "Multiplying by multiples of 10 extends the place value shift for × 10."
+  },
+  {
+    "topicId": "aum_y5_12",
+    "prerequisiteId": "aum_y4_14",
+    "strength": "hard",
+    "reason": "The non-zero part of the product is a known fact."
+  },
+  {
+    "topicId": "aum_y5_13",
+    "prerequisiteId": "aum_y4_15",
+    "strength": "hard",
+    "reason": "Larger products use the same splitting as two-digit by one-digit multiplication."
+  },
+  {
+    "topicId": "aum_y5_13",
+    "prerequisiteId": "aum_y5_12",
+    "strength": "hard",
+    "reason": "Partial products such as 300 × 8 use multiplying by multiples of 10, 100 or 1000."
+  },
+  {
+    "topicId": "aum_y5_14",
+    "prerequisiteId": "aum_y5_13",
+    "strength": "hard",
+    "reason": "Multiplying by a two-digit number combines a one-digit product and a multiple-of-ten product."
+  },
+  {
+    "topicId": "aum_y5_15",
+    "prerequisiteId": "aum_y4_16",
+    "strength": "hard",
+    "reason": "Division with remainders extends exact division."
+  },
+  {
+    "topicId": "aum_y5_16",
+    "prerequisiteId": "aum_y5_15",
+    "strength": "hard",
+    "reason": "Larger divisions repeat the steps of division with remainders."
+  },
+  {
+    "topicId": "aum_y5_16",
+    "prerequisiteId": "aum_y5_12",
+    "strength": "soft",
+    "reason": "Partitioning the dividend into multiples of 10 or 100 makes division easier."
+  },
+  {
+    "topicId": "aum_y5_17",
+    "prerequisiteId": "aum_y4_17",
+    "strength": "hard",
+    "reason": "Finding unknowns extends completing multiplication and division number sentences."
+  },
+  {
+    "topicId": "aum_y5_18",
+    "prerequisiteId": "aum_y4_13",
+    "strength": "hard",
+    "reason": "Multistep problems extend two-step problems."
+  },
+  {
+    "topicId": "aum_y5_19",
+    "prerequisiteId": "aum_y4_20",
+    "strength": "hard",
+    "reason": "Kilometres extend the metric length units already converted."
+  },
+  {
+    "topicId": "aum_y5_20",
+    "prerequisiteId": "aum_y4_19",
+    "strength": "hard",
+    "reason": "Efficient perimeter methods build on adding side lengths."
+  },
+  {
+    "topicId": "aum_y5_21",
+    "prerequisiteId": "aum_y4_21",
+    "strength": "hard",
+    "reason": "Multiplying rows by columns is a quicker way to count square units."
+  },
+  {
+    "topicId": "aum_y5_21",
+    "prerequisiteId": "aum_y4_14",
+    "strength": "hard",
+    "reason": "Calculating area uses multiplication facts."
+  },
+  {
+    "topicId": "aum_y5_22",
+    "prerequisiteId": "aum_y4_22",
+    "strength": "hard",
+    "reason": "Choosing a unit for mass needs grams and kilograms."
+  },
+  {
+    "topicId": "aum_y5_22",
+    "prerequisiteId": "aum_y4_23",
+    "strength": "hard",
+    "reason": "Choosing a unit for capacity needs millilitres and litres."
+  },
+  {
+    "topicId": "aum_y5_23",
+    "prerequisiteId": "aum_y4_25",
+    "strength": "hard",
+    "reason": "Converting to 24-hour time needs am and pm time."
+  },
+  {
+    "topicId": "aum_y5_24",
+    "prerequisiteId": "aum_y4_26",
+    "strength": "hard",
+    "reason": "Degrees give number sizes to the angle types named by comparison."
+  },
+  {
+    "topicId": "aum_y5_25",
+    "prerequisiteId": "aum_y4_27",
+    "strength": "hard",
+    "reason": "Coordinates name points on lines, building on grid references that name spaces."
+  },
+  {
+    "topicId": "aum_y5_26",
+    "prerequisiteId": "aum_y4_28",
+    "strength": "hard",
+    "reason": "Reflections and rotations are linked to line and rotational symmetry."
+  },
+  {
+    "topicId": "aum_y5_27",
+    "prerequisiteId": "aum_y3_28",
+    "strength": "hard",
+    "reason": "Classifying triangles by sides and angles extends classifying quadrilaterals."
+  },
+  {
+    "topicId": "aum_y5_27",
+    "prerequisiteId": "aum_y4_26",
+    "strength": "soft",
+    "reason": "Naming triangles by angles uses acute, right and obtuse."
+  },
+  {
+    "topicId": "aum_y5_28",
+    "prerequisiteId": "aum_y4_31",
+    "strength": "hard",
+    "reason": "Nets of pyramids and other prisms extend nets of cubes and rectangular prisms."
+  },
+  {
+    "topicId": "aum_y5_29",
+    "prerequisiteId": "aum_y4_30",
+    "strength": "hard",
+    "reason": "Views of prisms and pyramids extend views of cube models."
+  },
+  {
+    "topicId": "aum_y5_30",
+    "prerequisiteId": "aum_y4_33",
+    "strength": "hard",
+    "reason": "Describing the shape of data builds on comparing displays."
+  },
+  {
+    "topicId": "aum_y5_31",
+    "prerequisiteId": "aum_y4_32",
+    "strength": "hard",
+    "reason": "Reading a line graph uses scales on the axes, as in column graphs."
+  },
+  {
+    "topicId": "aum_y5_32",
+    "prerequisiteId": "aum_y4_33",
+    "strength": "hard",
+    "reason": "Choosing a display builds on comparing how well displays show data."
+  },
+  {
+    "topicId": "aum_y5_33",
+    "prerequisiteId": "aum_y4_34",
+    "strength": "hard",
+    "reason": "Deciding whether outcomes are equally likely builds on ordering likelihood."
+  },
+  {
+    "topicId": "aum_y5_34",
+    "prerequisiteId": "aum_y5_33",
+    "strength": "hard",
+    "reason": "Comparing frequencies needs knowing the possible outcomes."
+  },
+  {
+    "topicId": "aum_y6_01",
+    "prerequisiteId": "aum_y4_01",
+    "strength": "hard",
+    "reason": "Ordering whole numbers on a number line comes before extending the line below zero."
+  },
+  {
+    "topicId": "aum_y6_01",
+    "prerequisiteId": "aum_y4_11",
+    "strength": "soft",
+    "reason": "Subtracting a larger number from a smaller one is a way negative numbers arise."
+  },
+  {
+    "topicId": "aum_y6_02",
+    "prerequisiteId": "aum_y5_03",
+    "strength": "hard",
+    "reason": "Prime and composite numbers are defined by their factors."
+  },
+  {
+    "topicId": "aum_y6_03",
+    "prerequisiteId": "aum_y5_04",
+    "strength": "hard",
+    "reason": "Adding decimals means adding digits with the same place value."
+  },
+  {
+    "topicId": "aum_y6_03",
+    "prerequisiteId": "aum_y4_11",
+    "strength": "hard",
+    "reason": "Decimal column methods use the same regrouping as whole numbers."
+  },
+  {
+    "topicId": "aum_y6_03",
+    "prerequisiteId": "aum_y5_02",
+    "strength": "soft",
+    "reason": "Rounding to estimate is used to check decimal answers."
+  },
+  {
+    "topicId": "aum_y6_04",
+    "prerequisiteId": "aum_y5_04",
+    "strength": "hard",
+    "reason": "Moving digits right of the decimal point needs place value to thousandths."
+  },
+  {
+    "topicId": "aum_y6_04",
+    "prerequisiteId": "aum_y5_12",
+    "strength": "hard",
+    "reason": "Multiplying by multiples of 10 uses the same place value shift."
+  },
+  {
+    "topicId": "aum_y6_05",
+    "prerequisiteId": "aum_y6_04",
+    "strength": "hard",
+    "reason": "Multiplying decimals uses place value with tenths and hundredths."
+  },
+  {
+    "topicId": "aum_y6_05",
+    "prerequisiteId": "aum_y5_13",
+    "strength": "hard",
+    "reason": "Multiplying a decimal uses the steps of multiplying by a one-digit number."
+  },
+  {
+    "topicId": "aum_y6_06",
+    "prerequisiteId": "aum_y5_17",
+    "strength": "hard",
+    "reason": "Mixed-operation sentences build on sentences with one operation."
+  },
+  {
+    "topicId": "aum_y6_07",
+    "prerequisiteId": "aum_y6_06",
+    "strength": "hard",
+    "reason": "Working back through a sentence needs the order of operations."
+  },
+  {
+    "topicId": "aum_y6_07",
+    "prerequisiteId": "aum_y4_10",
+    "strength": "soft",
+    "reason": "Undoing the addition or subtraction step uses inverse reasoning with missing numbers."
+  },
+  {
+    "topicId": "aum_y6_08",
+    "prerequisiteId": "aum_y4_18",
+    "strength": "hard",
+    "reason": "Finding a rule extends following rules that make number patterns."
+  },
+  {
+    "topicId": "aum_y6_08",
+    "prerequisiteId": "aum_y5_03",
+    "strength": "soft",
+    "reason": "Many growing patterns are built from multiples."
+  },
+  {
+    "topicId": "aum_y6_09",
+    "prerequisiteId": "aum_y5_14",
+    "strength": "hard",
+    "reason": "Scaling a rate up uses multiplication of larger numbers."
+  },
+  {
+    "topicId": "aum_y6_09",
+    "prerequisiteId": "aum_y5_16",
+    "strength": "hard",
+    "reason": "Finding a unit rate uses division."
+  },
+  {
+    "topicId": "aum_y6_10",
+    "prerequisiteId": "aum_y4_07",
+    "strength": "hard",
+    "reason": "Simplifying reverses making equivalent fractions."
+  },
+  {
+    "topicId": "aum_y6_10",
+    "prerequisiteId": "aum_y5_03",
+    "strength": "hard",
+    "reason": "Simplifying a fraction uses common factors."
+  },
+  {
+    "topicId": "aum_y6_11",
+    "prerequisiteId": "aum_y6_10",
+    "strength": "hard",
+    "reason": "Placing fractions together uses equivalent fractions."
+  },
+  {
+    "topicId": "aum_y6_11",
+    "prerequisiteId": "aum_y5_09",
+    "strength": "hard",
+    "reason": "This extends ordering fractions with related denominators."
+  },
+  {
+    "topicId": "aum_y6_11",
+    "prerequisiteId": "aum_y5_08",
+    "strength": "soft",
+    "reason": "Number lines beyond one include mixed numerals."
+  },
+  {
+    "topicId": "aum_y6_12",
+    "prerequisiteId": "aum_y5_10",
+    "strength": "hard",
+    "reason": "After renaming, the calculation is adding fractions with the same denominator."
+  },
+  {
+    "topicId": "aum_y6_12",
+    "prerequisiteId": "aum_y6_10",
+    "strength": "hard",
+    "reason": "Renaming to a common denominator uses equivalent fractions."
+  },
+  {
+    "topicId": "aum_y6_13",
+    "prerequisiteId": "aum_y5_15",
+    "strength": "hard",
+    "reason": "Seeing a fraction as a division links the quotient and remainder to the fraction."
+  },
+  {
+    "topicId": "aum_y6_13",
+    "prerequisiteId": "aum_y5_11",
+    "strength": "soft",
+    "reason": "Finding unit fractions of a quantity is already dividing by the denominator."
+  },
+  {
+    "topicId": "aum_y6_14",
+    "prerequisiteId": "aum_y5_11",
+    "strength": "hard",
+    "reason": "A non-unit fraction of a quantity starts with the unit fraction."
+  },
+  {
+    "topicId": "aum_y6_15",
+    "prerequisiteId": "aum_y5_06",
+    "strength": "hard",
+    "reason": "Finding a percentage uses its fraction or decimal equivalent."
+  },
+  {
+    "topicId": "aum_y6_15",
+    "prerequisiteId": "aum_y6_14",
+    "strength": "soft",
+    "reason": "Finding 25% is the same as finding a quarter of a quantity."
+  },
+  {
+    "topicId": "aum_y6_16",
+    "prerequisiteId": "aum_y6_15",
+    "strength": "hard",
+    "reason": "A discount is a percentage of the original price."
+  },
+  {
+    "topicId": "aum_y6_17",
+    "prerequisiteId": "aum_y6_03",
+    "strength": "hard",
+    "reason": "Money problems need adding and subtracting decimals."
+  },
+  {
+    "topicId": "aum_y6_17",
+    "prerequisiteId": "aum_y6_16",
+    "strength": "soft",
+    "reason": "Many money problems involve discounts."
+  },
+  {
+    "topicId": "aum_y6_17",
+    "prerequisiteId": "aum_y5_18",
+    "strength": "soft",
+    "reason": "This extends solving multistep whole-number problems."
+  },
+  {
+    "topicId": "aum_y6_18",
+    "prerequisiteId": "aum_y5_19",
+    "strength": "hard",
+    "reason": "Converting lengths uses the metric length units including kilometres."
+  },
+  {
+    "topicId": "aum_y6_18",
+    "prerequisiteId": "aum_y5_22",
+    "strength": "hard",
+    "reason": "Converting mass and capacity needs the units for them, including tonnes."
+  },
+  {
+    "topicId": "aum_y6_18",
+    "prerequisiteId": "aum_y6_04",
+    "strength": "hard",
+    "reason": "Metric conversions multiply or divide decimals by 10, 100 or 1000."
+  },
+  {
+    "topicId": "aum_y6_19",
+    "prerequisiteId": "aum_y5_21",
+    "strength": "hard",
+    "reason": "Using the formula builds on calculating the area of rectangles."
+  },
+  {
+    "topicId": "aum_y6_19",
+    "prerequisiteId": "aum_y5_20",
+    "strength": "hard",
+    "reason": "Comparing area with perimeter needs calculating perimeters."
+  },
+  {
+    "topicId": "aum_y6_20",
+    "prerequisiteId": "aum_y6_19",
+    "strength": "hard",
+    "reason": "Each part of a composite shape is a rectangle whose area is length × width."
+  },
+  {
+    "topicId": "aum_y6_20",
+    "prerequisiteId": "aum_y4_29",
+    "strength": "soft",
+    "reason": "Finding the rectangles inside an L-shape builds on splitting composite shapes."
+  },
+  {
+    "topicId": "aum_y6_21",
+    "prerequisiteId": "aum_y6_19",
+    "strength": "hard",
+    "reason": "A parallelogram is rearranged into a rectangle with the same base and height."
+  },
+  {
+    "topicId": "aum_y6_22",
+    "prerequisiteId": "aum_y6_19",
+    "strength": "hard",
+    "reason": "A hectare is the area of a 100 m by 100 m square."
+  },
+  {
+    "topicId": "aum_y6_22",
+    "prerequisiteId": "aum_y5_19",
+    "strength": "soft",
+    "reason": "Square kilometres need kilometres as a unit of length."
+  },
+  {
+    "topicId": "aum_y6_23",
+    "prerequisiteId": "aum_y4_24",
+    "strength": "hard",
+    "reason": "The volume formula is a quick way to count cubes in layers."
+  },
+  {
+    "topicId": "aum_y6_23",
+    "prerequisiteId": "aum_y6_19",
+    "strength": "soft",
+    "reason": "The number of cubes in one layer is the area of the base."
+  },
+  {
+    "topicId": "aum_y6_24",
+    "prerequisiteId": "aum_y5_23",
+    "strength": "hard",
+    "reason": "Timetables are written in 24-hour or 12-hour time."
+  },
+  {
+    "topicId": "aum_y6_25",
+    "prerequisiteId": "aum_y5_24",
+    "strength": "hard",
+    "reason": "Finding unknown angles uses angle sizes in degrees."
+  },
+  {
+    "topicId": "aum_y6_26",
+    "prerequisiteId": "aum_y5_25",
+    "strength": "hard",
+    "reason": "Four quadrants extend the first-quadrant number plane."
+  },
+  {
+    "topicId": "aum_y6_26",
+    "prerequisiteId": "aum_y6_01",
+    "strength": "hard",
+    "reason": "Negative coordinates are integers on each axis."
+  },
+  {
+    "topicId": "aum_y6_27",
+    "prerequisiteId": "aum_y5_28",
+    "strength": "hard",
+    "reason": "Knowing how faces fit together in nets supports comparing prisms and pyramids."
+  },
+  {
+    "topicId": "aum_y6_28",
+    "prerequisiteId": "aum_y5_26",
+    "strength": "hard",
+    "reason": "Tessellations are made by combining translations, reflections and rotations."
+  },
+  {
+    "topicId": "aum_y6_29",
+    "prerequisiteId": "aum_y5_30",
+    "strength": "hard",
+    "reason": "Comparing distributions uses the mode and the shape of a display."
+  },
+  {
+    "topicId": "aum_y6_30",
+    "prerequisiteId": "aum_y5_32",
+    "strength": "hard",
+    "reason": "Reading comparative graphs builds on choosing displays and scales."
+  },
+  {
+    "topicId": "aum_y6_30",
+    "prerequisiteId": "aum_y5_31",
+    "strength": "soft",
+    "reason": "Timelines, like line graphs, show change over time on a scaled axis."
+  },
+  {
+    "topicId": "aum_y6_31",
+    "prerequisiteId": "aum_y5_32",
+    "strength": "hard",
+    "reason": "Spotting a misleading scale needs knowing how a suitable scale is chosen."
+  },
+  {
+    "topicId": "aum_y6_32",
+    "prerequisiteId": "aum_y5_33",
+    "strength": "hard",
+    "reason": "Assigning a probability needs the list of equally likely outcomes."
+  },
+  {
+    "topicId": "aum_y6_32",
+    "prerequisiteId": "aum_y5_06",
+    "strength": "hard",
+    "reason": "Probabilities are written as fractions, decimals or percentages."
+  },
+  {
+    "topicId": "aum_y6_33",
+    "prerequisiteId": "aum_y6_32",
+    "strength": "hard",
+    "reason": "Expected results are worked out from the probability of each outcome."
+  },
+  {
+    "topicId": "aum_y6_33",
+    "prerequisiteId": "aum_y5_34",
+    "strength": "hard",
+    "reason": "Observed results are recorded as frequencies."
+  },
+  {
+    "topicId": "aue_k_04",
+    "prerequisiteId": "aue_k_03",
+    "strength": "soft",
+    "reason": "Breaking a sentence into words comes before breaking a word into smaller sound chunks."
+  },
+  {
+    "topicId": "aue_k_05",
+    "prerequisiteId": "aue_k_02",
+    "strength": "soft",
+    "reason": "Rhyming words share their ending, so hearing rhyme helps children notice the first sound that differs."
+  },
+  {
+    "topicId": "aue_k_06",
+    "prerequisiteId": "aue_k_05",
+    "strength": "hard",
+    "reason": "Blending starts by hearing and holding the first sound, then adding the rest of the word."
+  },
+  {
+    "topicId": "aue_k_07",
+    "prerequisiteId": "aue_k_06",
+    "strength": "hard",
+    "reason": "Segmenting is the reverse of blending and is taught once children can blend spoken sounds."
+  },
+  {
+    "topicId": "aue_k_08",
+    "prerequisiteId": "aue_k_07",
+    "strength": "hard",
+    "reason": "To change one sound in a word, a child must first be able to hear every sound in it."
+  },
+  {
+    "topicId": "aue_k_09",
+    "prerequisiteId": "aue_k_01",
+    "strength": "hard",
+    "reason": "A sound can only be linked to a letter the child already recognises."
+  },
+  {
+    "topicId": "aue_k_09",
+    "prerequisiteId": "aue_k_05",
+    "strength": "hard",
+    "reason": "Matching a letter to a sound needs the child to hear that sound on its own first."
+  },
+  {
+    "topicId": "aue_k_10",
+    "prerequisiteId": "aue_k_09",
+    "strength": "hard",
+    "reason": "Reading a CVC word means saying the sound for each letter."
+  },
+  {
+    "topicId": "aue_k_10",
+    "prerequisiteId": "aue_k_06",
+    "strength": "hard",
+    "reason": "After saying each letter's sound, the child must blend the sounds into a word."
+  },
+  {
+    "topicId": "aue_k_11",
+    "prerequisiteId": "aue_k_09",
+    "strength": "hard",
+    "reason": "Spelling a word needs the letter for each sound."
+  },
+  {
+    "topicId": "aue_k_11",
+    "prerequisiteId": "aue_k_07",
+    "strength": "hard",
+    "reason": "Spelling a word starts by breaking it into its sounds."
+  },
+  {
+    "topicId": "aue_k_16",
+    "prerequisiteId": "aue_k_10",
+    "strength": "soft",
+    "reason": "Most high-frequency words are partly decodable, so they are learnt after children can read simple CVC words."
+  },
+  {
+    "topicId": "aue_k_17",
+    "prerequisiteId": "aue_k_11",
+    "strength": "hard",
+    "reason": "Children add s to base words they can already spell."
+  },
+  {
+    "topicId": "aue_k_21",
+    "prerequisiteId": "aue_k_03",
+    "strength": "soft",
+    "reason": "Hearing the separate words in a spoken sentence helps children see that a sentence is built from words."
+  },
+  {
+    "topicId": "aue_k_22",
+    "prerequisiteId": "aue_k_21",
+    "strength": "hard",
+    "reason": "Children must know where a sentence starts and ends before they can mark those places."
+  },
+  {
+    "topicId": "aue_k_22",
+    "prerequisiteId": "aue_k_01",
+    "strength": "hard",
+    "reason": "Using a capital letter needs the child to tell upper-case from lower-case letters."
+  },
+  {
+    "topicId": "aue_k_24",
+    "prerequisiteId": "aue_k_21",
+    "strength": "soft",
+    "reason": "Finding the naming and doing words is easier once children know a sentence tells who and what happens."
+  },
+  {
+    "topicId": "aue_k_24",
+    "prerequisiteId": "aue_k_18",
+    "strength": "soft",
+    "reason": "Sorting words into groups prepares children to sort words into naming words and doing words."
+  },
+  {
+    "topicId": "aue_k_29",
+    "prerequisiteId": "aue_k_28",
+    "strength": "hard",
+    "reason": "Putting events in order needs the child to recall what happened in the text."
+  },
+  {
+    "topicId": "aue_k_30",
+    "prerequisiteId": "aue_k_29",
+    "strength": "hard",
+    "reason": "Knowing how a story begins and ends needs the child to recall its events in order."
+  },
+  {
+    "topicId": "aue_y1_01",
+    "prerequisiteId": "aue_k_07",
+    "strength": "hard",
+    "reason": "Segmenting a blend extends segmenting simple CVC words into separate sounds."
+  },
+  {
+    "topicId": "aue_y1_08",
+    "prerequisiteId": "aue_k_10",
+    "strength": "hard",
+    "reason": "Children need each letter's most common sound from CVC reading before learning its other sounds."
+  },
+  {
+    "topicId": "aue_y1_09",
+    "prerequisiteId": "aue_k_04",
+    "strength": "hard",
+    "reason": "Reading a two-syllable word starts with knowing words break into syllables."
+  },
+  {
+    "topicId": "aue_y1_09",
+    "prerequisiteId": "aue_k_10",
+    "strength": "hard",
+    "reason": "Each syllable is decoded the same way as a CVC word."
+  },
+  {
+    "topicId": "aue_y1_10",
+    "prerequisiteId": "aue_k_16",
+    "strength": "hard",
+    "reason": "The Year 1 word bank builds on the first high-frequency words learnt in Kindergarten."
+  },
+  {
+    "topicId": "aue_y1_12",
+    "prerequisiteId": "aue_k_18",
+    "strength": "hard",
+    "reason": "Grouping topic words builds on sorting everyday words into groups."
+  },
+  {
+    "topicId": "aue_y1_13",
+    "prerequisiteId": "aue_k_24",
+    "strength": "hard",
+    "reason": "An adverb tells more about a verb, so children need to find the verb first."
+  },
+  {
+    "topicId": "aue_y1_14",
+    "prerequisiteId": "aue_k_28",
+    "strength": "hard",
+    "reason": "Finding facts in a longer text extends answering who, what and where questions."
+  },
+  {
+    "topicId": "aue_y1_15",
+    "prerequisiteId": "aue_y1_14",
+    "strength": "hard",
+    "reason": "An inference is built from facts the text does state."
+  },
+  {
+    "topicId": "aue_y1_16",
+    "prerequisiteId": "aue_k_31",
+    "strength": "soft",
+    "reason": "Knowing that information texts give facts helps children see why they have headings and contents pages."
+  },
+  {
+    "topicId": "aue_y1_17",
+    "prerequisiteId": "aue_k_30",
+    "strength": "hard",
+    "reason": "Plot, character and setting give names to the characters and events children found in Kindergarten stories."
+  },
+  {
+    "topicId": "aue_y1_18",
+    "prerequisiteId": "aue_k_02",
+    "strength": "hard",
+    "reason": "Finding rhyme in a poem needs the child to hear whether words rhyme."
+  },
+  {
+    "topicId": "aue_y1_19",
+    "prerequisiteId": "aue_k_31",
+    "strength": "hard",
+    "reason": "Adding persuasive texts builds on telling stories from information texts."
+  },
+  {
+    "topicId": "aue_y2_02",
+    "prerequisiteId": "aue_y1_06",
+    "strength": "hard",
+    "reason": "Choosing between spellings of a long vowel needs the split digraph spellings already learnt."
+  },
+  {
+    "topicId": "aue_y2_02",
+    "prerequisiteId": "aue_y1_05",
+    "strength": "hard",
+    "reason": "Choosing between spellings of a long vowel needs the vowel team spellings already learnt."
+  },
+  {
+    "topicId": "aue_y2_03",
+    "prerequisiteId": "aue_y1_05",
+    "strength": "hard",
+    "reason": "These vowel sounds are spelt with vowel teams, so children need the vowel team idea first."
+  },
+  {
+    "topicId": "aue_y2_06",
+    "prerequisiteId": "aue_y1_09",
+    "strength": "hard",
+    "reason": "The double letter marks the split between two syllables, so children need to split words into syllables first."
+  },
+  {
+    "topicId": "aue_y2_08",
+    "prerequisiteId": "aue_y1_10",
+    "strength": "hard",
+    "reason": "Tricky words build on the Year 1 bank of high-frequency words."
+  },
+  {
+    "topicId": "aue_y2_12",
+    "prerequisiteId": "aue_y1_11",
+    "strength": "hard",
+    "reason": "Adding -ful, -ly and -y builds new members of a word family from a base word."
+  },
+  {
+    "topicId": "aue_y2_13",
+    "prerequisiteId": "aue_y1_11",
+    "strength": "hard",
+    "reason": "Prefixes build word families from the front of a base word, just as suffixes do from the end."
+  },
+  {
+    "topicId": "aue_y2_15",
+    "prerequisiteId": "aue_y1_12",
+    "strength": "soft",
+    "reason": "Choosing the most exact word builds on knowing the words that belong to a topic."
+  },
+  {
+    "topicId": "aue_y2_27",
+    "prerequisiteId": "aue_y1_14",
+    "strength": "hard",
+    "reason": "Choosing the main idea means weighing the facts in a text against each other."
+  },
+  {
+    "topicId": "aue_y2_28",
+    "prerequisiteId": "aue_y1_15",
+    "strength": "hard",
+    "reason": "Combining clues from several sentences extends making an inference from one clue."
+  },
+  {
+    "topicId": "aue_y2_29",
+    "prerequisiteId": "aue_y1_16",
+    "strength": "hard",
+    "reason": "Using an index or menu builds on knowing what titles, headings and contents pages are for."
+  },
+  {
+    "topicId": "aue_y2_31",
+    "prerequisiteId": "aue_y1_17",
+    "strength": "hard",
+    "reason": "Looking at how characters and settings are described needs the child to identify them first."
+  },
+  {
+    "topicId": "aue_y2_32",
+    "prerequisiteId": "aue_y1_19",
+    "strength": "hard",
+    "reason": "Naming a text's purpose and audience builds on telling imaginative, informative and persuasive texts apart."
+  },
+  {
+    "topicId": "aue_y2_33",
+    "prerequisiteId": "aue_y1_18",
+    "strength": "hard",
+    "reason": "Rhythm and repeated patterns build on finding rhyme and alliteration in poems."
+  },
+  {
+    "topicId": "aue_y3_01",
+    "prerequisiteId": "aue_y2_06",
+    "strength": "hard",
+    "reason": "Splitting long words uses the syllable split first learnt with double letters (rab-bit)."
+  },
+  {
+    "topicId": "aue_y3_01",
+    "prerequisiteId": "aue_y2_05",
+    "strength": "soft",
+    "reason": "Long compound words are split at the join between their two words first."
+  },
+  {
+    "topicId": "aue_y3_04",
+    "prerequisiteId": "aue_y2_08",
+    "strength": "hard",
+    "reason": "Most common homophones are high-frequency words, so children need their spellings first."
+  },
+  {
+    "topicId": "aue_y3_05",
+    "prerequisiteId": "aue_y2_09",
+    "strength": "hard",
+    "reason": "Changing y to i before es builds on choosing between s and es for plurals."
+  },
+  {
+    "topicId": "aue_y3_05",
+    "prerequisiteId": "aue_y2_11",
+    "strength": "soft",
+    "reason": "The rule also applies to -er and -est (happier), which children add to simple adjectives first."
+  },
+  {
+    "topicId": "aue_y3_06",
+    "prerequisiteId": "aue_y2_13",
+    "strength": "hard",
+    "reason": "Breaking a word into parts needs the common prefixes."
+  },
+  {
+    "topicId": "aue_y3_06",
+    "prerequisiteId": "aue_y2_12",
+    "strength": "hard",
+    "reason": "Breaking a word into parts needs the common suffixes."
+  },
+  {
+    "topicId": "aue_y3_08",
+    "prerequisiteId": "aue_y2_18",
+    "strength": "hard",
+    "reason": "Modal verbs such as can, will and must are helping verbs in a verb group."
+  },
+  {
+    "topicId": "aue_y3_08",
+    "prerequisiteId": "aue_y2_15",
+    "strength": "soft",
+    "reason": "Choosing a modal word is a choice of the most fitting word for a message."
+  },
+  {
+    "topicId": "aue_y3_09",
+    "prerequisiteId": "aue_k_23",
+    "strength": "hard",
+    "reason": "Sentence types are signalled by end punctuation, so children need full stops, question marks and exclamation marks."
+  },
+  {
+    "topicId": "aue_y2_21",
+    "prerequisiteId": "aue_y2_18",
+    "strength": "hard",
+    "reason": "Agreement often falls on the helping verb (is or are, was or were), so children must find the verb group."
+  },
+  {
+    "topicId": "aue_y2_19",
+    "prerequisiteId": "aue_y2_18",
+    "strength": "hard",
+    "reason": "Sorting verbs by type needs the child to find the verb in a sentence."
+  },
+  {
+    "topicId": "aue_y2_20",
+    "prerequisiteId": "aue_y2_18",
+    "strength": "hard",
+    "reason": "Past and future tenses are often shown by helping verbs in a verb group (was walking, will walk)."
+  },
+  {
+    "topicId": "aue_y2_30",
+    "prerequisiteId": "aue_y2_27",
+    "strength": "hard",
+    "reason": "A topic sentence states the main idea of a paragraph."
+  },
+  {
+    "topicId": "aue_y3_14",
+    "prerequisiteId": "aue_y2_27",
+    "strength": "hard",
+    "reason": "A summary keeps the main idea and the key points that support it."
+  },
+  {
+    "topicId": "aue_y3_15",
+    "prerequisiteId": "aue_y2_28",
+    "strength": "hard",
+    "reason": "Choosing evidence for an inference builds on inferring from clues."
+  },
+  {
+    "topicId": "aue_y3_16",
+    "prerequisiteId": "aue_y2_29",
+    "strength": "hard",
+    "reason": "Headings, captions and layout extend using contents pages and indexes to find information."
+  },
+  {
+    "topicId": "aue_y3_17",
+    "prerequisiteId": "aue_y1_17",
+    "strength": "hard",
+    "reason": "The problem in a story is part of the plot, and children must know plot, character and setting first."
+  },
+  {
+    "topicId": "aue_y3_18",
+    "prerequisiteId": "aue_y2_31",
+    "strength": "hard",
+    "reason": "Linking setting to mood builds on finding the words that describe a setting."
+  },
+  {
+    "topicId": "aue_y3_19",
+    "prerequisiteId": "aue_y2_31",
+    "strength": "hard",
+    "reason": "Inferring traits builds on finding the words that describe a character."
+  },
+  {
+    "topicId": "aue_y3_19",
+    "prerequisiteId": "aue_y3_15",
+    "strength": "soft",
+    "reason": "Backing up a character trait uses the same skill as finding evidence for an inference."
+  },
+  {
+    "topicId": "aue_y3_20",
+    "prerequisiteId": "aue_y2_33",
+    "strength": "hard",
+    "reason": "Rhythm and sound words extend finding sound patterns in poems."
+  },
+  {
+    "topicId": "aue_y3_22",
+    "prerequisiteId": "aue_y2_32",
+    "strength": "hard",
+    "reason": "Linking language features to purpose and audience builds on naming the purpose and audience."
+  },
+  {
+    "topicId": "aue_y4_01",
+    "prerequisiteId": "aue_y3_01",
+    "strength": "hard",
+    "reason": "Finding the stressed and unstressed syllables needs the word split into syllables."
+  },
+  {
+    "topicId": "aue_y4_02",
+    "prerequisiteId": "aue_y3_06",
+    "strength": "hard",
+    "reason": "Adding these suffixes builds new words from base words, so children must find base words first."
+  },
+  {
+    "topicId": "aue_y4_02",
+    "prerequisiteId": "aue_y3_05",
+    "strength": "soft",
+    "reason": "Words such as happiness use the y to i rule."
+  },
+  {
+    "topicId": "aue_y4_03",
+    "prerequisiteId": "aue_y3_06",
+    "strength": "hard",
+    "reason": "Adding a prefix without changing the base word needs the child to find the base word."
+  },
+  {
+    "topicId": "aue_y4_04",
+    "prerequisiteId": "aue_y2_09",
+    "strength": "hard",
+    "reason": "Irregular plurals are learnt as exceptions to the s and es rule."
+  },
+  {
+    "topicId": "aue_y4_06",
+    "prerequisiteId": "aue_y3_02",
+    "strength": "soft",
+    "reason": "Unusual letter patterns often come from other languages, so knowing those patterns helps."
+  },
+  {
+    "topicId": "aue_y4_07",
+    "prerequisiteId": "aue_y2_15",
+    "strength": "soft",
+    "reason": "Choosing the most exact of several similar words is early work with synonyms."
+  },
+  {
+    "topicId": "aue_y4_07",
+    "prerequisiteId": "aue_y3_07",
+    "strength": "soft",
+    "reason": "Checking a synonym fits a sentence uses context to confirm meaning."
+  },
+  {
+    "topicId": "aue_y4_14",
+    "prerequisiteId": "aue_y4_13",
+    "strength": "hard",
+    "reason": "Telling direct from reported speech starts from recognising quotation marks around spoken words."
+  },
+  {
+    "topicId": "aue_y4_14",
+    "prerequisiteId": "aue_y2_20",
+    "strength": "soft",
+    "reason": "Reported speech often moves the verb back a tense (am to was)."
+  },
+  {
+    "topicId": "aue_y4_14",
+    "prerequisiteId": "aue_y2_19",
+    "strength": "soft",
+    "reason": "Reported speech is introduced by saying verbs such as said, asked and explained."
+  },
+  {
+    "topicId": "aue_y4_15",
+    "prerequisiteId": "aue_y3_22",
+    "strength": "soft",
+    "reason": "Spotting opinions builds on noticing the language features that mark a persuasive text."
+  },
+  {
+    "topicId": "aue_y4_17",
+    "prerequisiteId": "aue_y4_11",
+    "strength": "hard",
+    "reason": "Causal connectives such as because and as a result are the main clues to cause and effect."
+  },
+  {
+    "topicId": "aue_y4_17",
+    "prerequisiteId": "aue_y3_15",
+    "strength": "soft",
+    "reason": "When a cause is not stated, it is inferred from evidence in the text."
+  },
+  {
+    "topicId": "aue_y4_18",
+    "prerequisiteId": "aue_y3_14",
+    "strength": "hard",
+    "reason": "Comparing two texts needs the main points of each one."
+  },
+  {
+    "topicId": "aue_y4_19",
+    "prerequisiteId": "aue_y3_16",
+    "strength": "hard",
+    "reason": "Online features extend the headings and layout features of print texts."
+  },
+  {
+    "topicId": "aue_y4_20",
+    "prerequisiteId": "aue_y3_15",
+    "strength": "hard",
+    "reason": "Inferring across a whole text extends finding evidence for an inference in a short passage."
+  },
+  {
+    "topicId": "aue_y4_21",
+    "prerequisiteId": "aue_y3_22",
+    "strength": "hard",
+    "reason": "Naming a text's stages builds on recognising its purpose from its language features."
+  },
+  {
+    "topicId": "aue_y4_21",
+    "prerequisiteId": "aue_y2_30",
+    "strength": "soft",
+    "reason": "Each stage of an informative text is often a paragraph."
+  },
+  {
+    "topicId": "aue_y4_23",
+    "prerequisiteId": "aue_y3_17",
+    "strength": "hard",
+    "reason": "The complication of a narrative is its central problem, and the resolution is its solution."
+  },
+  {
+    "topicId": "aue_y4_23",
+    "prerequisiteId": "aue_y3_18",
+    "strength": "soft",
+    "reason": "A complication builds tension, a mood created by the setting and events."
+  },
+  {
+    "topicId": "aue_y4_24",
+    "prerequisiteId": "aue_y4_20",
+    "strength": "hard",
+    "reason": "A theme is not stated, so it has to be inferred from the whole text."
+  },
+  {
+    "topicId": "aue_y4_24",
+    "prerequisiteId": "aue_y3_14",
+    "strength": "soft",
+    "reason": "Summarising a story helps separate what it is about from what it means."
+  },
+  {
+    "topicId": "aue_y4_25",
+    "prerequisiteId": "aue_y2_26",
+    "strength": "hard",
+    "reason": "The narrator is shown by the pronouns used, so children must track who the pronouns refer to."
+  },
+  {
+    "topicId": "aue_y5_01",
+    "prerequisiteId": "aue_y3_02",
+    "strength": "hard",
+    "reason": "Knowing that one pattern has several sounds builds on knowing the less common patterns themselves."
+  },
+  {
+    "topicId": "aue_y5_02",
+    "prerequisiteId": "aue_y4_04",
+    "strength": "hard",
+    "reason": "Less common plurals extend the irregular plurals learnt in Year 4."
+  },
+  {
+    "topicId": "aue_y5_03",
+    "prerequisiteId": "aue_y4_02",
+    "strength": "hard",
+    "reason": "Seeing how a suffix changes word class builds on adding suffixes such as -ness and -ment."
+  },
+  {
+    "topicId": "aue_y5_04",
+    "prerequisiteId": "aue_y5_03",
+    "strength": "hard",
+    "reason": "-tion and -sion turn verbs into nouns, so children need to know suffixes change word class."
+  },
+  {
+    "topicId": "aue_y5_04",
+    "prerequisiteId": "aue_y4_01",
+    "strength": "soft",
+    "reason": "The 'shun' ending is an unstressed syllable, so its spelling cannot be heard clearly."
+  },
+  {
+    "topicId": "aue_y5_05",
+    "prerequisiteId": "aue_y4_03",
+    "strength": "hard",
+    "reason": "Assimilated prefixes are changed forms of a prefix, learnt after prefixes that do not change."
+  },
+  {
+    "topicId": "aue_y5_06",
+    "prerequisiteId": "aue_y4_06",
+    "strength": "hard",
+    "reason": "Exploring word histories builds on knowing that English borrows words from other languages."
+  },
+  {
+    "topicId": "aue_y5_07",
+    "prerequisiteId": "aue_y4_07",
+    "strength": "hard",
+    "reason": "Ranking similar words by strength needs the child to recognise synonyms."
+  },
+  {
+    "topicId": "aue_y5_08",
+    "prerequisiteId": "aue_y3_07",
+    "strength": "soft",
+    "reason": "Technical words are often explained by the text around them."
+  },
+  {
+    "topicId": "aue_y5_08",
+    "prerequisiteId": "aue_y4_02",
+    "strength": "soft",
+    "reason": "Many technical words are built from base words and suffixes."
+  },
+  {
+    "topicId": "aue_y5_10",
+    "prerequisiteId": "aue_y3_08",
+    "strength": "hard",
+    "reason": "Ranking modal words by strength needs the child to recognise modal words."
+  },
+  {
+    "topicId": "aue_y5_15",
+    "prerequisiteId": "aue_y4_11",
+    "strength": "hard",
+    "reason": "Many sentence openers are text connectives that tell the reader what kind of idea is coming."
+  },
+  {
+    "topicId": "aue_y5_16",
+    "prerequisiteId": "aue_y4_19",
+    "strength": "soft",
+    "reason": "Using headings, menus and links helps a reader scan quickly to the right part of a text."
+  },
+  {
+    "topicId": "aue_y5_17",
+    "prerequisiteId": "aue_y3_14",
+    "strength": "hard",
+    "reason": "Separating the main idea from supporting details builds on summarising."
+  },
+  {
+    "topicId": "aue_y5_18",
+    "prerequisiteId": "aue_y4_15",
+    "strength": "hard",
+    "reason": "Judging the evidence for a claim builds on telling fact from opinion."
+  },
+  {
+    "topicId": "aue_y5_21",
+    "prerequisiteId": "aue_y4_18",
+    "strength": "hard",
+    "reason": "Seeing how a text reflects its time builds on comparing texts from different times."
+  },
+  {
+    "topicId": "aue_y5_22",
+    "prerequisiteId": "aue_y4_25",
+    "strength": "hard",
+    "reason": "Point of view builds on identifying a first-person or third-person narrator."
+  },
+  {
+    "topicId": "aue_y5_22",
+    "prerequisiteId": "aue_y4_20",
+    "strength": "soft",
+    "reason": "What a narrator does not know or say is worked out by inference."
+  },
+  {
+    "topicId": "aue_y5_23",
+    "prerequisiteId": "aue_y3_20",
+    "strength": "hard",
+    "reason": "Assonance and other sound devices extend onomatopoeia and rhythm."
+  },
+  {
+    "topicId": "aue_y5_24",
+    "prerequisiteId": "aue_y3_19",
+    "strength": "hard",
+    "reason": "Describing how a character changes needs the character's traits at the start and the end."
+  },
+  {
+    "topicId": "aue_y5_24",
+    "prerequisiteId": "aue_y4_23",
+    "strength": "soft",
+    "reason": "A character usually changes through the complication and resolution."
+  },
+  {
+    "topicId": "aue_y6_01",
+    "prerequisiteId": "aue_y5_06",
+    "strength": "hard",
+    "reason": "Greek roots are part of the history of English words."
+  },
+  {
+    "topicId": "aue_y6_01",
+    "prerequisiteId": "aue_y5_05",
+    "strength": "soft",
+    "reason": "Splitting off prefixes such as in- and im- prepares children to find the root that remains."
+  },
+  {
+    "topicId": "aue_y6_02",
+    "prerequisiteId": "aue_y5_05",
+    "strength": "hard",
+    "reason": "Assimilated prefixes are Latin, and they are found by splitting a word into prefix and Latin root."
+  },
+  {
+    "topicId": "aue_y6_02",
+    "prerequisiteId": "aue_y5_06",
+    "strength": "soft",
+    "reason": "Latin roots are part of the history of English words."
+  },
+  {
+    "topicId": "aue_y6_03",
+    "prerequisiteId": "aue_y6_01",
+    "strength": "hard",
+    "reason": "Working out a word from its parts needs the meanings of common Greek roots."
+  },
+  {
+    "topicId": "aue_y6_03",
+    "prerequisiteId": "aue_y6_02",
+    "strength": "hard",
+    "reason": "Working out a word from its parts needs the meanings of common Latin roots."
+  },
+  {
+    "topicId": "aue_y6_03",
+    "prerequisiteId": "aue_y5_08",
+    "strength": "soft",
+    "reason": "Most words analysed this way are technical subject words."
+  },
+  {
+    "topicId": "aue_y6_04",
+    "prerequisiteId": "aue_y5_01",
+    "strength": "hard",
+    "reason": "Unusual spellings extend knowing that letters can stand for different sounds."
+  },
+  {
+    "topicId": "aue_y6_05",
+    "prerequisiteId": "aue_y4_05",
+    "strength": "hard",
+    "reason": "Easily confused pairs build on choosing homophones from context."
+  },
+  {
+    "topicId": "aue_y6_06",
+    "prerequisiteId": "aue_y4_02",
+    "strength": "hard",
+    "reason": "Choosing between -able and -ible builds on adding -able to a base word."
+  },
+  {
+    "topicId": "aue_y6_06",
+    "prerequisiteId": "aue_y6_02",
+    "strength": "soft",
+    "reason": "-ible usually follows a Latin root that is not a word on its own."
+  },
+  {
+    "topicId": "aue_y6_09",
+    "prerequisiteId": "aue_y5_07",
+    "strength": "soft",
+    "reason": "Choosing formal over informal words is often a choice between near-synonyms (kids, children)."
+  },
+  {
+    "topicId": "aue_y6_10",
+    "prerequisiteId": "aue_y5_12",
+    "strength": "hard",
+    "reason": "An embedded clause usually expands a noun group."
+  },
+  {
+    "topicId": "aue_y6_10",
+    "prerequisiteId": "aue_y5_11",
+    "strength": "hard",
+    "reason": "Embedding needs the child to tell a main clause from a dependent clause."
+  },
+  {
+    "topicId": "aue_y6_11",
+    "prerequisiteId": "aue_y5_13",
+    "strength": "hard",
+    "reason": "Commas after opening clauses extend commas after opening phrases."
+  },
+  {
+    "topicId": "aue_y6_11",
+    "prerequisiteId": "aue_y5_11",
+    "strength": "hard",
+    "reason": "Placing the comma needs the child to find where the dependent clause ends."
+  },
+  {
+    "topicId": "aue_y6_12",
+    "prerequisiteId": "aue_y6_11",
+    "strength": "soft",
+    "reason": "Brackets and dashes, like commas, mark off extra information in a sentence."
+  },
+  {
+    "topicId": "aue_y6_13",
+    "prerequisiteId": "aue_y4_12",
+    "strength": "hard",
+    "reason": "Elaborated tenses build on controlling simple past, present and future tenses."
+  },
+  {
+    "topicId": "aue_y6_14",
+    "prerequisiteId": "aue_y5_04",
+    "strength": "hard",
+    "reason": "Many nominalisations end in -tion or -sion (decide, decision), the noun endings learnt in Year 5."
+  },
+  {
+    "topicId": "aue_y6_15",
+    "prerequisiteId": "aue_y5_15",
+    "strength": "soft",
+    "reason": "Sentence openers and word chains are both ways of guiding the reader through a text."
+  },
+  {
+    "topicId": "aue_y6_16",
+    "prerequisiteId": "aue_y5_18",
+    "strength": "hard",
+    "reason": "Spotting bias builds on judging whether claims are backed by evidence."
+  },
+  {
+    "topicId": "aue_y6_16",
+    "prerequisiteId": "aue_y5_10",
+    "strength": "soft",
+    "reason": "Biased texts often use high modality to make opinions sound certain."
+  },
+  {
+    "topicId": "aue_y6_17",
+    "prerequisiteId": "aue_y4_18",
+    "strength": "hard",
+    "reason": "Comparing sources builds on comparing two texts on one topic."
+  },
+  {
+    "topicId": "aue_y6_17",
+    "prerequisiteId": "aue_y5_17",
+    "strength": "soft",
+    "reason": "Comparing sources needs the main idea and key details of each text."
+  },
+  {
+    "topicId": "aue_y6_18",
+    "prerequisiteId": "aue_y5_16",
+    "strength": "hard",
+    "reason": "Using glossaries, tables and diagrams relies on scanning a text for the right feature."
+  },
+  {
+    "topicId": "aue_y6_20",
+    "prerequisiteId": "aue_y5_22",
+    "strength": "soft",
+    "reason": "Point of view is one of the choices that make up an author's style."
+  },
+  {
+    "topicId": "aue_y6_20",
+    "prerequisiteId": "aue_y5_09",
+    "strength": "soft",
+    "reason": "Metaphor is one of the choices that make up an author's style."
+  },
+  {
+    "topicId": "aue_y6_21",
+    "prerequisiteId": "aue_y5_23",
+    "strength": "hard",
+    "reason": "Explaining sound and imagery together needs the sound devices first."
+  },
+  {
+    "topicId": "aue_y6_21",
+    "prerequisiteId": "aue_y5_09",
+    "strength": "soft",
+    "reason": "Imagery in poems is often built from similes, metaphors and personification."
+  },
+  {
+    "topicId": "aue_y6_22",
+    "prerequisiteId": "aue_y4_24",
+    "strength": "hard",
+    "reason": "Comparing themes across texts needs the child to identify a theme first."
+  },
+  {
+    "topicId": "aue_y6_22",
+    "prerequisiteId": "aue_y5_24",
+    "strength": "soft",
+    "reason": "What a character learns as they change often points to the theme."
+  },
+  {
+    "topicId": "aue_y6_23",
+    "prerequisiteId": "aue_y5_09",
+    "strength": "soft",
+    "reason": "A symbol stands for something beyond its literal meaning, like a metaphor."
+  },
+  {
+    "topicId": "aue_y6_23",
+    "prerequisiteId": "aue_y4_20",
+    "strength": "soft",
+    "reason": "A symbol's meaning is inferred from clues across the whole text."
+  },
+  {
+    "topicId": "aue_k_12",
+    "prerequisiteId": "aue_k_10",
+    "strength": "hard",
+    "reason": "Digraph words are read by blending, like CVC words, with two letters for one sound."
+  },
+  {
+    "topicId": "aue_k_12",
+    "prerequisiteId": "aue_k_11",
+    "strength": "soft",
+    "reason": "Spelling digraph words uses the same sound-by-sound spelling as CVC words."
+  },
+  {
+    "topicId": "aue_k_13",
+    "prerequisiteId": "aue_k_10",
+    "strength": "hard",
+    "reason": "Words with blends are read by blending each letter sound, as in CVC words."
+  },
+  {
+    "topicId": "aue_k_13",
+    "prerequisiteId": "aue_k_11",
+    "strength": "hard",
+    "reason": "Spelling a word with a blend extends spelling CVC words sound by sound, with one more consonant."
+  },
+  {
+    "topicId": "aue_k_14",
+    "prerequisiteId": "aue_k_12",
+    "strength": "hard",
+    "reason": "ff, ll, ss, zz and ck each use two letters for one sound, the idea learnt with consonant digraphs."
+  },
+  {
+    "topicId": "aue_k_15",
+    "prerequisiteId": "aue_k_12",
+    "strength": "hard",
+    "reason": "Vowel digraphs and split digraphs use the idea, met first with consonant digraphs, that two letters can make one sound."
+  },
+  {
+    "topicId": "aue_k_19",
+    "prerequisiteId": "aue_k_18",
+    "strength": "soft",
+    "reason": "Knowing which group a word belongs to helps pick its meaning, such as bat the animal or bat for cricket."
+  },
+  {
+    "topicId": "aue_k_23",
+    "prerequisiteId": "aue_k_22",
+    "strength": "hard",
+    "reason": "Choosing an end mark builds on knowing that a sentence ends with a full stop."
+  },
+  {
+    "topicId": "aue_k_26",
+    "prerequisiteId": "aue_k_24",
+    "strength": "hard",
+    "reason": "A pronoun stands in for a noun, so children need to recognise nouns first."
+  },
+  {
+    "topicId": "aue_k_25",
+    "prerequisiteId": "aue_k_24",
+    "strength": "hard",
+    "reason": "An adjective describes a noun, so children need to find the noun first."
+  },
+  {
+    "topicId": "aue_k_25",
+    "prerequisiteId": "aue_k_20",
+    "strength": "soft",
+    "reason": "Everyday size words are early describing words."
+  },
+  {
+    "topicId": "aue_k_27",
+    "prerequisiteId": "aue_k_21",
+    "strength": "hard",
+    "reason": "A compound sentence joins two simple sentences, so children must recognise a simple sentence first."
+  },
+  {
+    "topicId": "aue_y1_02",
+    "prerequisiteId": "aue_k_08",
+    "strength": "hard",
+    "reason": "Changing a sound inside a blend extends changing one sound in a simple spoken word."
+  },
+  {
+    "topicId": "aue_y1_02",
+    "prerequisiteId": "aue_y1_01",
+    "strength": "soft",
+    "reason": "Deleting a sound from a blend needs the blend split into its sounds."
+  },
+  {
+    "topicId": "aue_y1_03",
+    "prerequisiteId": "aue_k_12",
+    "strength": "hard",
+    "reason": "ng, nk and wh are learnt after the first consonant digraphs sh, ch, th and ck."
+  },
+  {
+    "topicId": "aue_y1_04",
+    "prerequisiteId": "aue_k_13",
+    "strength": "hard",
+    "reason": "Longer blends extend the two-consonant blends of CCVC and CVCC words."
+  },
+  {
+    "topicId": "aue_y1_04",
+    "prerequisiteId": "aue_y1_01",
+    "strength": "hard",
+    "reason": "Spelling a longer blend needs every sound in it heard separately."
+  },
+  {
+    "topicId": "aue_y1_05",
+    "prerequisiteId": "aue_k_15",
+    "strength": "hard",
+    "reason": "Spelling vowel teams builds on reading them."
+  },
+  {
+    "topicId": "aue_y1_06",
+    "prerequisiteId": "aue_k_15",
+    "strength": "hard",
+    "reason": "Spelling split digraph words builds on reading them."
+  },
+  {
+    "topicId": "aue_y1_07",
+    "prerequisiteId": "aue_k_12",
+    "strength": "hard",
+    "reason": "ar, or and er are read as two letters making one sound, like consonant digraphs."
+  },
+  {
+    "topicId": "aue_y1_11",
+    "prerequisiteId": "aue_k_17",
+    "strength": "hard",
+    "reason": "A word family is built by adding endings such as -s, -ing and -ed to a base word."
+  },
+  {
+    "topicId": "aue_y2_01",
+    "prerequisiteId": "aue_y1_02",
+    "strength": "hard",
+    "reason": "Swapping sounds inside longer words extends changing sounds in one-syllable words with blends."
+  },
+  {
+    "topicId": "aue_y2_01",
+    "prerequisiteId": "aue_y1_04",
+    "strength": "soft",
+    "reason": "Changing a sound inside a blend in a printed word needs the child to read and spell longer blends."
+  },
+  {
+    "topicId": "aue_y2_04",
+    "prerequisiteId": "aue_y1_03",
+    "strength": "hard",
+    "reason": "The digraph ph and silent-letter pairs such as kn and wr build on the Year 1 digraphs."
+  },
+  {
+    "topicId": "aue_y2_05",
+    "prerequisiteId": "aue_y1_09",
+    "strength": "hard",
+    "reason": "Compound words are read part by part, like other two-syllable words."
+  },
+  {
+    "topicId": "aue_y2_05",
+    "prerequisiteId": "aue_k_16",
+    "strength": "soft",
+    "reason": "Children first meet simple compound words such as into and today as high-frequency words."
+  },
+  {
+    "topicId": "aue_y2_07",
+    "prerequisiteId": "aue_k_14",
+    "strength": "hard",
+    "reason": "tch and dge after a short vowel follow the same pattern as ck after a short vowel."
+  },
+  {
+    "topicId": "aue_y2_07",
+    "prerequisiteId": "aue_y1_08",
+    "strength": "soft",
+    "reason": "dge and ge spell the soft g sound, so children need to know that g can sound like j."
+  },
+  {
+    "topicId": "aue_y2_09",
+    "prerequisiteId": "aue_k_17",
+    "strength": "hard",
+    "reason": "Choosing between s and es builds on adding s to a base word."
+  },
+  {
+    "topicId": "aue_y2_10",
+    "prerequisiteId": "aue_k_17",
+    "strength": "hard",
+    "reason": "These rules apply when adding -ing and -ed, which children already add to base words that do not change."
+  },
+  {
+    "topicId": "aue_y2_10",
+    "prerequisiteId": "aue_y1_06",
+    "strength": "hard",
+    "reason": "The e that is dropped is the e of a split digraph, so children need to recognise split digraph words."
+  },
+  {
+    "topicId": "aue_y2_10",
+    "prerequisiteId": "aue_y2_06",
+    "strength": "soft",
+    "reason": "A doubled letter after a short vowel is a pattern children already know from words like rabbit."
+  },
+  {
+    "topicId": "aue_y2_11",
+    "prerequisiteId": "aue_k_17",
+    "strength": "hard",
+    "reason": "Adding -er and -est uses the same base-plus-ending idea as s, -ing and -ed."
+  },
+  {
+    "topicId": "aue_y2_11",
+    "prerequisiteId": "aue_k_25",
+    "strength": "soft",
+    "reason": "-er and -est are added to adjectives, so knowing adjectives helps."
+  },
+  {
+    "topicId": "aue_y2_16",
+    "prerequisiteId": "aue_k_19",
+    "strength": "hard",
+    "reason": "Most jokes and riddles work because a word has two meanings."
+  },
+  {
+    "topicId": "aue_y2_34",
+    "prerequisiteId": "aue_y1_15",
+    "strength": "soft",
+    "reason": "Working out what a non-literal phrase or a symbol means is a kind of inference."
+  },
+  {
+    "topicId": "aue_y2_17",
+    "prerequisiteId": "aue_k_25",
+    "strength": "hard",
+    "reason": "A noun group is built by adding adjectives to a noun."
+  },
+  {
+    "topicId": "aue_y2_18",
+    "prerequisiteId": "aue_k_24",
+    "strength": "hard",
+    "reason": "Finding a verb group starts from finding the doing word in a sentence."
+  },
+  {
+    "topicId": "aue_y2_24",
+    "prerequisiteId": "aue_k_22",
+    "strength": "hard",
+    "reason": "Capitals in titles extend capitals for names, and commas are added to sentences children can already mark."
+  },
+  {
+    "topicId": "aue_y2_26",
+    "prerequisiteId": "aue_k_26",
+    "strength": "hard",
+    "reason": "Tracking what a pronoun refers to needs the child to recognise pronouns."
+  },
+  {
+    "topicId": "aue_y2_14",
+    "prerequisiteId": "aue_y2_08",
+    "strength": "soft",
+    "reason": "Most contractions join two high-frequency words, so knowing those words helps."
+  },
+  {
+    "topicId": "aue_y2_14",
+    "prerequisiteId": "aue_k_17",
+    "strength": "soft",
+    "reason": "Telling the dog's bone from the dogs builds on knowing that s at the end can mean more than one."
+  },
+  {
+    "topicId": "aue_y2_22",
+    "prerequisiteId": "aue_k_20",
+    "strength": "hard",
+    "reason": "Prepositional phrases extend the everyday phrases for place and time learnt in Kindergarten."
+  },
+  {
+    "topicId": "aue_y2_23",
+    "prerequisiteId": "aue_k_27",
+    "strength": "hard",
+    "reason": "Complex sentences build on joining clauses with and, but and so."
+  },
+  {
+    "topicId": "aue_y2_25",
+    "prerequisiteId": "aue_k_23",
+    "strength": "hard",
+    "reason": "Spoken words keep their own end mark, so children need full stops, question marks and exclamation marks first."
+  },
+  {
+    "topicId": "aue_y2_20",
+    "prerequisiteId": "aue_k_17",
+    "strength": "soft",
+    "reason": "The past tense of regular verbs uses the -ed ending."
+  },
+  {
+    "topicId": "aue_y3_02",
+    "prerequisiteId": "aue_y2_02",
+    "strength": "hard",
+    "reason": "Less common vowel patterns are added to the common long vowel spellings already known."
+  },
+  {
+    "topicId": "aue_y3_02",
+    "prerequisiteId": "aue_y2_03",
+    "strength": "soft",
+    "reason": "augh and ough in caught and bought spell the same vowel sound as aw and au."
+  },
+  {
+    "topicId": "aue_y3_02",
+    "prerequisiteId": "aue_y2_04",
+    "strength": "soft",
+    "reason": "The gh in caught and bought is silent, so knowing silent letters helps."
+  },
+  {
+    "topicId": "aue_y3_03",
+    "prerequisiteId": "aue_y2_02",
+    "strength": "hard",
+    "reason": "Choosing between ai and ay by position needs both spellings of the sound first."
+  },
+  {
+    "topicId": "aue_y3_10",
+    "prerequisiteId": "aue_y2_19",
+    "strength": "hard",
+    "reason": "Choosing a precise verb needs the child to know the types of verb."
+  },
+  {
+    "topicId": "aue_y3_10",
+    "prerequisiteId": "aue_y2_15",
+    "strength": "soft",
+    "reason": "Choosing a precise verb is a case of choosing the best word."
+  },
+  {
+    "topicId": "aue_y3_11",
+    "prerequisiteId": "aue_y2_23",
+    "strength": "hard",
+    "reason": "Choosing a conjunction for its meaning builds on knowing how a complex sentence is joined."
+  },
+  {
+    "topicId": "aue_y3_12",
+    "prerequisiteId": "aue_y1_13",
+    "strength": "hard",
+    "reason": "An adverb group is built around a single adverb."
+  },
+  {
+    "topicId": "aue_y3_12",
+    "prerequisiteId": "aue_y2_22",
+    "strength": "soft",
+    "reason": "Many adverbial phrases are prepositional phrases (in the morning)."
+  },
+  {
+    "topicId": "aue_y3_13",
+    "prerequisiteId": "aue_y2_14",
+    "strength": "hard",
+    "reason": "Plural possession extends the apostrophe for one owner."
+  },
+  {
+    "topicId": "aue_y3_13",
+    "prerequisiteId": "aue_y2_09",
+    "strength": "hard",
+    "reason": "Placing the apostrophe for plural owners needs the plural spelling first."
+  },
+  {
+    "topicId": "aue_y3_07",
+    "prerequisiteId": "aue_y2_16",
+    "strength": "hard",
+    "reason": "Using context to choose a meaning builds on knowing that a word can have two meanings."
+  },
+  {
+    "topicId": "aue_y3_07",
+    "prerequisiteId": "aue_y2_28",
+    "strength": "soft",
+    "reason": "Working out a word from context is a kind of inference from clues in nearby sentences."
+  },
+  {
+    "topicId": "aue_y3_21",
+    "prerequisiteId": "aue_y2_34",
+    "strength": "hard",
+    "reason": "Similes and personification are kinds of figurative language."
+  },
+  {
+    "topicId": "aue_y3_21",
+    "prerequisiteId": "aue_y3_20",
+    "strength": "soft",
+    "reason": "Children meet literary devices such as onomatopoeia alongside similes."
+  },
+  {
+    "topicId": "aue_y4_05",
+    "prerequisiteId": "aue_y3_04",
+    "strength": "hard",
+    "reason": "These pairs extend the common homophones learnt in Year 3."
+  },
+  {
+    "topicId": "aue_y4_05",
+    "prerequisiteId": "aue_y2_14",
+    "strength": "hard",
+    "reason": "Telling its from it's or your from you're needs the child to know what the contraction stands for."
+  },
+  {
+    "topicId": "aue_y4_09",
+    "prerequisiteId": "aue_y2_34",
+    "strength": "hard",
+    "reason": "Idioms are non-literal phrases, so children need to know that some phrases are not meant literally."
+  },
+  {
+    "topicId": "aue_y4_08",
+    "prerequisiteId": "aue_y3_07",
+    "strength": "hard",
+    "reason": "A pun works only if the reader can hold two meanings of a word in context."
+  },
+  {
+    "topicId": "aue_y4_10",
+    "prerequisiteId": "aue_y2_17",
+    "strength": "hard",
+    "reason": "An adjectival clause adds detail to a noun group."
+  },
+  {
+    "topicId": "aue_y4_10",
+    "prerequisiteId": "aue_y3_11",
+    "strength": "soft",
+    "reason": "Like a clause after a subordinating conjunction, an adjectival clause cannot stand alone."
+  },
+  {
+    "topicId": "aue_y4_11",
+    "prerequisiteId": "aue_y3_11",
+    "strength": "hard",
+    "reason": "Text connectives link sentences in the way conjunctions link clauses."
+  },
+  {
+    "topicId": "aue_y4_11",
+    "prerequisiteId": "aue_y2_30",
+    "strength": "soft",
+    "reason": "Connectives often open paragraphs to link one idea to the next."
+  },
+  {
+    "topicId": "aue_y4_12",
+    "prerequisiteId": "aue_y2_20",
+    "strength": "hard",
+    "reason": "Keeping tense consistent across a text needs the child to recognise each tense."
+  },
+  {
+    "topicId": "aue_y4_13",
+    "prerequisiteId": "aue_y2_25",
+    "strength": "hard",
+    "reason": "Full dialogue punctuation builds on putting quotation marks around spoken words."
+  },
+  {
+    "topicId": "aue_y4_13",
+    "prerequisiteId": "aue_y3_09",
+    "strength": "soft",
+    "reason": "The spoken words keep the end mark of their sentence type."
+  },
+  {
+    "topicId": "aue_y4_13",
+    "prerequisiteId": "aue_y2_24",
+    "strength": "soft",
+    "reason": "Speech punctuation uses commas, which children first meet in lists."
+  },
+  {
+    "topicId": "aue_y4_16",
+    "prerequisiteId": "aue_y4_15",
+    "strength": "hard",
+    "reason": "Persuasive techniques work by presenting opinions as convincing, so children must spot opinions first."
+  },
+  {
+    "topicId": "aue_y4_16",
+    "prerequisiteId": "aue_y3_08",
+    "strength": "soft",
+    "reason": "Strong modal words are one of the techniques used to persuade."
+  },
+  {
+    "topicId": "aue_y4_22",
+    "prerequisiteId": "aue_y4_21",
+    "strength": "hard",
+    "reason": "Stages of expositions and explanations extend the stages of procedures, recounts and reports."
+  },
+  {
+    "topicId": "aue_y4_22",
+    "prerequisiteId": "aue_y4_16",
+    "strength": "soft",
+    "reason": "Each argument stage of an exposition uses persuasive techniques."
+  },
+  {
+    "topicId": "aue_y4_22",
+    "prerequisiteId": "aue_y4_17",
+    "strength": "soft",
+    "reason": "The steps of an explanation are a chain of causes and effects."
+  },
+  {
+    "topicId": "aue_y5_09",
+    "prerequisiteId": "aue_y3_21",
+    "strength": "hard",
+    "reason": "A metaphor is a comparison without like or as, so children need similes first."
+  },
+  {
+    "topicId": "aue_y5_09",
+    "prerequisiteId": "aue_y4_09",
+    "strength": "soft",
+    "reason": "Many idioms are fixed metaphors."
+  },
+  {
+    "topicId": "aue_y5_19",
+    "prerequisiteId": "aue_y4_22",
+    "strength": "hard",
+    "reason": "A discussion extends the exposition by setting out more than one side."
+  },
+  {
+    "topicId": "aue_y5_20",
+    "prerequisiteId": "aue_y4_16",
+    "strength": "hard",
+    "reason": "Choosing devices for an audience needs the persuasive devices themselves."
+  },
+  {
+    "topicId": "aue_y5_11",
+    "prerequisiteId": "aue_y3_11",
+    "strength": "hard",
+    "reason": "Finding the main and dependent clauses builds on the conjunctions that join them."
+  },
+  {
+    "topicId": "aue_y5_12",
+    "prerequisiteId": "aue_y4_10",
+    "strength": "hard",
+    "reason": "An expanded noun group often includes an adjectival clause."
+  },
+  {
+    "topicId": "aue_y5_13",
+    "prerequisiteId": "aue_y3_12",
+    "strength": "hard",
+    "reason": "The comma marks off an opening adverbial phrase, so children must find the phrase."
+  },
+  {
+    "topicId": "aue_y5_13",
+    "prerequisiteId": "aue_y4_13",
+    "strength": "soft",
+    "reason": "Placing commas in dialogue gives practice in using commas to separate parts of a sentence."
+  },
+  {
+    "topicId": "aue_y5_14",
+    "prerequisiteId": "aue_y3_13",
+    "strength": "hard",
+    "reason": "Plural and shared possession extend the apostrophe for plural owners."
+  },
+  {
+    "topicId": "aue_y5_14",
+    "prerequisiteId": "aue_y4_04",
+    "strength": "soft",
+    "reason": "Irregular plurals such as children take 's, so knowing them helps."
+  },
+  {
+    "topicId": "aue_y4_12",
+    "prerequisiteId": "aue_y2_21",
+    "strength": "soft",
+    "reason": "Keeping agreement and keeping tense across a text are checked together when editing."
+  },
+  {
+    "topicId": "aue_y3_05",
+    "prerequisiteId": "aue_y2_10",
+    "strength": "soft",
+    "reason": "Changing y to i is another rule for changing a base word before a suffix, like dropping e or doubling."
+  },
+  {
+    "topicId": "aue_y2_03",
+    "prerequisiteId": "aue_y1_07",
+    "strength": "soft",
+    "reason": "air and ear are vowel sounds spelt with r, like ar, or and er."
+  },
+  {
+    "topicId": "aue_y6_07",
+    "prerequisiteId": "aue_y5_09",
+    "strength": "hard",
+    "reason": "Hyperbole is figurative language, read the same way as metaphors: by what it suggests rather than what it says."
+  },
+  {
+    "topicId": "aue_y6_19",
+    "prerequisiteId": "aue_y5_19",
+    "strength": "hard",
+    "reason": "Seeing how a text mixes purposes needs the stages of single-purpose texts, including discussions."
+  },
+  {
+    "topicId": "aue_y6_08",
+    "prerequisiteId": "aue_y5_07",
+    "strength": "hard",
+    "reason": "Choosing an emotive word means choosing among words with different shades of meaning."
+  },
+  {
+    "topicId": "aue_y6_08",
+    "prerequisiteId": "aue_y4_16",
+    "strength": "soft",
+    "reason": "Emotive words are a key persuasive technique."
+  }
+]
