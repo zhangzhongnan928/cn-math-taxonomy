@@ -622,6 +622,7 @@
     const sync = function () {
       const un = S.status() === 'unavailable';
       btn.disabled = un;
+      if (un) btn.classList.remove('speaking');
       note.hidden = !un;
       note.textContent = un ? (q.say
         ? 'Read-aloud isn’t available on this device, so a grown-up needs to read the word.'

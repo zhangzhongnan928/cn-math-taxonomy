@@ -208,3 +208,10 @@ button.choice.picked .choice-key { background: var(--brand); color: var(--on-bra
 @media print {
   .speak-row, .say-reveal, .grown-up { display: none !important; }
 }
+
+/* The reused diagnose styles make this summary a flex box, which hides the disclosure arrow. */
+.chapter-browser > summary { list-style: none; gap: 8px; }
+.chapter-browser > summary::-webkit-details-marker { display: none; }
+.chapter-browser > summary::before { content: "\25B8"; color: var(--brand); transition: transform 0.15s; }
+.chapter-browser[open] > summary::before { transform: rotate(90deg); }
+#link-demo { color: var(--brand-strong); font-weight: 700; }
