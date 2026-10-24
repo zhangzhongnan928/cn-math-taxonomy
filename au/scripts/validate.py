@@ -298,7 +298,7 @@ def main():
             keys = [c.get("key") for c in ch]
             if keys != list("ABCD"[: len(ch)]):
                 err(f"{qid}: choice keys must be A, B, C(, D) in order")
-            texts = [norm_text(c.get("text", "")) for c in ch]
+            texts = [re.sub(r"\s+", " ", c.get("text", "")).strip() for c in ch]
             if len(set(texts)) != len(texts) and not all(c.get("figure") for c in ch):
                 err(f"{qid}: duplicate choice texts")
             if ans not in keys:

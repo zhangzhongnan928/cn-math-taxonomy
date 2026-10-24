@@ -86,6 +86,8 @@ The Australian edition is a separate, English-only site under `au/`. It shares n
 | `figure` | Optional inline SVG string (`<svg viewBox=…>`, uses `currentColor`, no external references, no script). |
 | `explanation` | 1–3 sentences shown after answering, kind and plain. |
 | `verify` | numeric: a Python expression that evaluates to the answer (`"109 + 1"`, `"Fraction(3, 4)"`). choice and short: the correct answer text as a Python string literal (`"'ship'"`). Checked by `au/scripts/validate.py`. |
+| `readChoices` | Optional, `false` on choice items where hearing the options would give the answer away (spelling, decoding, punctuation). The read-aloud button then reads only the prompt. Set automatically for English choice items in the Spelling and Phonics strands, punctuation topics, and options that differ only slightly. |
+| `readAloud` | Optional, `false` on reading items from Year 3 with a passage in the prompt: no read-aloud button, so the item tests reading rather than listening. |
 | `unordered` | numeric with several answers where order does not matter. |
 
 ## standards.json

@@ -599,7 +599,10 @@
 
   function speechParts(q) {
     const parts = [q.say ? q.say : q.prompt];
-    if (q.type === 'choice') (q.choices || []).forEach(function (c) { parts.push(c.key + ', ' + c.text); });
+    if (q.type !== 'choice') return parts;
+    // readChoices: false marks items where hearing the options would give the answer away (spelling, punctuation, decoding).
+    if (q.readChoices === false) parts.push('Read the answers on the screen and pick one.');
+    else (q.choices || []).forEach(function (c) { parts.push(c.key + ', ' + c.text); });
     return parts;
   }
   function speakQuestion(q, btn) {
@@ -652,7 +655,8 @@
     if (ui.key !== key) ui = { key: key, phase: 'ask', answer: '', verdict: null, picked: null, spoken: null };
     const n = session.answers.length;
     const young = isYoung(t);
-    const autoRead = readAloudOn(t);
+    // readAloud: false marks reading items (passages from Year 3) where listening would replace reading.
+    const autoRead = q.readAloud !== false && readAloudOn(t);
     const card = h('div', { class: 'card q-card' + (young ? ' young' : ''), id: 'q-card', 'data-qid': q.id });
     A.append(card, 
       h('div', { class: 'row' },
@@ -667,7 +671,8 @@
         item.attempt === 2 ? tag('shaky', 'Second try') : null),
       h('div', { class: 'reason muted', text: reasonFor(item) }));
     if (item.attempt === 2 && ui.phase === 'ask') A.append(card, h('p', { class: 'feedback-kind skip', text: 'Let’s try another one!' }));
-    A.append(card, speechControls(q));
+    if (q.readAloud !== false) A.append(card, speechControls(q));
+    else A.append(card, h('p', { class: 'muted small no-print', text: 'Reading check: read this one by yourself.' }));
     A.append(card, h('div', { class: 'q-text', id: 'q-text', text: q.prompt }));
     const fig = A.figureEl(q.figure);
     if (fig) A.append(card, fig);
