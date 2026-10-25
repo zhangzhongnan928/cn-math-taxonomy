@@ -19257,8 +19257,7 @@
     ],
     "answer": "C",
     "explanation": "The word is wheel: wh-ee-l. A bike has two wheels.",
-    "verify": "'a round part that helps a bike roll'",
-    "readChoices": false
+    "verify": "'a round part that helps a bike roll'"
   },
   {
     "id": "aue_y1_04_q1",
@@ -19294,8 +19293,7 @@
     ],
     "answer": "A",
     "explanation": "The word is s-p-l-a-sh, splash. You make a splash when you jump into water.",
-    "verify": "'the sound of jumping into water'",
-    "readChoices": false
+    "verify": "'the sound of jumping into water'"
   },
   {
     "id": "aue_y1_04_q3",
@@ -19450,8 +19448,7 @@
     ],
     "answer": "C",
     "explanation": "The word is cape. The e on the end makes the a say its name, so it is not cap.",
-    "verify": "'a long cloth a superhero wears'",
-    "readChoices": false
+    "verify": "'a long cloth a superhero wears'"
   },
   {
     "id": "aue_y1_06_q4",
@@ -19711,8 +19708,7 @@
     ],
     "answer": "C",
     "explanation": "The word splits into rock and et: rocket. A rocket flies into space.",
-    "verify": "'a ship that flies into space'",
-    "readChoices": false
+    "verify": "'a ship that flies into space'"
   },
   {
     "id": "aue_y1_09_q4",
