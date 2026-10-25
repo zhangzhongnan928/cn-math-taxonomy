@@ -1,9 +1,9 @@
 /* Offline cache for the K-6 Learning Map (scope: au/).
- * Pages and scripts: network first, cache when offline. Data and icons: cache first, refreshed in the background.
+ * Pages, scripts and data: network first, cache when offline. Icons and the manifest: cache first, refreshed in the background.
  * Bump VERSION whenever SHELL or DATA changes or the data format changes. */
 'use strict';
 
-var VERSION = 'v1';
+var VERSION = 'v2';
 var PREFIX = 'au-pwa-';
 var CACHE = PREFIX + VERSION;
 var SCOPE = self.registration.scope;
@@ -17,6 +17,7 @@ var SHELL = [
   'diagnose/app.js',
   'diagnose/share.js',
   'kids/',
+  'about/',
   'kids/history.html',
   'kids/page.js',
   'kids/history.js',
@@ -117,6 +118,11 @@ self.addEventListener('fetch', function (event) {
   if (url.pathname === new URL(abs('sw.js')).pathname) return;
   if (req.mode === 'navigate') {
     event.respondWith(networkFirst(req, true, abs('./')));
+    return;
+  }
+  // Data: network first, so fixed questions reach an installed iPad on its next launch; the cache covers offline use.
+  if (/\/data\/[^/]+\.json$/.test(url.pathname)) {
+    event.respondWith(networkFirst(req, false, null));
     return;
   }
   if (/\.(?:json|png|svg|ico|webmanifest)$/.test(url.pathname)) {

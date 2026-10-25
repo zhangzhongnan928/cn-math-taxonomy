@@ -5,7 +5,6 @@
 
   var SUBJECTS = { maths: 'Maths', english: 'English' };
   var YEARS = [0, 1, 2, 3, 4, 5, 6];
-  var ABOUT_URL = 'https://github.com/zhangzhongnan928/cn-math-taxonomy/tree/main/au';
 
   function yearLabel(y) { return y === 0 ? 'Kindergarten' : (typeof y === 'number' && y > 0 ? 'Year ' + y : ''); }
   function yearShort(y) { return y === 0 ? 'K' : 'Year ' + y; }
@@ -166,7 +165,7 @@
   }
 
   window.AU = {
-    SUBJECTS: SUBJECTS, YEARS: YEARS, ABOUT_URL: ABOUT_URL,
+    SUBJECTS: SUBJECTS, YEARS: YEARS,
     yearLabel: yearLabel, yearShort: yearShort, stageOf: stageOf, bandOf: bandOf,
     subjectOfTopic: subjectOfTopic, subjectOfId: subjectOfId, detectSubject: detectSubject,
     withSubject: withSubject, applyChrome: applyChrome,

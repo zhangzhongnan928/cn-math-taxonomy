@@ -215,3 +215,55 @@ button.choice.picked .choice-key { background: var(--brand); color: var(--on-bra
 .chapter-browser > summary::before { content: "\25B8"; color: var(--brand); transition: transform 0.15s; }
 .chapter-browser[open] > summary::before { transform: rotate(90deg); }
 #link-demo { color: var(--brand-strong); font-weight: 700; }
+
+/* ---------------------------------------------------------------- about */
+main.about { width: min(760px, 100%); margin: 0 auto; padding: 20px 16px 56px; }
+.about h1 { margin: 0 0 8px; font-size: 1.5rem; }
+.about .lede { color: var(--muted); margin: 0 0 16px; }
+.about-card { background: var(--bg-elev); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; margin-bottom: 12px; }
+.about-card h2 { margin: 0 0 6px; font-size: 1.15rem; }
+.about-card p { margin: 6px 0; }
+.about-source { margin-top: 18px; }
+.about-source a { color: var(--brand-strong); font-weight: 650; }
+
+/* ---------------------------------------------------------------- check-up additions */
+.stat .stat-sub { display: block; font-size: 0.78rem; font-weight: 650; opacity: 0.85; margin-top: 2px; }
+#grade-card.highlight { box-shadow: 0 0 0 3px var(--brand); }
+.q-gate { text-align: center; padding: 28px 18px 18px; }
+.q-gate .gate-title { font-size: 1.7rem; margin: 6px 0 6px; }
+.q-gate .gate-sub { color: var(--muted); font-size: 1.1rem; margin: 0 0 18px; }
+button.gate-btn { min-height: 76px; min-width: min(320px, 100%); padding: 14px 28px; font-size: 1.5rem; font-weight: 800; border-radius: 999px; }
+button.gate-btn .ico { font-size: 1.2em; }
+.q-gate .grown-up { text-align: left; }
+.grown-up .child-bar { margin: 6px 0 8px; }
+button.speak-btn.nudge { animation: au-nudge 1.2s ease-in-out 3; }
+@keyframes au-nudge { 50% { box-shadow: 0 0 0 6px var(--brand-soft); } }
+/* Keep the answer buttons in reach on small screens, and always for young children. */
+.young .sticky-actions {
+  position: sticky; bottom: 0; z-index: 5;
+  background: var(--bg-elev);
+  margin: 12px -16px 0; padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+  border-top: 1px solid var(--line);
+}
+@media (max-width: 900px) {
+  .sticky-actions {
+    position: sticky; bottom: 0; z-index: 5;
+    background: var(--bg-elev);
+    margin: 12px -12px 0; padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid var(--line);
+  }
+}
+@media print { .sticky-actions { position: static; } .q-gate { display: none; } }
+
+/* ---------------------------------------------------------------- kids form */
+.year-pick { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.year-pick button { min-width: 64px; min-height: 52px; font-size: 1.05rem; }
+.year-pick button[aria-checked="true"] { background: var(--brand); color: var(--on-brand); border-color: transparent; }
+.kid-ios-note { background: var(--warn-bg); color: var(--text); border-radius: var(--radius-sm); padding: 10px 12px; margin: 0 0 14px; font-size: 0.95rem; }
+.kid-form .label { display: block; margin: 12px 0 4px; font-weight: 700; }
+@media (max-width: 560px) {
+  .sticky-actions { gap: 8px; }
+  .sticky-actions > .primary, .sticky-actions > .good { flex: 1 1 100%; }
+  .sticky-actions > button:not(.primary):not(.good) { flex: 1 1 0; min-width: 0; padding: 8px 10px; }
+  .young .sticky-actions > button:not(.primary):not(.good) { min-height: 50px; font-size: 1rem; }
+}

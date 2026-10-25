@@ -609,11 +609,47 @@ test('subjectOf: the subject field first, then the aum_/aue_ prefix', () => {
   assert.strictEqual(E.subjectOf(null), 'maths');
 });
 
-test('groupOf: year + strand + focus area', () => {
+test('groupOf: one group per focus area per year, whatever the strand', () => {
   const g = E.groupOf({ year: 1, strand: 'Number', focusArea: 'Representing whole numbers' });
-  assert.strictEqual(g.key, '1|Number|Representing whole numbers');
-  assert.strictEqual(g.label, 'Year 1 · Number · Representing whole numbers');
-  assert.strictEqual(E.groupOf({ year: 2, strand: 'Spelling', focusArea: 'Spelling' }).label, 'Year 2 · Spelling');
+  assert.strictEqual(g.key, '1|Representing whole numbers');
+  assert.strictEqual(g.label, 'Year 1 \u00b7 Representing whole numbers');
+  assert.strictEqual(E.groupOf({ year: 1, strand: 'Algebra', focusArea: 'Representing whole numbers' }).key, g.key);
+  assert.strictEqual(E.groupOf({ year: 2, strand: 'Spelling', focusArea: 'Spelling' }).label, 'Year 2 \u00b7 Spelling');
+});
+
+test('screenOrder: strands take turns, foundation strands first, each strand in teaching order', () => {
+  const ts = [
+    { id: 'm1', strand: 'Measurement' }, { id: 'n1', strand: 'Number' }, { id: 's1', strand: 'Space' },
+    { id: 'n2', strand: 'Number' }, { id: 'm2', strand: 'Measurement' }, { id: 'n3', strand: 'Number' }, { id: 'x1', strand: 'Other' }
+  ].map((t) => mk(t.id, t));
+  const g = E.buildGraph(ts, [{ topicId: 'n2', prerequisiteId: 'n1', strength: 'hard' }]);
+  assert.deepStrictEqual(E.screenOrder(g, ts.map((t) => t.id)), ['n1', 'm1', 's1', 'x1', 'n2', 'm2', 'n3']);
+  const s = E.createSession(g, ts.map((t) => t.id), { mode: 'screen' });
+  assert.strictEqual(E.nextQuestion(g, s), 'n1', 'the first question is the first Number skill');
+  assert.deepStrictEqual(E.createSession(g, ['n1', 'n2']).stack, ['n2', 'n1'], 'target mode still asks the furthest skill first');
+  const en = ['Text and literature', 'Spelling', 'Phonics and word recognition', 'Phonological awareness'].map((st, i) => mk('e' + i, { strand: st }));
+  assert.deepStrictEqual(E.screenOrder(E.buildGraph(en, []), ['e0', 'e1', 'e2', 'e3']), ['e3', 'e2', 'e1', 'e0']);
+});
+
+test('money: cents and dollars convert when the prompt says which the answer is in', () => {
+  const dollars = { type: 'numeric', answer: '3.5', prompt: 'A pie costs $2 and a drink $1.50. How much altogether, in dollars?' };
+  ['350c', '350 cents', '350\u00a2', '3 dollars 50', '$3 and 50c', '3 dollars and 50 cents', '$3 50', '$3.50', '3.50', '3.5', '$3.50.'].forEach((u) => {
+    assert.strictEqual(j(dollars, u), 'correct', u);
+  });
+  ['305c', '$3.05', '35c', '$35', '350', '3 dollars 5'].forEach((u) => assert.strictEqual(j(dollars, u), 'wrong', u));
+  const cents = { type: 'numeric', answer: '350', prompt: 'How many cents is $3.50?' };
+  ['$3.50', '$3.5', '350c', '350', '3 dollars 50'].forEach((u) => assert.strictEqual(j(cents, u), 'correct', u));
+  ['$35', '$350', '35c'].forEach((u) => assert.strictEqual(j(cents, u), 'wrong', u));
+  assert.strictEqual(E.moneyUnitOf({ prompt: 'Ben has 50c and $2. How much in cents?' }), 'c');
+  assert.strictEqual(E.moneyUnitOf({ prompt: 'Ben has 50c and $2. How much in dollars?' }), '$');
+  assert.strictEqual(E.moneyUnitOf({ prompt: 'Ben has 50c and $2. How much does he have?' }), null);
+  assert.strictEqual(E.moneyUnitOf({ prompt: 'How many apples?' }), null);
+  // unclear prompt: no conversion, the plain value rules apply
+  const unclear = { type: 'numeric', answer: '2.5', prompt: 'Ben has 50c and $2. How much does he have?' };
+  assert.strictEqual(j(unclear, '$2.50'), 'correct');
+  assert.strictEqual(j(unclear, '250c'), 'wrong');
+  assert.strictEqual(E.moneyCents('3 dollars 50'), 350);
+  assert.strictEqual(E.moneyCents('12'), null);
 });
 
 /* ------------------------------------------------------------ dataset checks (fixtures, and au/data when present) */
@@ -887,7 +923,7 @@ function datasetSuite(label, data, opts) {
     });
   });
 
-  test(label + ': chapterSummary groups by year + strand + focus area, weakest first', () => {
+  test(label + ': chapterSummary groups by year + focus area, weakest first', () => {
     years.forEach(([subj, y, g]) => {
       const s = screenRun(g.ids, indexStudent, 40);
       const sum = E.summarize(RG, s);
@@ -896,9 +932,11 @@ function datasetSuite(label, data, opts) {
       chs.forEach((c) => {
         assert.strictEqual(c.mastered + c.shaky + c.weak + c.untested, c.total);
         assert.strictEqual(c.year, y);
+        assert.strictEqual(c.right + c.assumed, c.mastered);
         c.weakIds.concat(c.shakyIds, c.untestedIds).forEach((id) => {
           const t = RG.byId[id];
-          assert.strictEqual(c.key, t.year + '|' + t.strand + '|' + t.focusArea);
+          assert.strictEqual(c.key, t.year + '|' + t.focusArea);
+          assert.ok(c.strands.includes(t.strand));
         });
       });
       assert.strictEqual(chs.reduce((n, c) => n + c.weak, 0), sum.weak.length);
@@ -906,6 +944,19 @@ function datasetSuite(label, data, opts) {
       for (let i = 1; i < chs.length; i++) {
         assert.ok(chs[i - 1].weak > chs[i].weak || (chs[i - 1].weak === chs[i].weak && chs[i - 1].shaky >= chs[i].shaky));
       }
+    });
+  });
+
+  test(label + ': screening opens with the first foundation-strand skill of the year and samples every strand early', () => {
+    years.forEach(([subj, y, g]) => {
+      const s = E.createSession(RG, g.ids, { mode: 'screen' });
+      const first = RG.byId[E.nextQuestion(RG, s)];
+      const strands = Array.from(new Set(g.ids.map((id) => RG.byId[id].strand)));
+      const order = STRANDS[subj].filter((x) => strands.includes(x));
+      assert.strictEqual(first.strand, order[0], subj + ' year ' + y + ' starts in ' + first.strand);
+      assert.strictEqual(first.id, g.ids.find((id) => RG.byId[id].strand === order[0]), subj + ' year ' + y + ' starts with the first skill of its strand');
+      const head = s.stack.slice(0, strands.length).map((id) => RG.byId[id].strand);
+      assert.strictEqual(new Set(head).size, strands.length, subj + ' year ' + y + ': each strand once in the first round');
     });
   });
 
@@ -938,8 +989,10 @@ test('fixtures: Year 6 percentages backtracks through fractions to Year 3 and or
   assert.deepStrictEqual(sum.roots.map((r) => r.id), ['aum_y3_02']);
   assert.deepStrictEqual(sum.path.map((p) => p.id), ['aum_y3_02', 'aum_y4_01', 'aum_y6_01']);
   const chs = E.chapterSummary(FX, E.createSession(FX, E.gradeTargets(FX, 'Year 6').ids, { mode: 'screen' }));
-  assert.ok(chs.some((c) => c.focusArea === 'Geometric measure' && c.strand === 'Measurement'));
-  assert.ok(chs.some((c) => c.focusArea === 'Geometric measure' && c.strand === 'Space'), 'strand is part of the key');
+  const gm = chs.filter((c) => c.focusArea === 'Geometric measure');
+  assert.strictEqual(gm.length, 1, 'one row per focus area per year');
+  assert.deepStrictEqual(gm[0].strands, ['Measurement', 'Space']);
+  assert.strictEqual(gm[0].total, 2);
 });
 
 test('fixtures: the say question and the figure question exist and are well formed', () => {

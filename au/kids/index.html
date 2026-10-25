@@ -31,13 +31,14 @@
       <a class="nav-link page-link" href="../explore/">Skill map</a>
       <a class="nav-link page-link" href="../diagnose/">Check-up</a>
       <a class="nav-link page-link active" href="./" aria-current="page">Kids</a>
-      <a class="nav-link" href="https://github.com/zhangzhongnan928/cn-math-taxonomy/tree/main/au" target="_blank" rel="noopener noreferrer">About</a>
+      <a class="nav-link page-link" href="../about/">About</a>
     </div>
   </nav>
 </header>
 <main class="kids" id="root">
   <h1>Kids</h1>
   <p class="lede">Add a profile for each child. Pick who is answering before a check-up and the results are saved to that child, so you can look back at each check-up and see what still needs work.</p>
+  <p class="kid-ios-note" id="ios-note">On an iPad or iPhone, the Home Screen app keeps its own list of kids, separate from Safari. Add to Home Screen first, then add your kids inside the app.</p>
   <div id="banner" aria-live="polite"></div>
   <p id="back" class="quiet-link" hidden></p>
   <div id="list" aria-live="polite"></div>
@@ -46,8 +47,8 @@
     <form id="form" novalidate>
       <label for="f-name">Name</label>
       <input id="f-name" type="text" maxlength="20" autocomplete="off" autocapitalize="words" placeholder="First name or nickname">
-      <label for="f-year">School year</label>
-      <select id="f-year"></select>
+      <span class="label" id="f-year-label">School year</span>
+      <div class="year-pick" id="f-year" role="radiogroup" aria-labelledby="f-year-label"></div>
       <p class="err" id="f-error" role="alert" hidden></p>
       <div class="form-actions">
         <button type="submit" class="primary" id="f-submit">Add kid</button>
@@ -58,7 +59,7 @@
   <p class="muted small kid-note">Profiles and results are kept only in this browser on this device. Nothing is uploaded and there is no account. Clearing the browser’s data, or using another device, starts afresh.</p>
 </main>
 <footer class="site-footer">
-  <p><a href="https://github.com/zhangzhongnan928/cn-math-taxonomy/tree/main/au" target="_blank" rel="noopener noreferrer">About this site</a></p>
+  <p><a class="page-link" href="../about/">About this site</a></p>
 </footer>
 <script src="../assets/common.js"></script>
 <script src="../assets/kids.js"></script>

@@ -95,6 +95,8 @@
       u.onerror = function (ev) {
         var err = ev && ev.error;
         if (my === token) { speaking = false; if (o.onend) o.onend(); }
+        // 'not-allowed': the browser wants speech to start inside a tap (iPad Safari). Not a failure of speech itself.
+        if (err === 'not-allowed') { if (my === token && o.onblocked) o.onblocked(); return; }
         if (err && ['synthesis-unavailable', 'synthesis-failed', 'audio-hardware', 'language-unavailable', 'voice-unavailable'].indexOf(err) >= 0) {
           setState('unavailable');
         }

@@ -10,7 +10,8 @@ Open `au/` on the site (for example `https://<site>/au/`). It is a separate site
 - **Check-up** (`au/diagnose/`): pick a skill or a whole year. The check-up asks about the skill first. A wrong answer gets a second, easier question; a second miss walks back along the prerequisites until it finds where the gap starts. The result lists what to practise next, earliest year first.
 - **Kids** (`au/kids/`): one profile per child (Kindergarten to Year 6). Check-ups are saved per child, on this device only. To create profiles in one step, open `au/kids/?add=Name:1,OtherName:6` (`K` for Kindergarten). Names live only in that link and in the browser's local storage, never in the repository.
 - **Read-aloud**: every question has a 🔊 button (speech synthesis, Australian voice when available), on by default for Kindergarten to Year 2. Spelling dictation speaks the word without showing it. Items where hearing the options would give the answer away (spelling, decoding, punctuation) read only the prompt, and reading-comprehension passages from Year 3 are not read aloud.
-- Works on iPad and phones, and can be added to the home screen (PWA, scope `au/`).
+- Works on iPad and phones, and can be added to the home screen (PWA, scope `au/`). On iPad and iPhone the home-screen app keeps its own storage, separate from Safari: add it to the home screen first, then add the kids inside the app.
+- Whole-year check-ups take turns across strands in teaching order, starting with an easy core skill (24 questions by default for K–Year 2, 40 from Year 3).
 
 ## What is in the data
 
@@ -39,6 +40,11 @@ Checks that were run:
 - `python3 au/scripts/validate.py`: schema, ids, curriculum codes, acyclic graph, prerequisite year order, 4 questions per skill with the difficulty mix the engine needs, `verify` expressions recomputed against every numeric answer, duplicate prompts, Australian spelling. Passes with 0 errors.
 - `node au/tests/test_engine.js`: engine unit tests plus property tests on the real data (a simulated student who knows exactly a given set of skills is diagnosed exactly; every answer key is marked correct by the engine). 77 passing.
 - Every question was solved again by an independent reviewer who saw only what the child sees (no answer key), with every figure rendered. Across all 1608 questions this found 1 wrong answer key (fixed) and 32 flagged items: ambiguous wording, possibly above year level, or giving the answer away when read aloud. 26 were fixed or guarded; the other 6 were year-level flags that the NSW syllabus places in that year (for example millimetres and tenths in Year 3), so they stayed.
+
+## Known limitations
+
+- Numeric answers are compared by value, so where a question asks for a particular form (a decimal, a mixed numeral) an equivalent form is also accepted. Fill-the-gap and multiple-choice items are used where the form is the point.
+- Read-aloud was tested with a simulated speech engine; it has not been heard on a real iPad yet.
 
 ## Running locally
 

@@ -23,30 +23,35 @@
   demo.textContent = 'See a demo first (a pretend child answers a ' + name + ' check-up)';
 
   var kids = K.list();
-  function kidForYear(y) {
-    var cur = K.current();
-    if (cur && cur.year === y) return cur;
-    return kids.filter(function (k) { return k.year === y; })[0] || null;
+  function yParam(y) { return y === 0 ? 'K' : String(y); }
+  function limitFor(y) { return y <= 2 ? 24 : 40; }
+
+  /** Year-grid check-ups: straight in for the one kid in that year; otherwise the start page, to pick who is answering. */
+  function yearHref(y) {
+    var inYear = kids.filter(function (k) { return k.year === y; });
+    if (inYear.length === 1) return w('diagnose/?year=' + yParam(y) + '&kid=' + encodeURIComponent(inYear[0].id));
+    return w('diagnose/?pick=' + yParam(y));
   }
 
-  function checkHref(y) {
-    var kid = kidForYear(y);
-    return w('diagnose/?year=' + (y === 0 ? 'K' : y) + (kid ? '&kid=' + encodeURIComponent(kid.id) : ''));
-  }
-
-  function quickCard(y, count) {
-    var kid = kidForYear(y);
-    var limit = y <= 2 ? 20 : 40;
-    return h('a', { class: 'quick-card', href: checkHref(y), id: 'quick-y' + y },
-      h('span', { class: 'qc-kicker', text: name + (kid ? ' · for ' + kid.name : '') }),
+  function quickCard(y, kid, count) {
+    var read = kid ? K.readAloudFor(kid) : y <= 2;
+    return h('a', {
+      class: 'quick-card', id: kid ? 'quick-kid-' + kid.id : 'quick-y' + y, 'data-year': String(y),
+      href: w('diagnose/?year=' + yParam(y) + (kid ? '&kid=' + encodeURIComponent(kid.id) : ''))
+    },
+      h('span', { class: 'qc-kicker', text: name + (kid ? ' \u00b7 for ' + kid.name : '') }),
       h('span', { class: 'qc-title', text: A.yearLabel(y) + ' check-up' }),
-      h('span', { class: 'qc-sub', text: (count != null ? A.plural(count, 'skill') + ' in ' + A.yearLabel(y) + '. ' : '') + 'Up to ' + limit + ' questions' + (y <= 2 ? ', read aloud.' : '.') }),
+      h('span', { class: 'qc-sub', text: (count != null ? A.plural(count, 'skill') + ' in ' + A.yearLabel(y) + '. ' : '') + 'Up to ' + limitFor(y) + ' questions' + (read ? ', read aloud.' : '.') }),
       h('span', { class: 'qc-go', text: 'Start' }));
   }
 
+  /** One card per kid at their year; with no kids yet, Year 1 and Year 6. */
   var quick = document.getElementById('quick');
   function renderQuick(counts) {
-    quick.replaceChildren(quickCard(1, counts ? counts[1] : null), quickCard(6, counts ? counts[6] : null));
+    var cards = kids.length
+      ? kids.map(function (k) { return quickCard(k.year, k, counts ? counts[k.year] : null); })
+      : [quickCard(1, null, counts ? counts[1] : null), quickCard(6, null, counts ? counts[6] : null)];
+    quick.replaceChildren.apply(quick, cards);
   }
   renderQuick(null);
 
@@ -89,7 +94,7 @@
         h('span', { class: 'yc-count', text: A.plural(list.length, 'skill') + (sCount ? ' · ' + A.plural(sCount, 'strand') : '') }),
         h('div', { class: 'yc-links' },
           h('a', { class: 'btn', href: w('explore/?year=' + y), text: 'Explore' }),
-          list.length ? h('a', { class: 'btn btn-primary', href: checkHref(y), text: 'Check-up' }) : null)));
+          list.length ? h('a', { class: 'btn btn-primary', href: yearHref(y), text: 'Check-up' }) : null)));
     });
   }).catch(function (error) {
     ['n-topics', 'n-edges', 'n-questions', 'n-standards'].forEach(function (id) { setText(id, '–'); });

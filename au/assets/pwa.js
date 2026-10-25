@@ -130,6 +130,7 @@
     var panel = el('div', 'pwa-sheet');
     panel.appendChild(el('h2', 'pwa-sheet-title', 'Add to Home Screen'));
     panel.appendChild(el('p', 'pwa-sheet-lead', 'Once it is on the Home Screen, the kids can open it with one tap, full screen like an app. The skill map works without internet too.'));
+    panel.appendChild(el('p', 'pwa-sheet-lead pwa-sheet-tip', 'The Home Screen app keeps its own storage, separate from Safari. Add to Home Screen first, then add your kids inside the app.'));
     var steps = [
       ['Tap the Share button ' + (isIPad ? 'next to the address bar' : 'in the toolbar at the bottom'), 'It looks like a square with an arrow pointing up.'],
       ['Scroll the menu and tap “Add to Home Screen”', 'If you cannot see it, scroll right to the bottom of the list.'],

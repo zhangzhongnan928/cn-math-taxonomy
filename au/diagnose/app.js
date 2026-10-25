@@ -44,6 +44,7 @@
   let shareToken = 0;
   let speechUnsub = null;     // listener of the question on screen
   let nextSpeechUnsub = null; // listener of the question being built
+  let speechGestured = false; // a tap or key press has happened on this page, so speech may start
 
   /* ------------------------------------------------------------ small helpers */
   function w(href) { return A.withSubject(href, subject); }
@@ -64,11 +65,11 @@
     return { limit: limit, screenLimit: screenLimit, readAloud: typeof st.readAloud === 'boolean' ? st.readAloud : null };
   }
   function setSetting(k, v) { const st = A.lsGet(LS_SETTINGS) || {}; st[k] = v; A.lsSet(LS_SETTINGS, st); }
-  /** Whole-year limit: the saved setting, otherwise 20 for K to Year 2 and 40 from Year 3. */
+  /** Whole-year limit: the saved setting, otherwise 24 for K to Year 2 and 40 from Year 3. */
   function screenLimitFor(year) {
     const st = getSettings();
     if (st.screenLimit) return st.screenLimit;
-    return year != null && year <= 2 ? 20 : E.SCREEN_LIMIT;
+    return year != null && year <= 2 ? 24 : E.SCREEN_LIMIT;
   }
 
   /** Read aloud: the kid's setting (default on for K to Year 2); without a kid, the saved choice or the question's year. */
@@ -153,7 +154,8 @@
       if (!y) { y = byYear[t.year] = { year: t.year, groups: [], byKey: {} }; years.push(y); }
       const g0 = E.groupOf(t);
       let g = y.byKey[g0.key];
-      if (!g) { g = y.byKey[g0.key] = { key: g0.key, year: t.year, strand: g0.strand, focusArea: g0.focusArea, label: g0.label, topics: [] }; y.groups.push(g); }
+      if (!g) { g = y.byKey[g0.key] = { key: g0.key, year: t.year, strand: g0.strand, strands: [], focusArea: g0.focusArea, label: g0.label, topics: [] }; y.groups.push(g); }
+      if (g0.strand && g.strands.indexOf(g0.strand) < 0) g.strands.push(g0.strand);
       g.topics.push(t);
     });
     years.sort(function (a, b) { return a.year - b.year; });
@@ -256,8 +258,26 @@
     if (demo || !session) return;
     A.lsSet(sessionKeyFor(sessionMeta.kidId), {
       v: 1, mode: session.mode, targets: session.targets, limit: session.limit, label: sessionMeta.label, url: sessionMeta.url,
-      answers: session.answers, seed: session.seed, avoid: session.avoid, kidId: sessionMeta.kidId, savedAt: new Date().toISOString()
+      answers: session.answers, seed: session.seed, avoid: session.avoid, kidId: sessionMeta.kidId,
+      done: E.nextItem(D.graph, session) === null, savedAt: new Date().toISOString()
     });
+  }
+
+  /** The saved check-up for a kid in this subject: {saved, unfinished}, or null when there is none (or it is broken). */
+  function savedState(kidId) {
+    const saved = A.lsGet(sessionKeyFor(kidId));
+    if (!saved || !Array.isArray(saved.targets) || !saved.targets.every(function (id) { return D.graph.byId[id]; })) return null;
+    try {
+      const s0 = E.replay(D.graph, saved.targets, saved.answers || [], { mode: saved.mode, limit: saved.limit, seed: saved.seed, avoid: saved.avoid });
+      return { saved: saved, unfinished: E.nextItem(D.graph, s0) !== null };
+    } catch (e) { return null; }
+  }
+  function sameTargets(saved, ids, mode) {
+    return JSON.stringify(saved.targets) === JSON.stringify(Array.from(new Set(ids))) && (saved.mode || 'target') === (mode || 'target');
+  }
+  function unfinishedText(st, kid) {
+    return (kid ? kid.name + ' has' : 'There is') + ' an unfinished check-up: ' + (st.saved.label || st.saved.targets.map(nameOf).join(', ')) +
+      ' (' + A.plural((st.saved.answers || []).length, 'answer') + ' so far).';
   }
 
   function setUrl(spec) {
@@ -268,10 +288,15 @@
     history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
   }
 
-  function startSession(targets, label, limit, mode, urlSpec) {
+  function startSession(targets, label, limit, mode, urlSpec, force) {
+    const kid = currentKid();
+    if (!force && !demo) {
+      const st = savedState(kid ? kid.id : null);
+      if (st && st.unfinished && !sameTargets(st.saved, targets, mode) &&
+          !confirm(unfinishedText(st, kid) + '\n\nStart a new check-up and throw that one away?')) return;
+    }
     pathExpanded = false;
     const screen = mode === 'screen';
-    const kid = currentKid();
     session = E.createSession(D.graph, targets, {
       mode: mode, limit: limit || (screen ? screenLimitFor(screenYearOf(targets)) : getSettings().limit),
       seed: newSeed(), avoid: seenList(kid ? kid.id : null)
@@ -405,11 +430,11 @@
   function renderStart(errMsg) {
     const page = h('div');
     const kid = currentKid();
-    const saved = A.lsGet(sessionKeyFor(kid ? kid.id : null));
-    if (saved && saved.targets && saved.targets.every(function (id) { return D.graph.byId[id]; })) {
+    const svs = savedState(kid ? kid.id : null);
+    const saved = svs && svs.unfinished ? svs.saved : null;
+    if (saved) {
       A.append(page, h('div', { class: 'banner', id: 'resume-banner' },
-        h('b', { text: (kid ? kid.name + ' has' : 'There is') + ' an unfinished check-up: ' }), saved.label || saved.targets.map(nameOf).join(', '),
-        ' (' + A.plural((saved.answers || []).length, 'answer') + ' so far). ',
+        h('b', { text: unfinishedText(svs, kid) }), ' ',
         h('button', { class: 'primary', id: 'btn-resume', onclick: function () { if (restoreSession(saved)) render(); else { A.lsDel(sessionKeyFor(kid ? kid.id : null)); renderStart('That saved check-up could not be restored, so it was cleared.'); } } }, 'Keep going'),
         ' ', h('button', { id: 'btn-discard', onclick: function () { A.lsDel(sessionKeyFor(kid ? kid.id : null)); renderStart(); } }, 'Throw it away')));
     }
@@ -445,7 +470,7 @@
     A.append(page, h('div', { class: 'card', id: 'pick-card' },
       h('h1', { text: 'Check one skill' }),
       h('p', { class: 'muted' }, 'Pick a skill your child is learning. A right answer means they’ve got it. A wrong answer gets one more, easier question. If that one is tricky too, the check-up steps back to the skills it builds on to find where the gap starts.'),
-      tabs('Year', yearItems, startYear, function (v) { startYear = v; renderStart(); }, 'year-tabs'),
+      tabs('Year', yearItems, startYear, function (v) { startYear = v; if (v !== '') browseOpen = true; renderStart(); }, 'year-tabs'),
       h('input', {
         type: 'search', class: 'search-lg', id: 'search',
         placeholder: subject === 'english' ? 'Search, e.g. rhyme, digraphs, commas' : 'Search, e.g. counting, fractions, area',
@@ -497,7 +522,7 @@
         h('div', { class: 'row' },
           h('label', null, 'Question limit (' + SCREEN_MIN + '–' + SCREEN_MAX + ') ', limitInput),
           h('button', { class: 'primary', id: 'btn-grade-start', disabled: !g, onclick: function () { if (g) startYearCheck(screenYear); } }, 'Start the ' + (g ? g.label : '') + ' check-up')),
-        h('p', { class: 'muted small' }, st.screenLimit ? 'Your saved limit is used for every year.' : 'The default is 20 questions for Kindergarten to Year 2 and ' + E.SCREEN_LIMIT + ' from Year 3.'));
+        h('p', { class: 'muted small' }, st.screenLimit ? 'Your saved limit is used for every year.' : 'The default is 24 questions for Kindergarten to Year 2 and ' + E.SCREEN_LIMIT + ' from Year 3.'));
     };
     fill();
     return box;
@@ -511,7 +536,7 @@
       if (startYear !== '' && String(yv.year) !== startYear) return;
       const groups = [];
       yv.groups.forEach(function (g) {
-        const gHit = q && (g.focusArea + ' ' + g.strand).toLowerCase().indexOf(q) >= 0;
+        const gHit = q && (g.focusArea + ' ' + g.strands.join(' ')).toLowerCase().indexOf(q) >= 0;
         const rows = g.topics.filter(function (t) {
           if (!q || gHit) return true;
           return (t.name + ' ' + t.description + ' ' + t.id).toLowerCase().indexOf(q) >= 0;
@@ -527,7 +552,7 @@
         const g = c.g;
         A.append(det, h('div', { class: 'chap' },
           h('div', { class: 'chap-head area-head' },
-            h('span', { class: 't' }, g.focusArea, h('small', { text: g.strand })),
+            h('span', { class: 't' }, g.focusArea, h('small', { text: g.strands.join(', ') })),
             h('button', {
               class: 'primary', title: 'Check all ' + A.plural(g.topics.length, 'skill') + ' in this focus area',
               onclick: function () { startSession(g.topics.map(function (t) { return t.id; }), g.label + ' (focus area)', null, null, { param: 'group', value: g.key }); }
@@ -605,16 +630,12 @@
     else (q.choices || []).forEach(function (c) { parts.push(c.key + ', ' + c.text); });
     return parts;
   }
-  function speakQuestion(q, btn) {
-    const ok = S.speak(speechParts(q), { onend: function () { if (btn) btn.classList.remove('speaking'); } });
-    if (ok && btn) btn.classList.add('speaking');
-  }
   function speechControls(q) {
     const btn = h('button', { type: 'button', class: 'speak-btn', id: 'btn-speak', 'aria-label': 'Read the question aloud' },
       h('span', { class: 'ico', 'aria-hidden': 'true', text: '🔊' }), h('span', { class: 'lbl', text: 'Read to me' }));
     btn.addEventListener('click', function () {
       if (S.isSpeaking()) { S.stop(); btn.classList.remove('speaking'); return; }
-      speakQuestion(q, btn);
+      speakWithFeedback(q, btn);
     });
     const note = h('p', { class: 'speech-note', id: 'speech-note', hidden: true });
     const row = h('div', { class: 'speak-row no-print', id: 'speak-row' }, btn, note);
@@ -647,6 +668,69 @@
     return lines[(session.answers.length) % lines.length];
   }
 
+  /** What to say after a miss: the answer (choice text, not the letter) and the explanation. */
+  function answerSpeech(q) {
+    let ans = q.answer;
+    if (q.type === 'choice') {
+      const c = (q.choices || []).find(function (x) { return x.key === q.answer; });
+      if (c) ans = c.text;
+    }
+    return ['The answer is ' + ans + '.'].concat(q.explanation ? [q.explanation] : []);
+  }
+
+  /** Grown-up panel under each question: who is answering, why this question, undo and restart. */
+  function grownUpPanel(item, young) {
+    const q = item ? item.question : null;
+    const n = session.answers.length;
+    return h('details', { class: 'grown-up no-print', id: 'grown-up' },
+      h('summary', null, 'For grown-ups'),
+      childBar('question'),
+      item && young ? h('div', { class: 'q-meta small', id: 'q-meta' },
+        tag('diff-' + q.difficulty, DIFF_LABEL[q.difficulty] || q.difficulty),
+        tag('', TYPE_LABEL[q.type] || q.type),
+        item.attempt === 2 ? tag('shaky', 'Second try') : null) : null,
+      item && young ? h('p', { class: 'reason muted small', text: reasonFor(item) }) : null,
+      h('p', { class: 'muted small' }, 'Answers are marked automatically for numbers, choices and single words. Words, units and fractions are compared loosely, and you can always correct a mark here or in the answer log on the results page.'),
+      h('div', { class: 'row' },
+        n > 0 ? h('button', { class: 'small', id: 'btn-undo', onclick: function () { rebuild(session.answers.slice(0, -1)); } }, 'Undo the last answer') : null,
+        h('button', { class: 'small', id: 'btn-restart', onclick: function () { if (confirm('Stop this check-up and go back to the start?')) restart(); } }, 'Start again')));
+  }
+
+  /**
+   * Browsers (iPad Safari above all) only allow speech that starts inside a tap. When a question appears
+   * without one (a link, a refresh, coming back later), read-aloud kids first get a big "Tap to start" button
+   * and the question is spoken inside that tap.
+   */
+  function renderGate(item, young) {
+    const kid = sessionKid();
+    const resumed = session.answers.length > 0;
+    const card = h('div', { class: 'card q-card q-gate' + (young ? ' young' : ''), id: 'q-gate' },
+      h('h2', { class: 'gate-title', text: (resumed ? 'Welcome back' : 'Ready') + (kid ? ', ' + kid.name : '') + '?' }),
+      h('p', { class: 'gate-sub', text: resumed
+        ? 'Let’s keep going from question ' + (session.answers.length + 1) + '.'
+        : 'Turn the sound up. Each question will be read out loud.' }),
+      h('button', { type: 'button', class: 'primary gate-btn', id: 'btn-gate', onclick: function () { speechGestured = true; renderQuestion(item); } },
+        h('span', { class: 'ico', 'aria-hidden': 'true', text: '🔊' }), ' Tap to start'),
+      grownUpPanel(null, young));
+    const page = h('div');
+    if (demo) A.append(page, demoBanner());
+    A.append(page, card);
+    show(page);
+  }
+
+  function speakWithFeedback(q, btn) {
+    const ok = S.speak(speechParts(q), {
+      onend: function () { if (btn) btn.classList.remove('speaking'); },
+      onblocked: function () {
+        speechGestured = false;
+        const note = document.getElementById('speech-note');
+        if (btn) { btn.classList.remove('speaking'); btn.classList.add('nudge'); }
+        if (note) { note.hidden = false; note.textContent = 'Tap “Read to me” to hear the question.'; }
+      }
+    });
+    if (ok && btn) btn.classList.add('speaking');
+  }
+
   function renderQuestion(item) {
     const id = item.topicId;
     const q = item.question;
@@ -657,19 +741,20 @@
     const young = isYoung(t);
     // readAloud: false marks reading items (passages from Year 3) where listening would replace reading.
     const autoRead = q.readAloud !== false && readAloudOn(t);
+    if (ui.phase === 'ask' && autoRead && !speechGestured && !demo && S.status() !== 'unavailable') { renderGate(item, young); return; }
     const card = h('div', { class: 'card q-card' + (young ? ' young' : ''), id: 'q-card', 'data-qid': q.id });
-    A.append(card, 
+    A.append(card,
       h('div', { class: 'row' },
-        h('span', { class: 'muted small' }, 'Checking: ' + sessionMeta.label),
+        young ? null : h('span', { class: 'muted small' }, 'Checking: ' + sessionMeta.label),
         h('span', { class: 'grow' }),
         h('span', { class: 'muted small', id: 'q-count' }, 'Question ' + (n + 1) + ' of up to ' + session.limit)),
       h('div', { class: 'progress' }, h('i', { style: 'width:' + Math.round(n / session.limit * 100) + '%' })),
-      h('h2', { class: 'q-topic', id: 'q-topic' }, t.name, ' ', tag('', A.yearLabel(t.year))),
-      h('div', { class: 'q-meta small' },
+      h('h2', { class: 'q-topic', id: 'q-topic' }, t.name, ' ', young ? null : tag('', A.yearLabel(t.year))),
+      young ? null : h('div', { class: 'q-meta small', id: 'q-meta' },
         tag('diff-' + q.difficulty, DIFF_LABEL[q.difficulty] || q.difficulty),
         tag('', TYPE_LABEL[q.type] || q.type),
         item.attempt === 2 ? tag('shaky', 'Second try') : null),
-      h('div', { class: 'reason muted', text: reasonFor(item) }));
+      young ? null : h('div', { class: 'reason muted', text: reasonFor(item) }));
     if (item.attempt === 2 && ui.phase === 'ask') A.append(card, h('p', { class: 'feedback-kind skip', text: 'Let’s try another one!' }));
     if (q.readAloud !== false) A.append(card, speechControls(q));
     else A.append(card, h('p', { class: 'muted small no-print', text: 'Reading check: read this one by yourself.' }));
@@ -704,50 +789,52 @@
           onkeydown: function (e) { if (e.key === 'Enter' && !e.isComposing) judgeAndGo(item); }
         }));
       }
-      A.append(card, h('div', { class: 'q-actions' },
+      A.append(card, h('div', { class: 'q-actions sticky-actions' },
         q.type === 'self' ? null : h('button', { class: 'primary', id: 'btn-submit', disabled: q.type === 'choice' && !ui.picked, onclick: function () { judgeAndGo(item); } }, 'Check my answer'),
-        q.type === 'choice' ? null : h('button', { id: 'btn-peek', onclick: function () { ui.phase = 'self'; ui.verdict = null; renderQuestion(item); } }, 'Show the answer'),
+        // Young children would use 'Show the answer' as a shortcut: auto-marked items skip it for them.
+        q.type === 'choice' || (young && q.type !== 'self') ? null : h('button', { id: 'btn-peek', onclick: function () { ui.phase = 'self'; ui.verdict = null; renderQuestion(item); } }, 'Show the answer'),
         h('button', { id: 'btn-skip', onclick: function () { ui.phase = 'skip'; renderQuestion(item); } }, 'I don’t know yet')));
     } else if (ui.phase === 'auto') {
       const ok = ui.verdict.verdict === 'correct';
-      A.append(card, 
+      A.append(card,
         h('div', { class: 'feedback-kind ' + (ok ? 'ok' : 'no'), id: 'verdict', role: 'status' }, kindLine(ok ? 'ok' : 'no')),
         h('div', { class: 'muted' }, 'Your answer: ' + (q.type === 'choice' ? answerOfKey(q, ui.answer) : ui.answer)),
         feedbackBlock(q),
-        h('div', { class: 'q-actions' },
+        h('div', { class: 'q-actions sticky-actions' },
           h('button', { class: 'primary', id: 'btn-next', onclick: function () { commit(ok ? 'correct' : 'wrong'); } }, 'Next question')),
-        h('div', { class: 'row small', style: 'margin-top:8px' },
-          h('button', { id: 'btn-flip', class: 'small', onclick: function () { commit(ok ? 'wrong' : 'correct'); } }, ok ? 'Marked right, but it wasn’t' : 'Marked wrong, but it was right'),
-          h('button', { class: 'small', id: 'btn-change', onclick: function () { ui.phase = 'ask'; renderQuestion(item); } }, 'Change the answer')));
-      if (autoRead && ui.spoken !== key + ':auto') { ui.spoken = key + ':auto'; S.speak([kindLine(ok ? 'ok' : 'no')]); }
+        (function () {
+          const fixRow = h('div', { class: 'row small', style: 'margin-top:8px' },
+            h('button', { id: 'btn-flip', class: 'small', onclick: function () { commit(ok ? 'wrong' : 'correct'); } }, ok ? 'Marked right, but it wasn’t' : 'Marked wrong, but it was right'),
+            h('button', { class: 'small', id: 'btn-change', onclick: function () { ui.phase = 'ask'; renderQuestion(item); } }, 'Change the answer'));
+          // Marking fixes are for grown-ups; keep them out of a young child's way.
+          return young ? h('details', { class: 'grownups small' }, h('summary', null, 'For grown-ups: fix the marking'), fixRow) : fixRow;
+        })());
+      if (autoRead && ui.spoken !== key + ':auto') {
+        ui.spoken = key + ':auto';
+        S.speak([kindLine(ok ? 'ok' : 'no')].concat(ok ? [] : answerSpeech(q)));
+      }
     } else if (ui.phase === 'skip') {
-      A.append(card, 
+      A.append(card,
         h('div', { class: 'feedback-kind skip', id: 'verdict', role: 'status' }, kindLine('skip')),
         feedbackBlock(q),
-        h('div', { class: 'q-actions' }, h('button', { class: 'primary', id: 'btn-next', onclick: function () { commit('skip'); } }, 'Next question')));
-      if (autoRead && ui.spoken !== key + ':skip') { ui.spoken = key + ':skip'; S.speak([kindLine('skip')]); }
+        h('div', { class: 'q-actions sticky-actions' }, h('button', { class: 'primary', id: 'btn-next', onclick: function () { commit('skip'); } }, 'Next question')));
+      if (autoRead && ui.spoken !== key + ':skip') { ui.spoken = key + ':skip'; S.speak([kindLine('skip')].concat(answerSpeech(q))); }
     } else {
-      A.append(card, 
+      A.append(card,
         ui.answer ? h('div', { class: 'muted' }, 'Your answer: ' + ui.answer) : null,
         h('div', { class: 'feedback-kind skip', id: 'verdict' }, q.type === 'self' || !ui.verdict
           ? 'Have a look at the answer. Did you get it right?'
           : 'The computer can’t tell for sure. Have a look: did you get it right?'),
         feedbackBlock(q),
-        h('div', { class: 'q-actions' },
+        h('div', { class: 'q-actions sticky-actions' },
           h('button', { class: 'good', id: 'btn-right', onclick: function () { commit('correct'); } }, 'Yes, I got it'),
           h('button', { class: 'bad', id: 'btn-wrong', onclick: function () { commit('wrong'); } }, 'Not quite'),
           h('button', { id: 'btn-skip2', onclick: function () { commit('skip'); } }, 'I didn’t know')));
     }
 
-    A.append(card, h('details', { class: 'grown-up no-print', id: 'grown-up' },
-      h('summary', null, 'For grown-ups'),
-      h('p', { class: 'muted small' }, 'Answers are marked automatically for numbers, choices and single words. Words, units and fractions are compared loosely, and you can always correct a mark here or in the answer log on the results page.'),
-      h('div', { class: 'row' },
-        n > 0 ? h('button', { class: 'small', id: 'btn-undo', onclick: function () { rebuild(session.answers.slice(0, -1)); } }, 'Undo the last answer') : null,
-        h('button', { class: 'small', id: 'btn-restart', onclick: function () { if (confirm('Stop this check-up and go back to the start?')) restart(); } }, 'Start again'))));
+    A.append(card, grownUpPanel(item, young));
     const page = h('div', { class: young ? 'young-page' : '' });
     if (demo) A.append(page, demoBanner());
-    A.append(page, childBar('question'));
     A.append(page, card);
     show(page, ui.phase === 'ask' && ui.picked != null);
     const inp = document.getElementById('ans');
@@ -757,7 +844,7 @@
     }
     if (ui.phase === 'ask' && autoRead && ui.spoken !== key) {
       ui.spoken = key;
-      speakQuestion(q, document.getElementById('btn-speak'));
+      speakWithFeedback(q, document.getElementById('btn-speak'));
     }
   }
 
@@ -783,7 +870,7 @@
       let hot = chapters.filter(function (c) { return c.weak > 0 || c.shaky > 0; });
       if (!hot.length) hot = chapters.slice(0, 3);
       spots = hot.slice(0, 3).map(function (c) {
-        return { title: c.focusArea, detail: c.strand + ' · needs work ' + c.weak + ' · shaky ' + c.shaky + ' · not checked ' + c.untested };
+        return { title: c.focusArea, detail: c.yearLabel + ' · ' + needWork(c.weak) + ' · ' + c.shaky + ' shaky · ' + c.untested + ' not checked' };
       });
     } else {
       const seen = Object.create(null);
@@ -890,10 +977,19 @@
     out.push(tag(st, STATUS_LABEL[st]));
     return out;
   }
-  function stat(cls, n, label, id) { return h('div', { class: 'stat ' + cls, id: id || null }, h('b', { text: String(n) }), label); }
+  function stat(cls, n, label, id, sub) {
+    return h('div', { class: 'stat ' + cls, id: id || null }, h('b', { text: String(n) }), label, sub ? h('small', { class: 'stat-sub', text: sub }) : null);
+  }
+  function needWork(n) { return n + (n === 1 ? ' needs work' : ' need work'); }
+  /** Where to begin the practice list: the top, or the skills marked as the gap start when they are not first. */
+  function startHint(sum) {
+    if (!sum.path.length || !sum.roots.length) return '';
+    return sum.path[0].isRoot ? ' Start at the top of the practice list below.' : ' Start with the skills marked \u201cGap starts here\u201d in the practice list below.';
+  }
 
   function renderResult() {
     const sum = E.summarize(D.graph, session);
+    if (!demo) setUrl({ param: 'results', value: '1' });
     const rootSet = new Set(sum.roots.map(function (r) { return r.id; }));
     const screen = session.mode === 'screen';
     const targetSet = new Set(screen ? [] : session.targets);
@@ -911,12 +1007,14 @@
       if (!sum.weak.length && !sum.shaky.length) headline = sum.untested.length
         ? 'No gaps in the skills we checked. ' + A.plural(sum.untested.length, 'skill was', 'skills were') + ' not reached.'
         : 'Every skill in this year looks solid. No gaps found.';
-      else headline = A.plural(session.targets.length, 'skill') + ' in this year: ' + sum.weak.length + ' need work, ' + sum.shaky.length + ' shaky, ' + sum.untested.length + ' not checked. The focus areas with the most gaps come first below.';
+      else headline = A.plural(session.targets.length, 'skill') + ' in this year: ' + needWork(sum.weak.length) + ', ' + sum.shaky.length + ' shaky, ' + sum.untested.length + ' not checked. The focus areas with the most gaps come first below.' + startHint(sum);
     }
     else if (!sum.roots.length && !sum.shaky.length && targetsMastered) headline = 'Got it! No gaps in the skills this builds on.';
     else if (!sum.roots.length && !sum.shaky.length) headline = 'No gaps found, but not everything was checked.';
     else if (!sum.roots.length) headline = 'No big gaps, but ' + A.plural(sum.shaky.length, 'skill is', 'skills are') + ' shaky (wrong first, right second). A little practice will help.';
-    else headline = 'Found ' + A.plural(sum.roots.length, 'place') + ' where the gap starts' + (sum.shaky.length ? ' and ' + A.plural(sum.shaky.length, 'shaky skill') : '') + '. Work down the list below, from the top.';
+    else headline = 'Found ' + A.plural(sum.roots.length, 'place') + ' where the gap starts' + (sum.shaky.length ? ' and ' + A.plural(sum.shaky.length, 'shaky skill') : '') + '.' + startHint(sum);
+    const right = sum.mastered.filter(function (id) { return session.status[id] && session.status[id].src === 'direct'; }).length;
+    const assumed = sum.mastered.length - right;
 
     const more = screen ? 10 : 4;
     const kid = sessionKid();
@@ -927,7 +1025,7 @@
         stat('ask', sum.asked, 'Answered', 'stat-asked'),
         stat('bad', sum.weak.length, STATUS_LABEL.weak, 'stat-weak'),
         stat('shaky', sum.shaky.length, STATUS_LABEL.shaky, 'stat-shaky'),
-        stat('ok', sum.mastered.length, STATUS_LABEL.mastered, 'stat-mastered'),
+        stat('ok', sum.mastered.length, STATUS_LABEL.mastered, 'stat-mastered', right + ' answered right, ' + assumed + ' assumed'),
         stat('unk', sum.untested.length, STATUS_LABEL.unknown, 'stat-untested')),
       sum.unconfirmed.length ? h('p', { class: 'notice' }, namesOf(sum.unconfirmed) + ' missed the first question and the limit ran out before a second try, so for now ' + (sum.unconfirmed.length === 1 ? 'it counts' : 'they count') + ' as needing work.') : null,
       sum.limitReached ? h('p', { class: 'notice' }, 'The question limit (' + sum.limit + ') was reached, so some skills are “Not checked”. If a gap’s earlier skills were not reached, the real gap may start even earlier.',
@@ -986,7 +1084,7 @@
         h('div', { id: 'node-tip', class: 'node-tip', role: 'tooltip', hidden: true }))));
 
     A.append(page, h('details', { class: 'card', id: 'mastered' },
-      h('summary', null, h('b', null, 'Got it (' + sum.mastered.length + ')')),
+      h('summary', null, h('b', null, 'Got it (' + sum.mastered.length + ': ' + right + ' answered right, ' + assumed + ' assumed from later skills)')),
       sum.mastered.map(function (id) {
         const src = session.status[id].src === 'direct' ? 'Answered right' : 'Covered by a later skill';
         return topicItem(id, [tag('mastered', src)]);
@@ -1011,9 +1109,9 @@
       chapters.map(function (c) {
         return h('details', { class: 'topic chap-sum', open: c.weak > 0 || c.shaky > 0, 'data-key': c.key },
           h('summary', null,
-            h('span', { class: 'chap-name' }, c.focusArea, h('span', { class: 'area-sub', text: c.yearLabel + ' · ' + c.strand })),
+            h('span', { class: 'chap-name' }, c.focusArea, h('span', { class: 'area-sub', text: c.yearLabel + ' · ' + c.strands.join(', ') })),
             h('span', { class: 'chap-counts' },
-              tag('mastered', 'Got it ' + c.mastered), tag('shaky', 'Shaky ' + c.shaky), tag('weak', 'Needs work ' + c.weak), tag('unknown', 'Not checked ' + c.untested)),
+              tag('mastered', 'Got it ' + c.mastered + (c.assumed ? ' (' + c.assumed + ' assumed)' : '')), tag('shaky', 'Shaky ' + c.shaky), tag('weak', 'Needs work ' + c.weak), tag('unknown', 'Not checked ' + c.untested)),
             h('span', { class: 'chap-bar', 'aria-hidden': 'true' },
               seg('m', c.mastered, c.total), seg('s', c.shaky, c.total), seg('w', c.weak, c.total), seg('u', c.untested, c.total))),
           h('div', { class: 'body' },
@@ -1266,7 +1364,7 @@
       }),
       focusAreas: chapters ? chapters.map(function (c) {
         return {
-          year: c.year, strand: c.strand, focusArea: c.focusArea, total: c.total, mastered: c.mastered, shaky: c.shaky, weak: c.weak, untested: c.untested,
+          year: c.year, strands: c.strands, focusArea: c.focusArea, total: c.total, mastered: c.mastered, answeredRight: c.right, assumed: c.assumed, shaky: c.shaky, weak: c.weak, untested: c.untested,
           weakTopics: c.weakIds.map(brief), shakyTopics: c.shakyIds.map(brief), untestedTopics: c.untestedIds.map(brief)
         };
       }) : undefined,
@@ -1360,17 +1458,48 @@
       render();
       return;
     }
+    const kid = currentKid();
+    const st = savedState(kid ? kid.id : null);
     if (resolved) {
-      const kid = currentKid();
-      const saved = A.lsGet(sessionKeyFor(kid ? kid.id : null));
-      const same = saved && JSON.stringify(saved.targets) === JSON.stringify(Array.from(new Set(resolved.ids))) &&
-        (saved.mode || 'target') === (resolved.mode || 'target') && (seedParam == null || saved.seed === seedParam);
-      if (same && restoreSession(saved)) { render(); return; }
-      startSession(resolved.ids, resolved.label, limit, resolved.mode, resolved.url);
+      // Resume only an unfinished check-up for the same skills; a finished one never reopens from a link.
+      const same = st && sameTargets(st.saved, resolved.ids, resolved.mode) && (seedParam == null || st.saved.seed === seedParam);
+      if (same && st.unfinished && restoreSession(st.saved)) { render(); return; }
+      if (st && st.unfinished && !same) { renderChooser(st, kid, resolved, limit); return; }
+      startSession(resolved.ids, resolved.label, limit, resolved.mode, resolved.url, true);
       return;
     }
+    // ?results=1 is the address of a results page, so a refresh shows the same results again.
+    if (params.get('results') && st && !st.unfinished && restoreSession(st.saved)) { render(); return; }
+    const pick = params.get('pick');
+    if (pick != null) {
+      const y = E.parseYear(pick);
+      if (y != null) screenYear = y;
+      setUrl(null);
+      renderStart();
+      const card = document.getElementById('grade-card');
+      if (card) { card.classList.add('highlight'); card.scrollIntoView({ block: 'start' }); }
+      return;
+    }
+    if (params.get('results')) setUrl(null);
     renderStart();
   }
+
+  /** A link asks for a new check-up while another one is unfinished for this kid: ask, rather than throw it away. */
+  function renderChooser(st, kid, resolved, limit) {
+    show(h('div', { class: 'card', id: 'chooser' },
+      h('h2', { text: 'Before you start' }),
+      h('p', null, unfinishedText(st, kid)),
+      h('div', { class: 'row' },
+        h('button', { class: 'primary', id: 'btn-keep-old', onclick: function () { if (restoreSession(st.saved)) render(); } }, 'Keep going with that one'),
+        h('button', { id: 'btn-start-new', onclick: function () { startSession(resolved.ids, resolved.label, limit, resolved.mode, resolved.url, true); } },
+          'Start ' + resolved.label + ' instead')),
+      h('p', { class: 'muted small', text: 'Starting the new one throws the unfinished check-up away.' })));
+  }
+
+  // Any tap or key press counts as the gesture that lets speech start (see renderGate).
+  ['click', 'keydown'].forEach(function (type) {
+    document.addEventListener(type, function () { speechGestured = true; }, true);
+  });
 
   document.addEventListener('click', function (event) {
     const origin = event.target && event.target.closest ? event.target : (event.target && event.target.parentElement);

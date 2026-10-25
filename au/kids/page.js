@@ -10,7 +10,8 @@
   var listBox = document.getElementById('list');
   var form = document.getElementById('form');
   var nameIn = document.getElementById('f-name');
-  var yearSel = document.getElementById('f-year');
+  var yearBox = document.getElementById('f-year');
+  var yearValue = null;
   var errBox = document.getElementById('f-error');
   var submitBtn = document.getElementById('f-submit');
   var cancelBtn = document.getElementById('f-cancel');
@@ -18,8 +19,22 @@
   var banner = document.getElementById('banner');
   var editing = null;
 
-  A.append(yearSel, h('option', { value: '', text: 'Choose a year' }));
-  K.YEARS.forEach(function (y) { A.append(yearSel, h('option', { value: String(y), text: K.yearName(y) })); });
+  /* Year as big tap buttons: quicker than a menu on an iPad. */
+  function setYear(y) {
+    yearValue = y;
+    yearBox.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-checked', String(b.getAttribute('data-year') === String(y))); });
+  }
+  K.YEARS.forEach(function (y) {
+    A.append(yearBox, h('button', { type: 'button', role: 'radio', 'aria-checked': 'false', 'data-year': String(y), id: 'f-year-' + y,
+      'aria-label': K.yearName(y), onclick: function () { setYear(y); } }, y === 0 ? 'K' : 'Year ' + y));
+  });
+  /* The note about Home Screen storage matters on iPad and iPhone, and inside the installed app it is already true. */
+  var ua = navigator.userAgent || '';
+  var isIOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var standalone = (window.matchMedia && window.matchMedia('(display-mode: standalone)').matches) || window.navigator.standalone === true;
+  var iosNote = document.getElementById('ios-note');
+  if (standalone) iosNote.textContent = 'This Home Screen app keeps its own list of kids. Add them here (it only takes a moment).';
+  else if (!isIOS) iosNote.textContent = 'Tip: on an iPad or iPhone, add the site to the Home Screen first, then add your kids inside the app. The app keeps its own separate list.';
 
   var params = new URLSearchParams(location.search);
 
@@ -47,7 +62,7 @@
   function resetForm() {
     editing = null;
     nameIn.value = '';
-    yearSel.value = '';
+    setYear(null);
     formTitle.textContent = 'Add a kid';
     submitBtn.textContent = 'Add kid';
     cancelBtn.hidden = true;
@@ -57,7 +72,7 @@
   function startEdit(c) {
     editing = c.id;
     nameIn.value = c.name;
-    yearSel.value = String(c.year);
+    setYear(c.year);
     formTitle.textContent = 'Edit ' + c.name;
     submitBtn.textContent = 'Save changes';
     cancelBtn.hidden = false;
@@ -117,7 +132,7 @@
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    var f = { name: nameIn.value, year: yearSel.value === '' ? null : parseInt(yearSel.value, 10) };
+    var f = { name: nameIn.value, year: yearValue };
     var res = editing ? K.update(editing, f) : K.add(f);
     if (!res.ok) { showError(res.error); return; }
     if (!editing && window.cnmTrack) window.cnmTrack('child_added');
@@ -128,4 +143,5 @@
 
   resetForm();
   render();
+  if (!K.list().length) nameIn.focus();
 })();

@@ -60,7 +60,7 @@
       A.append(sec, h('p', { class: 'kid-empty', text: 'Going by the latest check-ups, nothing needs work. Well done!' }));
       return sec;
     }
-    A.append(sec, h('p', { class: 'muted small', text: 'If a skill was checked more than once, the latest result counts. ' + weakN + ' need work, ' + (ids.length - weakN) + ' shaky. Tap a name to open it in the skill map.' }));
+    A.append(sec, h('p', { class: 'muted small', text: 'If a skill was checked more than once, the latest result counts. ' + weakN + (weakN === 1 ? ' needs work, ' : ' need work, ') + (ids.length - weakN) + ' shaky. Tap a name to open it in the skill map.' }));
     A.append(sec, h('ul', { class: 'wk-list' }, ids.map(function (id) { return topicRow(id, by[id]); })));
     return sec;
   }

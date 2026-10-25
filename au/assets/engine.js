@@ -162,15 +162,44 @@
     const sub = screen ? { nodes: topoSort(graph, ts) } : subgraph(graph, ts);
     const pos = Object.create(null);
     sub.nodes.forEach(function (id, i) { pos[id] = i; });
-    // The target furthest along (latest in topological order) is asked first; the rest wait on the stack.
-    const stack = ts.filter(function (id) { return isTestable(graph, id); })
-      .sort(function (a, b) { return pos[b] - pos[a]; });
+    const testable = ts.filter(function (id) { return isTestable(graph, id); });
+    // Target mode: the target furthest along (latest in topological order) is asked first; the rest wait on the stack.
+    // Screening: strands take turns (foundation strands first), each strand in teaching order, so the first
+    // question is an easy core skill and every strand is sampled early even with a short limit.
+    const stack = screen ? screenOrder(graph, testable)
+      : testable.sort(function (a, b) { return pos[b] - pos[a]; });
     return {
       targets: ts, limit: limit, order: sub.nodes, status: {}, stack: stack, answers: [], attempts: {},
       mode: screen ? 'screen' : 'target', scope: screen ? ts.slice() : null,
       seed: opts.seed == null ? 'default' : String(opts.seed),
       avoid: Array.from(new Set(opts.avoid || []))
     };
+  }
+
+  // Strand order for screening: foundation strands first. Strands not listed follow in order of first appearance.
+  const STRAND_ORDER = [
+    'Number', 'Algebra', 'Measurement', 'Space', 'Statistics', 'Probability',
+    'Phonological awareness', 'Phonics and word recognition', 'Spelling', 'Vocabulary',
+    'Grammar and punctuation', 'Reading comprehension', 'Text and literature'
+  ];
+
+  /** Round-robin over strands (STRAND_ORDER first), each strand in topics.json (teaching) order. */
+  function screenOrder(graph, ids) {
+    const queues = Object.create(null);
+    const names = [];
+    ids.slice().sort(function (a, b) { return graph.index[a] - graph.index[b]; }).forEach(function (id) {
+      const strand = (graph.byId[id] && graph.byId[id].strand) || '';
+      if (!queues[strand]) { queues[strand] = []; names.push(strand); }
+      queues[strand].push(id);
+    });
+    const rank = function (n) { const i = STRAND_ORDER.indexOf(n); return i < 0 ? STRAND_ORDER.length + names.indexOf(n) : i; };
+    names.sort(function (a, b) { return rank(a) - rank(b); });
+    const out = [];
+    let left = ids.length;
+    for (let round = 0; left > 0; round++) {
+      names.forEach(function (n) { if (round < queues[n].length) { out.push(queues[n][round]); left--; } });
+    }
+    return out;
   }
 
   function cloneSession(s) {
@@ -516,7 +545,7 @@
     return t.year;
   }
 
-  /** Grouping used by the summary: year + strand + focus area. */
+  /** Grouping used by the summary: one group per NSW focus area per year (a focus area can span strands). */
   function groupOf(topic) {
     const t = topic || {};
     const year = typeof t.year === 'number' ? t.year : null;
@@ -524,9 +553,9 @@
     const focusArea = t.focusArea || strand || 'Other';
     const yl = year == null ? '' : yearLabel(year);
     return {
-      key: (year == null ? '' : year) + '|' + strand + '|' + focusArea,
+      key: (year == null ? '' : year) + '|' + focusArea,
       year: year, yearLabel: yl, strand: strand, focusArea: focusArea,
-      label: [yl, strand, focusArea].filter(Boolean).filter(function (x, i, a) { return a.indexOf(x) === i; }).join(' · ')
+      label: [yl, focusArea].filter(Boolean).join(' \u00b7 ')
     };
   }
 
@@ -574,7 +603,8 @@
   }
 
   /**
-   * Summary by year + strand + focus area: counts of got it / shaky / needs work / not checked, plus the ids.
+   * Summary by year + focus area: counts of got it (answered right / assumed) / shaky / needs work / not checked,
+   * plus the ids. `strands` lists the strands the focus area's skills belong to.
    * Groups come in teaching order, then a stable sort puts the most "needs work", then most "shaky", first.
    */
   function chapterSummary(graph, session) {
@@ -587,15 +617,16 @@
       let ch = byKey[g.key];
       if (!ch) {
         ch = byKey[g.key] = {
-          key: g.key, year: g.year, yearLabel: g.yearLabel, strand: g.strand, focusArea: g.focusArea,
+          key: g.key, year: g.year, yearLabel: g.yearLabel, strand: g.strand, strands: [], focusArea: g.focusArea,
           volume: g.yearLabel, chapterNo: g.strand, chapterName: g.focusArea, label: g.label,
-          total: 0, mastered: 0, shaky: 0, weak: 0, untested: 0, weakIds: [], shakyIds: [], untestedIds: [], _i: list.length
+          total: 0, mastered: 0, right: 0, assumed: 0, shaky: 0, weak: 0, untested: 0, weakIds: [], shakyIds: [], untestedIds: [], _i: list.length
         };
         list.push(ch);
       }
+      if (g.strand && ch.strands.indexOf(g.strand) < 0) ch.strands.push(g.strand);
       const st = statusOf(session, t.id);
       ch.total++;
-      if (st === 'mastered') ch.mastered++;
+      if (st === 'mastered') { ch.mastered++; if (session.status[t.id].src === 'direct') ch.right++; else ch.assumed++; }
       else if (st === 'shaky') { ch.shaky++; ch.shakyIds.push(t.id); }
       else if (st === 'weak') { ch.weak++; ch.weakIds.push(t.id); }
       else { ch.untested++; ch.untestedIds.push(t.id); }
@@ -936,7 +967,54 @@
     return letter === q.answer ? { verdict: 'correct', reason: 'choice' } : { verdict: 'wrong', reason: 'choice' };
   }
 
+  /* ---- money: dollars and cents ---- */
+
+  /** Is the reference answer in dollars ('$') or cents ('c')? Decided from the prompt; null when unclear. */
+  function moneyUnitOf(q) {
+    const p = String(q && q.prompt || '').toLowerCase();
+    const dollars = /\$|\bdollars?\b/.test(p);
+    const cents = /\bcents?\b|\d\s*c\b|\u00a2/.test(p);
+    if (/\b(?:in|how many) cents\b/.test(p)) return 'c';
+    if (/\b(?:in|how many) dollars\b/.test(p)) return '$';
+    if (dollars && !cents) return '$';
+    if (cents && !dollars) return 'c';
+    return null;
+  }
+
+  /** An amount of money typed by the child, in cents, when it carries a money unit: "$3.50", "350c", "3 dollars 50". */
+  function moneyCents(input) {
+    let s = String(input == null ? '' : input).toLowerCase().normalize('NFKC').replace(/\u00a2/g, 'c').trim().replace(/[.!]+$/, '');
+    s = s.replace(/\s+/g, ' ');
+    const compound = /^(?:\$\s*(\d+)|(\d+)\s*(?:dollars?|\$))\s*(?:and\s*)?(\d{1,2})\s*(?:c|cents?)?$/.exec(s);
+    if (compound) return parseInt(compound[1] || compound[2], 10) * 100 + parseInt(compound[3], 10);
+    const p = parseNumeric(normalizeText(s));
+    if (!p || (p.unit.name !== '$' && p.unit.name !== 'c')) return null;
+    const nd = p.key.split('/');
+    const v = Number(nd[0]) / Number(nd[1]);
+    return p.unit.name === '$' ? Math.round(v * 10000) / 100 : v;
+  }
+
+  /** When the key is a money amount and the child wrote a unit, compare in cents. null when not applicable. */
+  function judgeMoney(user, q) {
+    const unit = moneyUnitOf(q);
+    if (!unit) return null;
+    const got = moneyCents(user);
+    if (got == null) return null;
+    const refs = [q.answer].concat(q.accept || []);
+    for (let i = 0; i < refs.length; i++) {
+      const r = parseNumeric(normalizeText(refs[i]));
+      if (!r) continue;
+      const nd = r.key.split('/');
+      const v = Number(nd[0]) / Number(nd[1]);
+      const want = unit === '$' && r.unit.name !== 'c' ? Math.round(v * 10000) / 100 : v;
+      if (Math.abs(want - got) < 1e-9) return { verdict: 'correct', reason: 'money' };
+    }
+    return { verdict: 'wrong', reason: 'money' };
+  }
+
   function judgeNumeric(user, q) {
+    const money = judgeMoney(user, q);
+    if (money) return money;
     const words = wordsToNumber(user);
     if (words != null) user = String(words);
     const u = parseAnswer(user);
@@ -1036,6 +1114,9 @@
     gradeRank: gradeRank,
     resolveTargets: resolveTargets,
     normalizeText: normalizeText,
+    screenOrder: screenOrder,
+    moneyUnitOf: moneyUnitOf,
+    moneyCents: moneyCents,
     wordsToNumber: wordsToNumber,
     judgeAnswer: judgeAnswer
   };

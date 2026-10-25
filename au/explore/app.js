@@ -274,9 +274,8 @@
     var band = A.bandOf(topic.year);
     parts.push(el('div', { class: 'pills' },
       el('span', { class: 'pill pill-' + (band === 'early' ? 'p' : band === 'middle' ? 'j' : 'h'), text: A.yearLabel(topic.year) }),
-      el('span', { class: 'pill', style: 'background:var(--bg-muted)', text: A.stageOf(topic.year) }),
-      el('code', { class: 'id-code', text: topic.id })));
-    parts.push(el('a', { class: 'btn btn-primary btn-lg diag-btn', id: 'check-topic', href: w('../diagnose/?target=' + encodeURIComponent(topic.id)) }, 'Check this topic'));
+      el('span', { class: 'pill', style: 'background:var(--bg-muted)', text: A.stageOf(topic.year) })));
+    parts.push(el('a', { class: 'btn btn-primary btn-lg diag-btn', id: 'check-topic', href: w('../diagnose/?target=' + encodeURIComponent(topic.id)) }, 'Check this skill'));
     parts.push(el('dl', { class: 'meta-grid' },
       metaItem('Year', A.yearLabel(topic.year)),
       metaItem('Type', TYPE_LABEL[topic.type] || topic.type),
@@ -307,8 +306,9 @@
     var posts = post.get(topic.id) || [];
     parts.push(el('section', { id: 'dependents' },
       el('h2', { text: 'Leads to' }),
-      el('p', { class: 'muted', text: A.plural(posts.length, 'skill') + ' use this directly, ' + countReach(post, topic.id) + ' in total.' }),
+      el('p', { class: 'muted', text: A.plural(posts.length, 'skill uses', 'skills use') + ' this directly, ' + countReach(post, topic.id) + ' in total.' }),
       posts.length ? posts.map(relButton) : el('p', { text: 'No later skill in the map builds on this yet.' })));
+    parts.push(el('p', { class: 'muted small id-small', id: 'skill-code' }, 'Skill code ', el('code', { class: 'id-code', text: topic.id })));
     box.replaceChildren.apply(box, parts);
     box.scrollTop = 0;
     document.title = topic.name + ' · Skill map';
