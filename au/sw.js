@@ -33,8 +33,6 @@ var SHELL = [
   '../assets/pwa.css',
   '../diagnose/style.css',
   '../children/children.css',
-  '../assets/stats-config.js',
-  '../assets/stats.js',
   '../assets/vendor/cytoscape.min.js',
   '../assets/vendor/cytoscape-dagre.js',
   '../assets/vendor/dagre.min.js',

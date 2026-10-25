@@ -29181,7 +29181,7 @@
     "topicId": "aue_y5_06",
     "difficulty": "basic",
     "type": "choice",
-    "prompt": "Louis Braille, a blind French boy, invented a way of reading using raised dots. The system is named after him. What is it called?",
+    "prompt": "Louis Braille, a blind French boy, invented a way of reading using raised dots. Which word comes from his name?",
     "choices": [
       {
         "key": "A",
@@ -30850,7 +30850,7 @@
     "topicId": "aue_y5_21",
     "difficulty": "basic",
     "type": "choice",
-    "prompt": "When was this passage most likely written? \"Mother lit the kerosene lamp as the sun went down. Father had ridden his horse into town to send a telegram and would not be back until morning. I finished churning the butter and fed the chickens before bed.\"",
+    "prompt": "When is this story most likely set? \"Mother lit the kerosene lamp as the sun went down. Father had ridden his horse into town to send a telegram and would not be back until morning. I finished churning the butter and fed the chickens before bed.\"",
     "choices": [
       {
         "key": "A",
@@ -30870,7 +30870,7 @@
       }
     ],
     "answer": "B",
-    "explanation": "Kerosene lamps, riding a horse into town, telegrams and churning butter are clues that the text is from long ago.",
+    "explanation": "Kerosene lamps, riding a horse into town, telegrams and churning butter are clues that the story is set long ago.",
     "verify": "'more than 100 years ago'",
     "readAloud": false
   },
@@ -30974,7 +30974,7 @@
       },
       {
         "key": "B",
-        "text": "the older sibling, who says 'I'"
+        "text": "the older sibling, the narrator"
       },
       {
         "key": "C",
@@ -30987,7 +30987,7 @@
     ],
     "answer": "B",
     "explanation": "The narrator uses 'I' and talks about 'my little brother', so the story is told by the older sibling.",
-    "verify": "\"the older sibling, who says 'I'\"",
+    "verify": "'the older sibling, the narrator'",
     "readAloud": false
   },
   {
