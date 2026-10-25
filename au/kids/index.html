@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kids · K–6 Learning Map</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Cpath%20fill%3D%22%23dff3ef%22%20stroke%3D%22%230f6e62%22%20stroke-width%3D%221.7%22%20stroke-linejoin%3D%22round%22%20d%3D%22M6.6%204.8H17L27.4%2015.2V25Q27.4%2027.4%2025.2%2027.4H6.6Q4.4%2027.4%204.4%2025.2V7Q4.4%204.8%206.6%204.8Z%22%2F%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M17.7%206.3%2026.1%2014.7H17.7Z%22%2F%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%230f6e62%22%20stroke-width%3D%221.35%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20d%3D%22M17.7%206.3V14.7H26.1%22%2F%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%230f6e62%22%20stroke-width%3D%222.15%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20d%3D%22M8.3%2024.2H12.4Q14.2%2024.2%2014.2%2022.4V20.2Q14.2%2018.6%2016%2018.6H18.8%22%2F%3E%3Cpath%20fill%3D%22%230f6e62%22%20d%3D%22M18.5%2016.85%2023%2018.6%2018.5%2020.35Z%22%2F%3E%3C%2Fsvg%3E">
+<link rel="stylesheet" href="../../assets/site.css">
+<link rel="stylesheet" href="../../children/children.css">
+<link rel="stylesheet" href="../../assets/pwa.css">
+<link rel="stylesheet" href="../assets/au.css">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="apple-touch-icon" href="../../assets/icons/apple-touch-icon.png">
+<meta name="theme-color" content="#0f6e62">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="K–6 Map">
+</head>
+<body class="page-kids">
+<header class="site-header no-print">
+  <a class="brand" href="../">
+    <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><path fill="var(--logo-sheet)" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" d="M6.6 4.8H17L27.4 15.2V25Q27.4 27.4 25.2 27.4H6.6Q4.4 27.4 4.4 25.2V7Q4.4 4.8 6.6 4.8Z"/><path fill="var(--logo-fold)" d="M17.7 6.3 26.1 14.7H17.7Z"/><path fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" d="M17.7 6.3V14.7H26.1"/><path fill="none" stroke="currentColor" stroke-width="2.15" stroke-linecap="round" stroke-linejoin="round" d="M8.3 24.2H12.4Q14.2 24.2 14.2 22.4V20.2Q14.2 18.6 16 18.6H18.8"/><path fill="currentColor" d="M18.5 16.85 23 18.6 18.5 20.35Z"/></svg>
+    <span class="brand-copy">
+      <span class="brand-name">K–6 Learning Map</span>
+      <span class="brand-kicker">NSW Maths &amp; English</span>
+    </span>
+  </a>
+  <nav class="site-nav" aria-label="Main">
+    <div class="page-links">
+      <a class="nav-link page-link" href="../">Home</a>
+      <a class="nav-link page-link" href="../explore/">Skill map</a>
+      <a class="nav-link page-link" href="../diagnose/">Check-up</a>
+      <a class="nav-link page-link active" href="./" aria-current="page">Kids</a>
+      <a class="nav-link page-link" href="../about/">About</a>
+    </div>
+  </nav>
+</header>
+<main class="kids" id="root">
+  <h1>Kids</h1>
+  <p class="lede">Add a profile for each child. Pick who is answering before a check-up and the results are saved to that child, so you can look back at each check-up and see what still needs work.</p>
+  <p class="kid-ios-note" id="ios-note">On an iPad or iPhone, the Home Screen app keeps its own list of kids, separate from Safari. Add to Home Screen first, then add your kids inside the app.</p>
+  <div id="banner" aria-live="polite"></div>
+  <p id="back" class="quiet-link" hidden></p>
+  <div id="list" aria-live="polite"></div>
+  <section class="kid-form" id="form-card" aria-labelledby="form-title">
+    <h2 id="form-title">Add a kid</h2>
+    <form id="form" novalidate>
+      <label for="f-name">Name</label>
+      <input id="f-name" type="text" maxlength="20" autocomplete="off" autocapitalize="words" placeholder="First name or nickname">
+      <span class="label" id="f-year-label">School year</span>
+      <div class="year-pick" id="f-year" role="radiogroup" aria-labelledby="f-year-label"></div>
+      <p class="err" id="f-error" role="alert" hidden></p>
+      <div class="form-actions">
+        <button type="submit" class="primary" id="f-submit">Add kid</button>
+        <button type="button" id="f-cancel" hidden>Cancel</button>
+      </div>
+    </form>
+  </section>
+  <p class="muted small kid-note">Profiles and results are kept only in this browser on this device. Nothing is uploaded and there is no account. Clearing the browser’s data, or using another device, starts afresh.</p>
+</main>
+<footer class="site-footer">
+  <p><a class="page-link" href="../about/">About this site</a></p>
+</footer>
+<script src="../assets/common.js"></script>
+<script src="../assets/kids.js"></script>
+<script src="page.js"></script>
+<script src="../assets/pwa.js"></script>
+</body>
+</html>

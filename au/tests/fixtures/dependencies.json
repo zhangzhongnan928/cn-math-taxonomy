@@ -1,0 +1,158 @@
+[
+  {
+    "topicId": "aum_k_02",
+    "prerequisiteId": "aum_k_01",
+    "strength": "hard",
+    "reason": "Comparing groups needs counting each group."
+  },
+  {
+    "topicId": "aum_k_03",
+    "prerequisiteId": "aum_k_01",
+    "strength": "hard",
+    "reason": "Joining and taking away needs counting the result."
+  },
+  {
+    "topicId": "aum_y1_01",
+    "prerequisiteId": "aum_k_01",
+    "strength": "hard",
+    "reason": "Counting to 120 extends counting to 10."
+  },
+  {
+    "topicId": "aum_y1_02",
+    "prerequisiteId": "aum_y1_01",
+    "strength": "hard",
+    "reason": "Skip counting builds on counting by ones."
+  },
+  {
+    "topicId": "aum_y1_03",
+    "prerequisiteId": "aum_k_03",
+    "strength": "hard",
+    "reason": "Adding to 20 extends joining and separating to 10."
+  },
+  {
+    "topicId": "aum_y1_03",
+    "prerequisiteId": "aum_y1_01",
+    "strength": "soft",
+    "reason": "Counting on to 20 helps with adding."
+  },
+  {
+    "topicId": "aum_y2_01",
+    "prerequisiteId": "aum_y1_01",
+    "strength": "hard",
+    "reason": "Place value needs counting beyond 100."
+  },
+  {
+    "topicId": "aum_y2_01",
+    "prerequisiteId": "aum_y1_02",
+    "strength": "soft",
+    "reason": "Counting by tens helps with tens and ones."
+  },
+  {
+    "topicId": "aum_y2_02",
+    "prerequisiteId": "aum_y1_03",
+    "strength": "hard",
+    "reason": "Two-digit addition uses addition facts to 20."
+  },
+  {
+    "topicId": "aum_y2_02",
+    "prerequisiteId": "aum_y2_01",
+    "strength": "hard",
+    "reason": "Adding tens and ones needs place value."
+  },
+  {
+    "topicId": "aum_y3_01",
+    "prerequisiteId": "aum_y1_02",
+    "strength": "hard",
+    "reason": "Multiplication facts for 2, 5 and 10 come from skip counting."
+  },
+  {
+    "topicId": "aum_y3_01",
+    "prerequisiteId": "aum_y2_02",
+    "strength": "soft",
+    "reason": "Repeated addition helps explain multiplication."
+  },
+  {
+    "topicId": "aum_y4_01",
+    "prerequisiteId": "aum_y3_02",
+    "strength": "hard",
+    "reason": "Equivalent fractions need halves, quarters and eighths."
+  },
+  {
+    "topicId": "aum_y5_01",
+    "prerequisiteId": "aum_y3_01",
+    "strength": "hard",
+    "reason": "Written multiplication uses the basic facts."
+  },
+  {
+    "topicId": "aum_y6_01",
+    "prerequisiteId": "aum_y4_01",
+    "strength": "hard",
+    "reason": "Percentages are fractions out of 100."
+  },
+  {
+    "topicId": "aum_y6_01",
+    "prerequisiteId": "aum_y5_01",
+    "strength": "soft",
+    "reason": "Finding a percentage of an amount uses multiplication."
+  },
+  {
+    "topicId": "aum_y6_02",
+    "prerequisiteId": "aum_y5_01",
+    "strength": "hard",
+    "reason": "Area of a rectangle is length times width."
+  },
+  {
+    "topicId": "aum_y6_02",
+    "prerequisiteId": "aum_y1_04",
+    "strength": "soft",
+    "reason": "Measuring with units is the idea behind square units."
+  },
+  {
+    "topicId": "aue_k_02",
+    "prerequisiteId": "aue_k_01",
+    "strength": "soft",
+    "reason": "Hearing sounds in words helps link them to letters."
+  },
+  {
+    "topicId": "aue_k_03",
+    "prerequisiteId": "aue_k_02",
+    "strength": "hard",
+    "reason": "Blending needs the sound for each letter."
+  },
+  {
+    "topicId": "aue_y1_01",
+    "prerequisiteId": "aue_k_03",
+    "strength": "hard",
+    "reason": "Reading digraph words builds on blending CVC words."
+  },
+  {
+    "topicId": "aue_y1_03",
+    "prerequisiteId": "aue_y1_01",
+    "strength": "hard",
+    "reason": "Many common words use the digraphs sh, ch and th."
+  },
+  {
+    "topicId": "aue_y2_01",
+    "prerequisiteId": "aue_y1_03",
+    "strength": "hard",
+    "reason": "Adding -ed needs the base word spelt correctly."
+  },
+  {
+    "topicId": "aue_y6_01",
+    "prerequisiteId": "aue_y3_01",
+    "strength": "hard",
+    "reason": "Inferring goes beyond what the text is mostly about."
+  },
+  {
+    "topicId": "aue_y6_02",
+    "prerequisiteId": "aue_y1_02",
+    "strength": "hard",
+    "reason": "Commas in sentences build on sentence punctuation."
+  },
+  {
+    "topicId": "aue_y6_03",
+    "prerequisiteId": "aue_y2_01",
+    "strength": "hard",
+    "reason": "Suffixes like -ed are the first word endings children learn."
+  }
+]

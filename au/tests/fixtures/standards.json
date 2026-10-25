@@ -1,0 +1,646 @@
+{
+  "source": {
+    "nsw-maths": {
+      "name": "Mathematics K–10 Syllabus (2022)",
+      "publisher": "NSW Education Standards Authority",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/mathematics/mathematics-k-10-2022",
+      "retrieved": "2026-10-24"
+    },
+    "nsw-english": {
+      "name": "English K–10 Syllabus (2022)",
+      "publisher": "NSW Education Standards Authority",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/english/english-k-10-2022",
+      "retrieved": "2026-10-24"
+    },
+    "ac9-maths": {
+      "name": "Australian Curriculum: Mathematics (Version 9.0)",
+      "publisher": "ACARA",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/mathematics",
+      "retrieved": "2026-10-24"
+    },
+    "ac9-english": {
+      "name": "Australian Curriculum: English (Version 9.0)",
+      "publisher": "ACARA",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/english",
+      "retrieved": "2026-10-24"
+    }
+  },
+  "items": [
+    {
+      "id": "MAE-RWN-01",
+      "framework": "nsw-maths",
+      "subject": "maths",
+      "stage": "ES1",
+      "years": [
+        0
+      ],
+      "focusArea": "Representing whole numbers",
+      "text": "Fixture paraphrase: demonstrates an understanding of how whole numbers indicate quantity.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/mathematics/mathematics-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "MAE-CSQ-01",
+      "framework": "nsw-maths",
+      "subject": "maths",
+      "stage": "ES1",
+      "years": [
+        0
+      ],
+      "focusArea": "Combining and separating quantities",
+      "text": "Fixture paraphrase: reasons about combining and separating quantities to 10.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/mathematics/mathematics-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "MA1-RWN-01",
+      "framework": "nsw-maths",
+      "subject": "maths",
+      "stage": "S1",
+      "years": [
+        1,
+        2
+      ],
+      "focusArea": "Representing whole numbers",
+      "text": "Fixture paraphrase: applies an understanding of place value and counting to read, represent and order numbers to 120.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/mathematics/mathematics-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "MA1-RWN-02",
+      "framework": "nsw-maths",
+      "subject": "maths",
+      "stage": "S1",
+      "years": [
+        1,
+        2
+      ],
+      "focusArea": "Representing whole numbers",
+      "text": "Fixture paraphrase: reasons about partitioning numbers into hundreds, tens and ones up to 1000.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/mathematics/mathematics-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "MA1-CSQ-01",
+      "framework": "nsw-maths",
+      "subject": "maths",
+      "stage": "S1",
+      "years": [
+        1,
+        2
+      ],
+      "focusArea": "Combining and separating quantities",
+      "text": "Fixture paraphrase: uses number bonds and the relationship between addition and subtraction to solve problems to 20.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/mathematics/mathematics-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "MA1-AR-01",
+      "framework": "nsw-maths",
+      "subject": "maths",
+      "stage": "S1",
+      "years": [
+        1,
+        2
+      ],
+      "focusArea": "Additive relations",
+      "text": "Fixture paraphrase: uses a range of strategies to add and subtract two-digit numbers.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/mathematics/mathematics-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "MA1-GM-02",
+      "framework": "nsw-maths",
+      "subject": "maths",
+      "stage": "S1",
+      "years": [
+        1,
+        2
+      ],
+      "focusArea": "Geometric measure",
+      "text": "Fixture paraphrase: measures and compares lengths using uniform informal units.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/mathematics/mathematics-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "MA2-MR-01",
+      "framework": "nsw-maths",
+      "subject": "maths",
+      "stage": "S2",
+      "years": [
+        3,
+        4
+      ],
+      "focusArea": "Multiplicative relations",
+      "text": "Fixture paraphrase: represents and uses multiplication facts and the relationship with division.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/mathematics/mathematics-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "MA2-RN-01",
+      "framework": "nsw-maths",
+      "subject": "maths",
+      "stage": "S2",
+      "years": [
+        3,
+        4
+      ],
+      "focusArea": "Representing numbers using fractions",
+      "text": "Fixture paraphrase: represents and compares halves, quarters, eighths and equivalent fractions.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/mathematics/mathematics-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "MA3-MR-01",
+      "framework": "nsw-maths",
+      "subject": "maths",
+      "stage": "S3",
+      "years": [
+        5,
+        6
+      ],
+      "focusArea": "Multiplicative relations",
+      "text": "Fixture paraphrase: selects and applies strategies for multiplication of whole numbers.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/mathematics/mathematics-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "MA3-RQF-01",
+      "framework": "nsw-maths",
+      "subject": "maths",
+      "stage": "S3",
+      "years": [
+        5,
+        6
+      ],
+      "focusArea": "Representing quantities using fractions, decimals and percentages",
+      "text": "Fixture paraphrase: compares, orders and calculates with fractions, decimals and percentages.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/mathematics/mathematics-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "MA3-GM-02",
+      "framework": "nsw-maths",
+      "subject": "maths",
+      "stage": "S3",
+      "years": [
+        5,
+        6
+      ],
+      "focusArea": "Geometric measure",
+      "text": "Fixture paraphrase: selects and uses appropriate units to calculate areas of rectangles.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/mathematics/mathematics-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "MA3-GM-03",
+      "framework": "nsw-maths",
+      "subject": "maths",
+      "stage": "S3",
+      "years": [
+        5,
+        6
+      ],
+      "focusArea": "Geometric measure",
+      "text": "Fixture paraphrase: measures and identifies angle relationships, including angles on a straight line.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/mathematics/mathematics-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "AC9MFN01",
+      "framework": "ac9-maths",
+      "subject": "maths",
+      "stage": "F",
+      "years": [
+        0
+      ],
+      "text": "Fixture paraphrase: name, represent and order numbers to at least 20.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/mathematics",
+      "verbatim": false
+    },
+    {
+      "id": "AC9MFN02",
+      "framework": "ac9-maths",
+      "subject": "maths",
+      "stage": "F",
+      "years": [
+        0
+      ],
+      "text": "Fixture paraphrase: recognise and compare small collections.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/mathematics",
+      "verbatim": false
+    },
+    {
+      "id": "AC9MFN03",
+      "framework": "ac9-maths",
+      "subject": "maths",
+      "stage": "F",
+      "years": [
+        0
+      ],
+      "text": "Fixture paraphrase: partition and combine collections up to 10.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/mathematics",
+      "verbatim": false
+    },
+    {
+      "id": "AC9M1N01",
+      "framework": "ac9-maths",
+      "subject": "maths",
+      "stage": "1",
+      "years": [
+        1
+      ],
+      "text": "Fixture paraphrase: recognise, represent and order numbers to at least 120.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/mathematics",
+      "verbatim": false
+    },
+    {
+      "id": "AC9M1N02",
+      "framework": "ac9-maths",
+      "subject": "maths",
+      "stage": "1",
+      "years": [
+        1
+      ],
+      "text": "Fixture paraphrase: count by twos, fives and tens.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/mathematics",
+      "verbatim": false
+    },
+    {
+      "id": "AC9M1N04",
+      "framework": "ac9-maths",
+      "subject": "maths",
+      "stage": "1",
+      "years": [
+        1
+      ],
+      "text": "Fixture paraphrase: add and subtract numbers within 20.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/mathematics",
+      "verbatim": false
+    },
+    {
+      "id": "AC9M1M01",
+      "framework": "ac9-maths",
+      "subject": "maths",
+      "stage": "1",
+      "years": [
+        1
+      ],
+      "text": "Fixture paraphrase: measure lengths using uniform informal units.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/mathematics",
+      "verbatim": false
+    },
+    {
+      "id": "AC9M2N01",
+      "framework": "ac9-maths",
+      "subject": "maths",
+      "stage": "2",
+      "years": [
+        2
+      ],
+      "text": "Fixture paraphrase: recognise, represent and order numbers to at least 1000.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/mathematics",
+      "verbatim": false
+    },
+    {
+      "id": "AC9M2N04",
+      "framework": "ac9-maths",
+      "subject": "maths",
+      "stage": "2",
+      "years": [
+        2
+      ],
+      "text": "Fixture paraphrase: add and subtract one- and two-digit numbers.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/mathematics",
+      "verbatim": false
+    },
+    {
+      "id": "AC9M3N03",
+      "framework": "ac9-maths",
+      "subject": "maths",
+      "stage": "3",
+      "years": [
+        3
+      ],
+      "text": "Fixture paraphrase: model unit fractions and their multiples.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/mathematics",
+      "verbatim": false
+    },
+    {
+      "id": "AC9M3N06",
+      "framework": "ac9-maths",
+      "subject": "maths",
+      "stage": "3",
+      "years": [
+        3
+      ],
+      "text": "Fixture paraphrase: recall multiplication facts of two, three, five and ten.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/mathematics",
+      "verbatim": false
+    },
+    {
+      "id": "AC9M4N03",
+      "framework": "ac9-maths",
+      "subject": "maths",
+      "stage": "4",
+      "years": [
+        4
+      ],
+      "text": "Fixture paraphrase: find equivalent fractions.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/mathematics",
+      "verbatim": false
+    },
+    {
+      "id": "AC9M5N06",
+      "framework": "ac9-maths",
+      "subject": "maths",
+      "stage": "5",
+      "years": [
+        5
+      ],
+      "text": "Fixture paraphrase: solve problems involving multiplication of larger numbers by one- or two-digit numbers.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/mathematics",
+      "verbatim": false
+    },
+    {
+      "id": "AC9M5M02",
+      "framework": "ac9-maths",
+      "subject": "maths",
+      "stage": "5",
+      "years": [
+        5
+      ],
+      "text": "Fixture paraphrase: solve problems involving the area of rectangles.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/mathematics",
+      "verbatim": false
+    },
+    {
+      "id": "AC9M6N05",
+      "framework": "ac9-maths",
+      "subject": "maths",
+      "stage": "6",
+      "years": [
+        6
+      ],
+      "text": "Fixture paraphrase: find percentages of quantities and solve discount problems.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/mathematics",
+      "verbatim": false
+    },
+    {
+      "id": "AC9M6M04",
+      "framework": "ac9-maths",
+      "subject": "maths",
+      "stage": "6",
+      "years": [
+        6
+      ],
+      "text": "Fixture paraphrase: identify the relationships between angles on a straight line.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/mathematics",
+      "verbatim": false
+    },
+    {
+      "id": "ENE-PHOA-01",
+      "framework": "nsw-english",
+      "subject": "english",
+      "stage": "ES1",
+      "years": [
+        0
+      ],
+      "focusArea": "Phonological awareness",
+      "text": "Fixture paraphrase: identifies and manipulates rhyme, syllables and phonemes in spoken words.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/english/english-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "ENE-PHOKW-01",
+      "framework": "nsw-english",
+      "subject": "english",
+      "stage": "ES1",
+      "years": [
+        0
+      ],
+      "focusArea": "Phonic knowledge and word recognition",
+      "text": "Fixture paraphrase: uses single-letter grapheme-phoneme correspondences to decode and blend words.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/english/english-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "EN1-PHOKW-01",
+      "framework": "nsw-english",
+      "subject": "english",
+      "stage": "S1",
+      "years": [
+        1,
+        2
+      ],
+      "focusArea": "Phonic knowledge and word recognition",
+      "text": "Fixture paraphrase: uses digraphs and common graphemes to decode and encode words.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/english/english-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "EN1-CWT-01",
+      "framework": "nsw-english",
+      "subject": "english",
+      "stage": "S1",
+      "years": [
+        1,
+        2
+      ],
+      "focusArea": "Creating written texts",
+      "text": "Fixture paraphrase: plans, creates and revises texts using sentence punctuation.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/english/english-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "EN1-SPELL-01",
+      "framework": "nsw-english",
+      "subject": "english",
+      "stage": "S1",
+      "years": [
+        1,
+        2
+      ],
+      "focusArea": "Spelling",
+      "text": "Fixture paraphrase: spells high-frequency words and applies suffix rules.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/english/english-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "EN2-RECOM-01",
+      "framework": "nsw-english",
+      "subject": "english",
+      "stage": "S2",
+      "years": [
+        3,
+        4
+      ],
+      "focusArea": "Reading, viewing and comprehending texts",
+      "text": "Fixture paraphrase: identifies the main idea and supporting details in texts.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/english/english-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "EN3-RECOM-01",
+      "framework": "nsw-english",
+      "subject": "english",
+      "stage": "S3",
+      "years": [
+        5,
+        6
+      ],
+      "focusArea": "Reading, viewing and comprehending texts",
+      "text": "Fixture paraphrase: makes inferences using evidence in texts.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/english/english-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "EN3-CWT-01",
+      "framework": "nsw-english",
+      "subject": "english",
+      "stage": "S3",
+      "years": [
+        5,
+        6
+      ],
+      "focusArea": "Creating written texts",
+      "text": "Fixture paraphrase: uses punctuation such as commas to clarify meaning in complex sentences.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/english/english-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "EN3-VOCAB-01",
+      "framework": "nsw-english",
+      "subject": "english",
+      "stage": "S3",
+      "years": [
+        5,
+        6
+      ],
+      "focusArea": "Vocabulary",
+      "text": "Fixture paraphrase: uses knowledge of prefixes and suffixes to work out word meanings.",
+      "url": "https://curriculum.nsw.edu.au/learning-areas/english/english-k-10-2022",
+      "verbatim": false
+    },
+    {
+      "id": "AC9EFLY09",
+      "framework": "ac9-english",
+      "subject": "english",
+      "stage": "F",
+      "years": [
+        0
+      ],
+      "text": "Fixture paraphrase: identify rhyming words and syllables in spoken words.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/english",
+      "verbatim": false
+    },
+    {
+      "id": "AC9EFLY12",
+      "framework": "ac9-english",
+      "subject": "english",
+      "stage": "F",
+      "years": [
+        0
+      ],
+      "text": "Fixture paraphrase: write consonant-vowel-consonant words by representing sounds with letters.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/english",
+      "verbatim": false
+    },
+    {
+      "id": "AC9E1LY12",
+      "framework": "ac9-english",
+      "subject": "english",
+      "stage": "1",
+      "years": [
+        1
+      ],
+      "text": "Fixture paraphrase: read and write digraphs and blends.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/english",
+      "verbatim": false
+    },
+    {
+      "id": "AC9E1LA05",
+      "framework": "ac9-english",
+      "subject": "english",
+      "stage": "1",
+      "years": [
+        1
+      ],
+      "text": "Fixture paraphrase: use capital letters and full stops to mark sentences.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/english",
+      "verbatim": false
+    },
+    {
+      "id": "AC9E1LY09",
+      "framework": "ac9-english",
+      "subject": "english",
+      "stage": "1",
+      "years": [
+        1
+      ],
+      "text": "Fixture paraphrase: spell high-frequency words correctly.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/english",
+      "verbatim": false
+    },
+    {
+      "id": "AC9E2LY10",
+      "framework": "ac9-english",
+      "subject": "english",
+      "stage": "2",
+      "years": [
+        2
+      ],
+      "text": "Fixture paraphrase: add suffixes such as -ed to base words.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/english",
+      "verbatim": false
+    },
+    {
+      "id": "AC9E3LY05",
+      "framework": "ac9-english",
+      "subject": "english",
+      "stage": "3",
+      "years": [
+        3
+      ],
+      "text": "Fixture paraphrase: identify the main idea of a text.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/english",
+      "verbatim": false
+    },
+    {
+      "id": "AC9E6LY05",
+      "framework": "ac9-english",
+      "subject": "english",
+      "stage": "6",
+      "years": [
+        6
+      ],
+      "text": "Fixture paraphrase: draw inferences using text evidence.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/english",
+      "verbatim": false
+    },
+    {
+      "id": "AC9E6LA06",
+      "framework": "ac9-english",
+      "subject": "english",
+      "stage": "6",
+      "years": [
+        6
+      ],
+      "text": "Fixture paraphrase: use commas to separate clauses.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/english",
+      "verbatim": false
+    },
+    {
+      "id": "AC9E6LY09",
+      "framework": "ac9-english",
+      "subject": "english",
+      "stage": "6",
+      "years": [
+        6
+      ],
+      "text": "Fixture paraphrase: use prefixes and suffixes to change word meanings.",
+      "url": "https://v9.australiancurriculum.edu.au/f-10-curriculum/learning-areas/english",
+      "verbatim": false
+    }
+  ]
+}
