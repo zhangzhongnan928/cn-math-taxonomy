@@ -2,7 +2,7 @@
 
 An English-language, Australian edition of the knowledge graph and adaptive check-up in this repository, built for primary school children in New South Wales. It covers **Kindergarten to Year 6** in two subjects, **Mathematics** and **English**, aligned to the NSW syllabuses (2022) with Australian Curriculum v9 codes as a second mapping.
 
-Open `au/` on the site (for example `https://<site>/au/`). It is a separate site: nothing in it depends on the Chinese pages, apart from the shared vendor libraries and icons.
+Live at https://cn-math-taxonomy-beta.vercel.app/au/ (Vercel, deployed from `main`). It is a separate site: nothing in it depends on the Chinese pages, apart from the shared vendor libraries and icons.
 
 ## What it does
 
